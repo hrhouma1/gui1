@@ -1,5 +1,7 @@
 
+-----------------
 # 1. Installer les prérequis
+-----------------
 
 ### 1.1 Git
 
@@ -27,7 +29,10 @@ Flutter nécessite Git pour cloner et gérer ses dépendances.
 <br/>
 
 
+-----------------
 # 2. Installer un éditeur de code
+-----------------
+
 
 ### Option 1 : Visual Studio Code
 
@@ -49,7 +54,9 @@ Flutter nécessite Git pour cloner et gérer ses dépendances.
 <br/>
 <br/>
 
+-----------------
 # 3. Vérifier l’installation
+-----------------
 
 Ouvrir un terminal ou PowerShell, puis taper :
 
@@ -64,7 +71,9 @@ Corriger chaque point manquant selon les instructions affichées.
 <br/>
 <br/>
 
+-----------------
 # 4. Installer Android SDK
+-----------------
 
 Si ce n’est pas déjà fait, installer Android Studio (voir étape 2).
 
@@ -77,7 +86,9 @@ Si ce n’est pas déjà fait, installer Android Studio (voir étape 2).
 <br/>
 <br/>
 
+-----------------
 # 5. Créer un projet Flutter
+-----------------
 
 Dans un terminal ou PowerShell :
 
@@ -97,7 +108,9 @@ Cela va :
 <br/>
 <br/>
 
+-----------------
 # 6. Lancer un émulateur Android (optionnel mais recommandé)
+-----------------
 
 * Ouvrir Android Studio
 * Aller dans Device Manager
@@ -113,7 +126,9 @@ flutter run
 <br/>
 <br/>
 
-# Résumé
+-----------------
+# 7. Résumé
+-----------------
 
 | Composant          | Rôle                                           |
 | ------------------ | ---------------------------------------------- |
@@ -129,10 +144,11 @@ flutter run
 
 
 
+-----------------
+# 8. Résolution de Problèmes 
+-----------------
 
-# Résolution de Problèmes 
-
-### 1. **cmdline-tools manquant dans l’Android SDK**
+### 8.1. **cmdline-tools manquant dans l’Android SDK**
 
 #### Explication :
 
@@ -150,7 +166,7 @@ Flutter a besoin des **command line tools** du SDK Android (comme `sdkmanager`) 
 
 
 
-### 2. **Licences Android non acceptées**
+### 8.2. **Licences Android non acceptées**
 
 #### Solution :
 
@@ -172,5 +188,5 @@ Une fois ces deux étapes terminées, relance :
 flutter doctor
 ```
 
-Tu devrais obtenir un rapport 100 % ✅ (aucun "!" ni "X").
+Tu devrais obtenir un rapport 100 %  (aucun "!" ni "X").
 
