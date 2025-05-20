@@ -89,12 +89,34 @@ class Personne {
 }
 ```
 
+### Explications :
+
+```
+// Déclaration d'une classe nommée "Personne"
+class Personne {
+  // Déclaration d'un attribut "nom" de type String
+  String nom;
+
+  // Déclaration d'un attribut "age" de type int (entier)
+  int age;
+
+  // Constructeur de la classe : permet d'initialiser les attributs "nom" et "age"
+  // L'utilisation de "this.nom" signifie que l'on affecte la valeur reçue au champ "nom" de l'objet
+  Personne(this.nom, this.age);
+
+  // Méthode de la classe qui affiche une phrase contenant les valeurs de "nom" et "age"
+  void afficher() {
+    print("$nom a $age ans.");
+  }
+}
+```
+
 ### Utilisation :
 
 ```dart
 void main() {
-  var p = Personne("Ali", 30);
-  p.afficher(); // Affiche : Ali a 30 ans.
+  var p = Personne("Sam", 30);
+  p.afficher(); // Affiche : Sam a 30 ans.
 }
 ```
 
