@@ -120,6 +120,60 @@ body: Center(child: Text("Bonjour !")),
 Tu places un texte "Bonjour !" au **centre de l’écran**.
 
 
+###  child et children
+
+En Flutter, `child` est **une propriété** utilisée dans **de nombreux widgets** pour spécifier **un seul widget enfant**. Elle est très fréquente dans les widgets qui n’acceptent **qu’un seul élément visuel** à l’intérieur.
+
+
+
+###  Exemple dans notre code
+
+```dart
+body: Center(child: Text("Bonjour !")),
+```
+
+* Ici, le widget `Center` est un conteneur qui **centre son enfant** dans l’espace disponible.
+* Le mot-clé `child:` indique que l’on place **un seul enfant** à l’intérieur de ce conteneur.
+* Cet enfant est ici : `Text("Bonjour !")`.
+
+
+
+###  Différence entre `child` et `children`
+
+| Terme      | Type             | Utilisé pour…                                 |
+| ---------- | ---------------- | --------------------------------------------- |
+| `child`    | Un seul widget   | Quand un widget n’a **qu’un seul enfant**     |
+| `children` | Liste de widgets | Quand un widget accepte **plusieurs enfants** |
+
+
+
+### Autres exemples de `child`
+
+```dart
+Container(
+  padding: EdgeInsets.all(16),
+  child: Text("Ceci est dans un container"),
+)
+```
+
+
+
+###  Exemples de `children`
+
+```dart
+Column(
+  children: [
+    Text("Ligne 1"),
+    Text("Ligne 2"),
+  ],
+)
+```
+
+Ici, `Column` accepte **plusieurs widgets enfants**, donc on utilise `children`.
+
+
+
+
 
 # 5. Visualisation de la structure
 
@@ -134,6 +188,9 @@ Ce que Flutter affichera :
 |                            |
 ------------------------------
 ```
+
+
+
 
 
 
