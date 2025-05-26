@@ -115,7 +115,7 @@ Dans la colonne :
 
 
 
-# 4. Visualisation ASCII
+# 4. Visualisation 
 
 ```
 ---------------------------
@@ -143,7 +143,7 @@ Puis après clic :
 
 
 
-# 5. Résumé pédagogique
+# 5. Résumé 
 
 | Élément               | Rôle                                                                         |
 | --------------------- | ---------------------------------------------------------------------------- |
@@ -156,7 +156,9 @@ Puis après clic :
 | `ElevatedButton(...)` | Déclenche une action au clic                                                 |
 
 
-# Annexe 1  - Le **underscore `_` ?
+<br/>
+
+# Annexe 1  - Le underscore `_` ?
 
 
 
@@ -294,6 +296,101 @@ Dans Flutter, c’est utilisé **partout**, notamment :
 * En Dart, un nom qui commence par `_` est **privé au fichier**.
 * C’est la **seule façon de rendre quelque chose privé**.
 * Flutter utilise cette règle **systématiquement** pour ses widgets avec état (`StatefulWidget`).
+
+<br/>
+<br/>
+
+# Annexe 2 - ElevatedButton — Bouton avec relief
+
+Un `ElevatedButton` est un bouton **matériel** qui donne un **effet de profondeur** (relief). Il est largement utilisé pour les actions principales dans une interface Flutter.
+
+
+
+### Exemple 1 — Bouton simple
+
+```dart
+ElevatedButton(
+  onPressed: () {
+    print("Bouton cliqué !");
+  },
+  child: Text("Clique ici"),
+)
+```
+
+**Résultat** : Un bouton affichant "Clique ici" qui imprime un message dans la console lorsqu’on clique dessus.
+
+
+
+### Exemple 2 — Bouton désactivé
+
+```dart
+ElevatedButton(
+  onPressed: null,
+  child: Text("Je suis désactivé"),
+)
+```
+
+**Résultat** : Le bouton est grisé et non cliquable.
+
+
+
+### Exemple 3 — Bouton avec icône
+
+```dart
+ElevatedButton.icon(
+  onPressed: () {
+    print("Action avec icône");
+  },
+  icon: Icon(Icons.thumb_up),
+  label: Text("J’aime"),
+)
+```
+
+**Résultat** : Un bouton contenant une icône à gauche et du texte à droite.
+
+
+
+### Exemple 4 — Bouton avec mise en forme
+
+```dart
+ElevatedButton(
+  onPressed: () {},
+  style: ElevatedButton.styleFrom(
+    backgroundColor: Colors.green,
+    foregroundColor: Colors.white,
+    padding: EdgeInsets.symmetric(horizontal: 32, vertical: 16),
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(12),
+    ),
+  ),
+  child: Text("Valider"),
+)
+```
+
+**Résultat** : Un bouton vert avec texte blanc, coins arrondis et marges internes personnalisées.
+
+
+
+### Exemple 5 — Utilisation dans une colonne
+
+```dart
+Column(
+  children: [
+    ElevatedButton(
+      onPressed: () {},
+      child: Text("Valider"),
+    ),
+    SizedBox(height: 20),
+    ElevatedButton(
+      onPressed: () {},
+      child: Text("Annuler"),
+    ),
+  ],
+)
+```
+
+**Résultat** : Deux boutons empilés verticalement, espacés par 20 pixels.
+
 
 
 
