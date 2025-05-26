@@ -26,6 +26,14 @@
 
 
 
+### 🔔 **Note importante**
+
+> **Pour chaque exercice, vous devez uniquement remettre le fichier `main.dart` complet.**
+> Assurez-vous que le code Dart est **exécutable tel quel** (copier-coller dans un projet Flutter suffit pour voir le résultat).
+> Il n'est **pas nécessaire de créer d'autres fichiers ou de modifier pubspec.yaml**.
+
+
+
 
 ### <h2 id="ex1">Exercice 1 – Afficher un bouton rouge</h2>
 
