@@ -24,6 +24,32 @@ class MonTitre extends StatelessWidget {
 Ce widget affichera toujours le texte "Bienvenue !". Il ne peut **pas réagir à un clic ou à une action**. Il est "statique".
 
 
+```
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MonApp()); // ← ICI : on peut mettre const si MonApp est const-compatible
+}
+
+class MonApp extends StatelessWidget {
+  const MonApp({super.key}); // ← Constructor marqué const, nécessaire pour runApp(const MonApp())
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text("Ma première fenêtre"), // ← const ici car Text est immuable
+        ),
+        body: const Center(
+          child: Text("Bonjour !"), // ← const car aucun état ne change ici
+        ),
+      ),
+    );
+  }
+}
+```
+
 
 # 2. Et son inverse ? C’est un `StatefulWidget`
 
