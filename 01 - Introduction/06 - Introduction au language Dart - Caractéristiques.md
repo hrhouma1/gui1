@@ -156,3 +156,78 @@ Dart propose deux types de compilation :
 * Il est utilisé **professionnellement dans de grandes entreprises** via Flutter
 
 
+<br/>
+
+# Annexe 1 -AOT (Ahead-of-Time compilation) :
+
+
+
+## Qu’est-ce que AOT (Ahead-of-Time) ?
+
+AOT, ou **compilation anticipée**, est une technique où ton **code source** est **transformé en code machine** **avant** que le programme ne soit lancé.
+
+
+
+## Explication simple
+
+Imagine que tu écris une recette de cuisine en français (ton code), mais ton robot cuisinier ne comprend que le chinois (le code machine).
+Avec AOT, tu fais **toute la traduction à l’avance**, avant même de commencer à cuisiner.
+
+Quand vient le moment d’exécuter la recette, **tout est déjà prêt**, donc tu gagnes du temps.
+Le robot exécute les instructions **sans attendre**.
+
+
+## Différence entre AOT et JIT
+
+| Type de compilation | Moment où ça se passe | Avantage principal                 |
+| ------------------- | --------------------- | ---------------------------------- |
+| AOT (Ahead-of-Time) | Avant l’exécution     | Temps de démarrage plus rapide     |
+| JIT (Just-in-Time)  | Pendant l’exécution   | Optimisations dynamiques possibles |
+
+Avec **JIT**, c’est comme si tu traduisais les phrases de ta recette **pendant que tu cuisines**. Cela permet parfois d’améliorer certains passages en cours de route, mais **ça prend plus de temps au début**.
+
+
+## Exemple avec Flutter
+
+En Flutter, quand tu prépares une application pour Android ou iOS en mode production, le code Dart est **compilé en code machine natif** à l’avance grâce à AOT.
+
+Cela permet à l’application :
+
+* de démarrer plus rapidement
+* d’être plus performante
+* de ne pas dépendre d’un interpréteur au moment du lancement
+
+
+
+## Conclusion
+
+AOT signifie que le code est compilé **avant l’exécution** du programme, ce qui permet des **temps de démarrage plus courts** et une **meilleure performance initiale**.
+C’est particulièrement utile pour les **applications mobiles**, où la réactivité est essentielle.
+
+
+<br/>
+
+<br/>
+
+
+# Annexe 2 -  Tableau comparatif : AOT vs JIT
+
+| Critère                          | AOT (Ahead-of-Time)              | JIT (Just-in-Time)                   |
+| -------------------------------- | -------------------------------- | ------------------------------------ |
+| **Moment de la compilation**     | Avant l'exécution                | Pendant l'exécution                  |
+| **Langage / Plateforme exemple** | Dart (Flutter), C, C++           | Java, C#, JavaScript                 |
+| **Temps de démarrage**           | Très rapide                      | Plus lent (compilation au lancement) |
+| **Performances à long terme**    | Stables et constantes            | Peut s’adapter et s’optimiser        |
+| **Taille du binaire**            | Plus grande                      | Moins de code initial                |
+| **Besoin d'une VM ou runtime**   | Non (tout est déjà compilé)      | Oui (Java Virtual Machine, CLR…)     |
+| **Utilisation typique**          | Applications mobiles, embarquées | Applications web, desktop, serveurs  |
+| **Exemple concret**              | Flutter (appli mobile)           | Java (application desktop, Android)  |
+
+
+
+## À retenir
+
+* **Flutter** utilise **AOT** pour générer du code natif avant d’installer l’application : l’exécution est rapide et fluide.
+* **Java** repose sur **JIT** via la JVM : le code est compilé pendant l'exécution, ce qui permet des ajustements dynamiques mais avec un coût au démarrage.
+
+
