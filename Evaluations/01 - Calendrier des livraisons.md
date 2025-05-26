@@ -82,7 +82,7 @@ Les équipes peuvent soumettre **une idée originale**, sous réserve :
 
 
 
-# 6. Contraintes techniques incontournables
+# 6. Contraintes techniques
 
 * **Flutter/Dart** exclusivement.
 * Clé API stockée dans `.env` (package `flutter_dotenv`) ; **jamais** poussée sur Git.
