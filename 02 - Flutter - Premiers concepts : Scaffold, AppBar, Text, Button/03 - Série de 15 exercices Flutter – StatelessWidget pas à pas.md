@@ -1,6 +1,7 @@
 # Série de 15 exercices Flutter – StatelessWidget pas à pas
 
-## <h1 id="toc">Table des matières</h1>
+
+# <h1 id="toc">Table des matières</h1>
 
 1. [Exercice 1 – Afficher un bouton rouge](#ex1)
 2. [Exercice 2 – Afficher un bouton bleu](#ex2)
@@ -17,6 +18,12 @@
 13. [Exercice 13 – Afficher un `DropdownButton` (valeur fixe)](#ex13)
 14. [Exercice 14 – Afficher une image locale ou réseau](#ex14)
 15. [Exercice 15 – Créer une carte (`Card`) contenant un bouton](#ex15)
+16. [Exercice 16 – Formulaire simple avec deux champs de texte](#ex16)
+17. [Exercice 17 – Formulaire avec champs email et mot de passe](#ex17)
+18. [Exercice 18 – Interface avec 3 `TextField` et une `DropdownButton`](#ex18)
+19. [Exercice 19 – Interface avec `Checkbox` et `ElevatedButton`](#ex19)
+20. [Exercice 20 – Formulaire complet sans logique (Stateless)](#ex20)
+
 
 
 
