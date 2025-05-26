@@ -96,19 +96,37 @@ Les équipes peuvent soumettre **une idée originale**, sous réserve :
 
 | Critère                                       | Sprint 1 | Sprint 2 |
 | --------------------------------------------- | -------- | -------- |
-| Cahier des charges complet                    | x       | —        |
-| Prototype fonctionnel (appel IA simulé)       | x       | —        |
-| Appel API IA réel, sécurisé                   | —        | x       |
-| Qualité UX / UI / accessibilité               | x       | x       |
-| Gestion d’état robuste                        | —        | x       |
-| Architecture, qualité du code, historique Git | x      | x     |
-| Documentation intégrée                        | —        | x       |
-| Quiz individuel (technique)                   | —        | x      |
-
+| Cahier des charges complet                    | ✔️       | —        |
+| Prototype fonctionnel (appel IA simulé)       | ✔️       | —        |
+| Appel API IA réel, sécurisé                   | —        | ✔️       |
+| Qualité UX / UI / accessibilité               | ✔️       | ✔️       |
+| Gestion d’état robuste                        | —        | ✔️       |
+| Architecture, qualité du code, historique Git | ✔️       | ✔️       |
+| Documentation intégrée                        | —        | ✔️       |
+| Quiz individuel (technique)                   | —        | ✔️       |
 
 
 ### Rappel essentiel
 
-La **fiche-projet** constitue l’engagement officiel de chaque stagiaire ; aucun changement de thème ou d’API ne sera accepté après validation sans approbation écrite de l’enseignant.
+La **fiche-projet** constitue l’engagement officiel de chaque étudiant ; aucun changement de thème ou d’API ne sera accepté après validation sans approbation écrite de l’enseignant.
 
 Bonne planification et réussite à toutes et à tous.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
