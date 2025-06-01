@@ -1379,11 +1379,12 @@ class MonApp extends StatelessWidget {
 
 
 
-<br/>
-<br/>
-<br/>
 
+[Retour à la table de matière](#toc)
 
+<br/>
+<br/>
+<br/>
 
 
 
@@ -1470,10 +1471,12 @@ L'utilisation de `SizedBox.shrink()` est le moyen recommandé pour fournir un **
 
 
 
-<br/>
-<br/>
-<br/>
 
+[Retour à la table de matière](#toc)
+
+<br/>
+<br/>
+<br/>
 
 
 
@@ -1543,17 +1546,18 @@ ElevatedButton(
 
 
 
-<br/>
-<br/>
-<br/>
 
+[Retour à la table de matière](#toc)
 
+<br/>
+<br/>
+<br/>
 
 
 
 ### <h2 id="annexe-4">Annexe 4 – Notions fondamentales : `const`, `SizedBox`, `Column`, `Row`</h2>
 
----
+
 
 #### 1. `const` – Déclaration constante
 
@@ -1693,12 +1697,11 @@ Row(
 
 
 
+[Retour à la table de matière](#toc)
+
 <br/>
 <br/>
 <br/>
-
-
-
 
 
 
@@ -1817,11 +1820,11 @@ DropdownButton<String>(
 
 
 
-<br/>
-<br/>
-<br/>
+[Retour à la table de matière](#toc)
 
-
+<br/>
+<br/>
+<br/>
 
 
 
@@ -1829,7 +1832,7 @@ DropdownButton<String>(
 
 ### <h2 id="annexe-6">Annexe 6 – `Scaffold`, `AppBar`, et `Navigator.push`</h2>
 
----
+
 
 #### 1. `Scaffold` – Structure de base d’un écran Flutter
 
@@ -1980,15 +1983,16 @@ Navigator.pop(context); // retire la page du haut de la pile
 
 
 
+[Retour à la table de matière](#toc)
 
+<br/>
+<br/>
+<br/>
 
-<br/>
-<br/>
-<br/>
 
 ### <h2 id="annexe-7">Annexe 7 – Icônes (`Icon`, `Icons`) et bouton flottant (`FloatingActionButton`)</h2>
 
----
+
 
 #### 1. `Icon` – Widget pour afficher une icône
 
@@ -2090,3 +2094,9 @@ Scaffold(
 | `Icons.<nom>`          | Bibliothèque d’icônes prédéfinies           |
 | `FloatingActionButton` | Bouton rond flottant pour action principale |
 
+
+[Retour à la table de matière](#toc)
+
+<br/>
+<br/>
+<br/>
