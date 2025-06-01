@@ -56,24 +56,30 @@ Crée une application Flutter qui affiche un bouton rouge centré à l'écran.
 ### <h2 id="c-ex1">Exercice 1 – Afficher un bouton rouge</h2>
 
 ```dart
+// Importation du package Flutter de base
 import 'package:flutter/material.dart';
 
+// Point d'entrée de l'application
 void main() {
-  runApp(const MonApp());
+  runApp(const MonApp()); // Lance l'application en affichant le widget MonApp
 }
 
+// Déclaration d'un widget sans état (StatelessWidget)
 class MonApp extends StatelessWidget {
-  const MonApp({super.key});
+  const MonApp({super.key}); // Constructeur constant (optimisation Flutter)
 
   @override
   Widget build(BuildContext context) {
+    // Retourne une MaterialApp, structure de base pour une app Flutter
     return MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: ElevatedButton(
-            onPressed: () {},
-            style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
-            child: const Text('Bouton Rouge'),
+      home: Scaffold( // Scaffold fournit une structure d'écran avec fond, barre, etc.
+        body: Center( // Centre son enfant (ici : le bouton)
+          child: ElevatedButton( // Création d'un bouton élevé (relief)
+            onPressed: () {}, // Fonction appelée au clic (vide ici)
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.red, // Couleur de fond rouge
+            ),
+            child: const Text('Bouton Rouge'), // Texte à afficher sur le bouton
           ),
         ),
       ),
