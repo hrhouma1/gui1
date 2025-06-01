@@ -1373,11 +1373,6 @@ class MonApp extends StatelessWidget {
 
 
 
-[Retour à la table de matière](#toc)
-
-
-
-
 
 
 [Retour à la table de matière](#toc)
@@ -1429,7 +1424,13 @@ La version abrégée est disponible depuis Dart 2.17.
 * Même si un widget ne contient pas encore de logique d’état, il est recommandé d'inclure `super.key`.
 * Cela garantit que le widget est correctement identifié et géré par Flutter, notamment dans des cas de navigation, d’animation, ou de listes dynamiques.
 
----
+
+[Retour à la table de matière](#toc)
+
+<br/>
+<br/>
+<br/>
+
 
 ### <h2 id="annexe-2">Annexe 2 – Comprendre l’utilisation de `SizedBox.shrink()`</h2>
 
