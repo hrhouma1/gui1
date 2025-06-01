@@ -1375,7 +1375,718 @@ class MonApp extends StatelessWidget {
 
 [Retour à la table de matière](#toc)
 
+
+
+
+
 <br/>
 <br/>
 <br/>
+
+
+
+
+
+### <h2 id="annexe-1">Annexe 1 – Utilisation de `super.key` dans les widgets Flutter</h2>
+
+#### Description
+
+Dans tous les widgets Flutter définis dans cette série d'exercices, vous trouverez la ligne suivante dans le constructeur :
+
+```dart
+const MonApp({super.key});
+```
+
+Cette syntaxe permet de transmettre la clé (`Key`) au constructeur de la classe parente (`StatelessWidget` ou `StatefulWidget`).
+
+#### Objectif
+
+La clé (`Key`) est utilisée par Flutter pour :
+
+* Identifier de manière unique chaque widget dans l’arbre des widgets
+* Optimiser les reconstructions d’interface (rebuild)
+* Préserver l’état des widgets lorsqu’ils sont remplacés ou réordonnés
+
+#### Syntaxe équivalente
+
+L’instruction suivante :
+
+```dart
+const MonApp({super.key});
+```
+
+est équivalente à la version étendue :
+
+```dart
+const MonApp({Key? key}) : super(key: key);
+```
+
+La version abrégée est disponible depuis Dart 2.17.
+
+#### Bonnes pratiques
+
+* Même si un widget ne contient pas encore de logique d’état, il est recommandé d'inclure `super.key`.
+* Cela garantit que le widget est correctement identifié et géré par Flutter, notamment dans des cas de navigation, d’animation, ou de listes dynamiques.
+
+---
+
+### <h2 id="annexe-2">Annexe 2 – Comprendre l’utilisation de `SizedBox.shrink()`</h2>
+
+#### Contexte
+
+Dans l’Exercice 2, un bouton bleu est affiché **sans contenu textuel** :
+
+```dart
+child: const SizedBox.shrink(),
+```
+
+#### Fonctionnement
+
+`sizedBox.shrink()` est un constructeur spécial qui crée un widget `SizedBox` **avec une largeur et une hauteur égales à zéro**.
+
+```dart
+SizedBox.shrink() // équivaut à SizedBox(width: 0, height: 0)
+```
+
+Ce widget **n’affiche rien du tout** mais reste structurellement valide dans l’interface.
+
+#### Pourquoi l'utiliser ?
+
+* Un `ElevatedButton` attend obligatoirement un `child`.
+* Si aucun texte ou contenu ne doit apparaître dans le bouton, il faut quand même fournir un widget vide.
+* `SizedBox.shrink()` est la **solution la plus légère et la plus idiomatique** pour cela.
+
+#### Alternatives moins appropriées
+
+| Alternative   | Problème potentiel                     |
+| ------------- | -------------------------------------- |
+| `Text('')`    | Peut occuper de l’espace vertical      |
+| `Container()` | Plus coûteux en performances           |
+| `null`        | Non autorisé (le paramètre est requis) |
+
+#### En résumé
+
+L'utilisation de `SizedBox.shrink()` est le moyen recommandé pour fournir un **contenu totalement vide et invisible**, tout en respectant les exigences de l’API Flutter.
+
+
+
+<br/>
+<br/>
+<br/>
+
+
+
+
+### <h2 id="annexe-3">Annexe 3 – Qu’est-ce qu’un `ElevatedButton` ?</h2>
+
+#### Définition
+
+Un `ElevatedButton` est un **bouton avec un relief (ombre)** intégré, utilisé pour signaler une **action principale** dans une interface Flutter. Il fait partie des widgets de base fournis par le framework Material Design.
+
+#### Comportement
+
+* Par défaut, il a un **fond coloré** (souvent bleu) et une **ombre portée**.
+* Il réagit visuellement au survol (sur desktop), à l’appui, et à l’état désactivé.
+* Il peut afficher un texte, une icône ou tout autre widget via son paramètre `child`.
+
+#### Syntaxe minimale
+
+```dart
+ElevatedButton(
+  onPressed: () {},
+  child: Text("Clique ici"),
+)
+```
+
+#### Paramètres importants
+
+| Paramètre   | Description                                           |
+| ----------- | ----------------------------------------------------- |
+| `onPressed` | Fonction appelée lors du clic (si `null` → désactivé) |
+| `child`     | Le contenu visuel du bouton (souvent un `Text`)       |
+| `style`     | Permet de modifier l’apparence (couleur, forme...)    |
+
+#### Bouton sans relief (pour comparaison)
+
+Si vous voulez un **bouton sans relief**, vous pouvez utiliser par exemple :
+
+```dart
+TextButton(
+  onPressed: () {},
+  child: Text("Bouton plat"),
+)
+```
+
+#### Comparaison des principaux types de boutons Flutter
+
+| Widget           | Apparence par défaut         | Idéal pour...                        |
+| ---------------- | ---------------------------- | ------------------------------------ |
+| `ElevatedButton` | Fond coloré + ombre (relief) | Action principale                    |
+| `TextButton`     | Texte sans fond ni ombre     | Actions secondaires ou discrètes     |
+| `OutlinedButton` | Contour sans fond            | Actions alternatives ou neutres      |
+| `IconButton`     | Icône seule, sans fond       | Barre d’actions ou icônes flottantes |
+
+#### Exemple stylisé
+
+```dart
+ElevatedButton(
+  onPressed: () {},
+  style: ElevatedButton.styleFrom(
+    backgroundColor: Colors.green,
+    padding: EdgeInsets.symmetric(horizontal: 32, vertical: 12),
+    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+  ),
+  child: Text("Valider"),
+)
+```
+
+
+
+
+<br/>
+<br/>
+<br/>
+
+
+
+
+
+### <h2 id="annexe-4">Annexe 4 – Notions fondamentales : `const`, `SizedBox`, `Column`, `Row`</h2>
+
+---
+
+#### 1. `const` – Déclaration constante
+
+```dart
+const Text("Bonjour");
+```
+
+##### Définition :
+
+Le mot-clé `const` indique que le widget (ou la valeur) est **constante à la compilation**. Cela signifie que :
+
+* Il ne changera jamais à l’exécution
+* Flutter peut le **réutiliser en mémoire sans le recréer**
+* Cela **améliore les performances**
+
+##### Quand l’utiliser :
+
+Utilisez `const` **dès que possible** pour tous les widgets immuables (qui ne dépendent d’aucune donnée dynamique).
+
+##### Exemple :
+
+```dart
+const SizedBox(height: 20); // Bonne pratique
+```
+
+---
+
+#### 2. `SizedBox` – Boîte avec dimension fixe
+
+```dart
+const SizedBox(height: 40)
+```
+
+##### Rôle :
+
+Crée une **boîte vide** de taille déterminée. C’est le moyen standard en Flutter pour **ajouter de l’espace entre deux widgets**.
+
+##### Paramètres :
+
+* `height` : hauteur fixe
+* `width` : largeur fixe
+
+##### Utilisation typique :
+
+Pour créer un espacement vertical ou horizontal entre deux éléments :
+
+```dart
+Column(
+  children: [
+    Text("Nom"),
+    SizedBox(height: 16), // espace vertical
+    Text("Prénom"),
+  ],
+)
+```
+
+##### Variante spéciale :
+
+```dart
+SizedBox.shrink(); // équivalent à SizedBox(width: 0, height: 0)
+```
+
+---
+
+#### 3. `Column` – Organisation verticale
+
+```dart
+Column(
+  children: [
+    Text("Ligne 1"),
+    Text("Ligne 2"),
+  ],
+)
+```
+
+##### Rôle :
+
+Affiche les widgets **les uns sous les autres** (axe vertical).
+
+##### Paramètres clés :
+
+* `mainAxisAlignment` : aligne les enfants verticalement
+* `crossAxisAlignment` : aligne les enfants horizontalement
+
+##### Exemple :
+
+```dart
+Column(
+  mainAxisAlignment: MainAxisAlignment.center,
+  crossAxisAlignment: CrossAxisAlignment.start,
+  children: [ ... ],
+)
+```
+
+---
+
+#### 4. `Row` – Organisation horizontale
+
+```dart
+Row(
+  children: [
+    Text("Gauche"),
+    Text("Droite"),
+  ],
+)
+```
+
+##### Rôle :
+
+Affiche les widgets **les uns à côté des autres** (axe horizontal).
+
+##### Paramètres clés :
+
+* `mainAxisAlignment` : aligne les enfants horizontalement
+* `crossAxisAlignment` : aligne les enfants verticalement
+
+##### Exemple :
+
+```dart
+Row(
+  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+  children: [ ... ],
+)
+```
+
+---
+
+#### Résumé visuel :
+
+| Widget     | Organisation | Axe principal   | Usage principal                   |
+| ---------- | ------------ | --------------- | --------------------------------- |
+| `Column`   | Verticale    | Haut ↕ Bas      | Empiler les widgets verticalement |
+| `Row`      | Horizontale  | Gauche ↔ Droite | Aligner des widgets côte à côte   |
+| `SizedBox` | Boîte vide   | Fixe            | Espacement entre widgets          |
+| `const`    | Mot-clé Dart | Compilation     | Optimisation, performance         |
+
+
+
+
+<br/>
+<br/>
+<br/>
+
+
+
+
+
+
+### <h2 id="annexe-5">Annexe 5 – `TextField`, `obscureText`, `DropdownButton`</h2>
+
+---
+
+#### 1. `TextField` – Champ de saisie de texte
+
+```dart
+TextField(
+  decoration: InputDecoration(labelText: 'Nom'),
+)
+```
+
+##### Rôle :
+
+Le widget `TextField` permet à l’utilisateur **de saisir du texte** dans une interface.
+
+##### Principaux paramètres :
+
+| Paramètre      | Rôle                                                     |
+| -------------- | -------------------------------------------------------- |
+| `decoration`   | Définit l’aspect visuel (ex : étiquette, icône, bordure) |
+| `controller`   | Permet de récupérer ou modifier la valeur saisie         |
+| `keyboardType` | Type de clavier affiché (email, nombre, etc.)            |
+| `obscureText`  | Masque le texte saisi (voir ci-dessous)                  |
+| `enabled`      | Active ou désactive le champ                             |
+
+##### Exemple :
+
+```dart
+TextField(
+  decoration: InputDecoration(labelText: 'Email'),
+  keyboardType: TextInputType.emailAddress,
+)
+```
+
+---
+
+#### 2. `obscureText` – Masquer le texte (mot de passe)
+
+```dart
+TextField(
+  decoration: InputDecoration(labelText: 'Mot de passe'),
+  obscureText: true,
+)
+```
+
+##### Rôle :
+
+Ce paramètre est utilisé pour **masquer le contenu saisi** (remplacé par des points ou astérisques), comme pour les champs de mot de passe.
+
+##### Valeurs possibles :
+
+| Valeur               | Effet                            |
+| -------------------- | -------------------------------- |
+| `false` (par défaut) | Le texte est affiché normalement |
+| `true`               | Le texte est masqué              |
+
+##### Utilisation typique :
+
+Recommandé pour tout champ contenant des informations sensibles.
+
+---
+
+#### 3. `DropdownButton` – Liste déroulante
+
+```dart
+DropdownButton<String>(
+  value: 'France',
+  onChanged: (value) {},
+  items: [
+    DropdownMenuItem(value: 'France', child: Text('France')),
+    DropdownMenuItem(value: 'Canada', child: Text('Canada')),
+  ],
+)
+```
+
+##### Rôle :
+
+Permet à l’utilisateur **de choisir une valeur parmi une liste de choix prédéfinis**.
+
+##### Paramètres principaux :
+
+| Paramètre      | Description                                               |
+| -------------- | --------------------------------------------------------- |
+| `value`        | Valeur actuellement sélectionnée                          |
+| `items`        | Liste des options (`DropdownMenuItem`)                    |
+| `onChanged`    | Fonction appelée lorsqu’un nouvel élément est sélectionné |
+| `hint`         | Texte affiché lorsque rien n’est encore sélectionné       |
+| `disabledHint` | Texte affiché si la sélection est désactivée              |
+
+##### Variante désactivée (Stateless) :
+
+```dart
+DropdownButton<String>(
+  value: 'Canada',
+  onChanged: null, // désactivé
+  items: [...],
+)
+```
+
+---
+
+#### Résumé des cas d’usage :
+
+| Composant        | Utilisation principale                     |
+| ---------------- | ------------------------------------------ |
+| `TextField`      | Entrée de texte libre                      |
+| `obscureText`    | Masquer le contenu du champ (mot de passe) |
+| `DropdownButton` | Choix unique dans une liste fixe           |
+
+
+
+
+
+
+<br/>
+<br/>
+<br/>
+
+
+
+
+
+
+
+### <h2 id="annexe-6">Annexe 6 – `Scaffold`, `AppBar`, et `Navigator.push`</h2>
+
+---
+
+#### 1. `Scaffold` – Structure de base d’un écran Flutter
+
+```dart
+Scaffold(
+  appBar: AppBar(title: Text("Titre")),
+  body: Center(child: Text("Contenu")),
+)
+```
+
+##### Rôle :
+
+Le widget `Scaffold` fournit **la structure de base d’une page** Flutter conforme aux principes de Material Design. Il encapsule des éléments standards comme :
+
+* La `AppBar` (barre du haut)
+* Le `body` (contenu principal)
+* Le `floatingActionButton` (bouton flottant)
+* Les `Drawer`, `BottomNavigationBar`, `Snackbar`, etc.
+
+##### Principaux paramètres :
+
+| Paramètre              | Description                                         |
+| ---------------------- | --------------------------------------------------- |
+| `appBar`               | Barre supérieure (titre, actions, menu…)            |
+| `body`                 | Zone centrale de la page                            |
+| `floatingActionButton` | Bouton rond flottant (généralement en bas à droite) |
+| `drawer`               | Menu latéral escamotable                            |
+| `backgroundColor`      | Couleur de fond de l’écran                          |
+
+##### Exemple complet :
+
+```dart
+Scaffold(
+  appBar: AppBar(title: Text("Accueil")),
+  body: Center(child: Text("Bienvenue")),
+  floatingActionButton: FloatingActionButton(
+    onPressed: () {},
+    child: Icon(Icons.add),
+  ),
+)
+```
+
+---
+
+#### 2. `AppBar` – Barre d’application supérieure
+
+```dart
+AppBar(title: Text("Mon Application"))
+```
+
+##### Rôle :
+
+La `AppBar` est une **barre horizontale située en haut de l’écran**, qui contient :
+
+* Un titre
+* Des actions (icônes, boutons)
+* Éventuellement un menu (`Drawer`)
+* Un retour automatique (flèche ←) lors de la navigation
+
+##### Paramètres courants :
+
+| Paramètre         | Description                                     |
+| ----------------- | ----------------------------------------------- |
+| `title`           | Widget affiché au centre (souvent `Text`)       |
+| `actions`         | Liste d’icônes à droite de la barre             |
+| `backgroundColor` | Couleur de fond                                 |
+| `leading`         | Icône personnalisée à gauche (ex : bouton menu) |
+
+##### Exemple avec actions :
+
+```dart
+AppBar(
+  title: Text("Tableau de bord"),
+  actions: [
+    IconButton(onPressed: () {}, icon: Icon(Icons.refresh)),
+    IconButton(onPressed: () {}, icon: Icon(Icons.logout)),
+  ],
+)
+```
+
+---
+
+#### 3. `Navigator.push` – Navigation entre pages
+
+##### Objectif :
+
+Flutter utilise un système de **pile de navigation**.
+Chaque fois que l’on appelle `Navigator.push`, on **empile une nouvelle page** sur l’écran courant.
+
+##### Syntaxe de base :
+
+```dart
+Navigator.push(
+  context,
+  MaterialPageRoute(builder: (context) => NouvellePage()),
+);
+```
+
+##### Étapes :
+
+1. Créer une nouvelle classe `StatelessWidget` ou `StatefulWidget` représentant la nouvelle page :
+
+```dart
+class NouvellePage extends StatelessWidget {
+  const NouvellePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text("Deuxième page")),
+      body: Center(child: Text("Contenu de la deuxième page")),
+    );
+  }
+}
+```
+
+2. Naviguer vers cette page depuis un bouton :
+
+```dart
+ElevatedButton(
+  onPressed: () {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const NouvellePage()),
+    );
+  },
+  child: Text("Aller à la page suivante"),
+)
+```
+
+##### Pour revenir à la page précédente :
+
+```dart
+Navigator.pop(context); // retire la page du haut de la pile
+```
+
+---
+
+#### Résumé :
+
+| Composant        | Rôle principal                                         |
+| ---------------- | ------------------------------------------------------ |
+| `Scaffold`       | Structure d’un écran (appbar, corps, boutons, menus…)  |
+| `AppBar`         | Barre d’en-tête avec titre et actions                  |
+| `Navigator.push` | Affiche une nouvelle page au-dessus de l’actuelle      |
+| `Navigator.pop`  | Revient à la page précédente (retire la page courante) |
+
+
+
+
+
+
+<br/>
+<br/>
+<br/>
+
+### <h2 id="annexe-7">Annexe 7 – Icônes (`Icon`, `Icons`) et bouton flottant (`FloatingActionButton`)</h2>
+
+---
+
+#### 1. `Icon` – Widget pour afficher une icône
+
+```dart
+Icon(Icons.home)
+```
+
+##### Rôle :
+
+Le widget `Icon` permet d’afficher une icône vectorielle prédéfinie dans l’interface Flutter.
+
+##### Paramètres importants :
+
+| Paramètre       | Description                                             |
+| --------------- | ------------------------------------------------------- |
+| `Icons.<nom>`   | Icône à afficher (provenant de la bibliothèque `Icons`) |
+| `size`          | Taille de l’icône en pixels (ex. `size: 32`)            |
+| `color`         | Couleur de l’icône                                      |
+| `semanticLabel` | Étiquette d’accessibilité (lecteur d’écran)             |
+
+##### Exemple :
+
+```dart
+Icon(
+  Icons.email,
+  size: 30,
+  color: Colors.blue,
+)
+```
+
+---
+
+#### 2. `Icons` – Bibliothèque d’icônes prédéfinies
+
+Le package `Icons` contient des **centaines d’icônes Material Design** prêtes à l’emploi.
+
+##### Exemples fréquents :
+
+```dart
+Icons.add             // +
+Icons.delete          // Poubelle
+Icons.arrow_back      // ←
+Icons.favorite        // Cœur
+Icons.settings        // Roue dentée
+Icons.search          // Loupe
+Icons.check_circle    // Cercle avec coche
+```
+
+##### Utilisation :
+
+Toujours combiné avec `Icon` ou un `IconButton`.
+
+---
+
+#### 3. `FloatingActionButton` – Bouton flottant rond
+
+```dart
+FloatingActionButton(
+  onPressed: () {},
+  child: Icon(Icons.add),
+)
+```
+
+##### Rôle :
+
+Affiche un **bouton rond flottant** en surimpression de la page, généralement situé en bas à droite de l’écran. Il sert à **déclencher une action principale** (ex : ajouter un élément, créer un contact, ouvrir un formulaire).
+
+##### Paramètres essentiels :
+
+| Paramètre         | Description                                          |
+| ----------------- | ---------------------------------------------------- |
+| `onPressed`       | Fonction appelée lorsqu'on appuie sur le bouton      |
+| `child`           | Contenu du bouton (souvent une `Icon`)               |
+| `tooltip`         | Infobulle affichée au survol (desktop/web)           |
+| `backgroundColor` | Couleur du fond du bouton                            |
+| `heroTag`         | Identifiant unique pour les animations de transition |
+
+##### Exemple complet :
+
+```dart
+Scaffold(
+  floatingActionButton: FloatingActionButton(
+    onPressed: () {
+      print("Ajout demandé");
+    },
+    child: Icon(Icons.add),
+    tooltip: "Ajouter",
+  ),
+)
+```
+
+---
+
+#### Résumé :
+
+| Composant              | Rôle                                        |
+| ---------------------- | ------------------------------------------- |
+| `Icon`                 | Affiche une icône à l’écran                 |
+| `Icons.<nom>`          | Bibliothèque d’icônes prédéfinies           |
+| `FloatingActionButton` | Bouton rond flottant pour action principale |
 
