@@ -90,8 +90,12 @@ class MonApp extends StatelessWidget {
 
 
 
+[Retour à la table de matière](#toc)
 
 <br/>
+<br/>
+<br/>
+
 
 
 ### <h2 id="ex2">Exercice 2 – Afficher un bouton bleu</h2>
