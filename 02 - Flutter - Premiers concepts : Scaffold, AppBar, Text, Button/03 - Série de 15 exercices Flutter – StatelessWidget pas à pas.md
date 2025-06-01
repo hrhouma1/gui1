@@ -115,6 +115,43 @@ Crée une application Flutter qui affiche un bouton bleu centré, sans texte.
 
 
 
+### <h2 id="c-ex2">Exercice 2 – Afficher un bouton bleu</h2>
+
+```dart
+// Importation du package Flutter
+import 'package:flutter/material.dart';
+
+// Point d’entrée de l’application
+void main() {
+  runApp(const MonApp()); // Démarre l’application avec MonApp
+}
+
+// Déclaration du widget principal sans état
+class MonApp extends StatelessWidget {
+  const MonApp({super.key}); // Constructeur constant (transmet la clé au parent)
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold( // Structure de base de l'écran
+        body: Center( // Centre le bouton dans l’écran
+          child: ElevatedButton(
+            onPressed: () {}, // Action vide pour le clic
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.blue, // Bouton bleu
+            ),
+            child: const SizedBox.shrink(), // Aucun contenu visible (voir Annexe 2)
+          ),
+        ),
+      ),
+    );
+  }
+}
+```
+
+
+
+
 
 
 [Retour à la table de matière](#toc)
