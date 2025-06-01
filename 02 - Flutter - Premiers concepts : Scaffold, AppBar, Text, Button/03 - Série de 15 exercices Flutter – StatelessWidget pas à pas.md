@@ -116,6 +116,9 @@ Crée une application Flutter qui affiche un bouton bleu centré, sans texte.
 
 
 
+
+[Retour à la table de matière](#toc)
+
 <br/>
 <br/>
 <br/>
@@ -187,10 +190,12 @@ class MonApp extends StatelessWidget {
 ```
 
 
-<br/>
-<br/>
-<br/>
 
+[Retour à la table de matière](#toc)
+
+<br/>
+<br/>
+<br/>
 
 
 
@@ -243,10 +248,12 @@ class MonApp extends StatelessWidget {
 
 
 
-<br/>
-<br/>
-<br/>
 
+[Retour à la table de matière](#toc)
+
+<br/>
+<br/>
+<br/>
 
 
 ### <h2 id="ex5">Exercice 5 – Bouton avec texte centré dans la page</h2>
@@ -303,12 +310,12 @@ class MonApp extends StatelessWidget {
 }
 ```
 
-Je passe maintenant à l’**Exercice 6 – Utiliser un `ElevatedButton`**, avec le même niveau de rigueur.
 
+[Retour à la table de matière](#toc)
 
-Voici l’**Exercice 6 – Utiliser un `ElevatedButton`**, fidèlement commenté ligne par ligne comme les précédents :
-
----
+<br/>
+<br/>
+<br/>
 
 ### <h2 id="ex6">Exercice 6 – Utiliser un `ElevatedButton`</h2>
 
@@ -357,10 +364,12 @@ class MonApp extends StatelessWidget {
 }
 ```
 
-<br/>
-<br/>
-<br/>
 
+[Retour à la table de matière](#toc)
+
+<br/>
+<br/>
+<br/>
 
 ### <h2 id="ex7">Exercice 7 – Utiliser un widget `Text` stylisé</h2>
 
@@ -411,6 +420,9 @@ class MonApp extends StatelessWidget {
   }
 }
 ```
+
+
+[Retour à la table de matière](#toc)
 
 <br/>
 <br/>
@@ -474,10 +486,12 @@ class MonApp extends StatelessWidget {
 }
 ```
 
-<br/>
-<br/>
-<br/>
 
+[Retour à la table de matière](#toc)
+
+<br/>
+<br/>
+<br/>
 
 ### <h2 id="ex9">Exercice 9 – Ajouter un `Column` avec deux éléments</h2>
 
@@ -533,12 +547,12 @@ class MonApp extends StatelessWidget {
 }
 ```
 
-Je passe sans attendre à l’**Exercice 10 – Utiliser un `Row` pour aligner deux éléments**.
 
+[Retour à la table de matière](#toc)
 
-Voici l’**Exercice 10 – Utiliser un `Row` pour aligner deux éléments**, fidèlement commenté ligne par ligne :
-
----
+<br/>
+<br/>
+<br/>
 
 ### <h2 id="ex10">Exercice 10 – Utiliser un `Row` pour aligner deux éléments</h2>
 
@@ -591,10 +605,12 @@ class MonApp extends StatelessWidget {
 }
 ```
 
-<br/>
-<br/>
-<br/>
 
+[Retour à la table de matière](#toc)
+
+<br/>
+<br/>
+<br/>
 
 ### <h2 id="ex11">Exercice 11 – Afficher un `Radio` sans interaction</h2>
 
@@ -650,10 +666,12 @@ class MonApp extends StatelessWidget {
 }
 ```
 
-<br/>
-<br/>
-<br/>
 
+[Retour à la table de matière](#toc)
+
+<br/>
+<br/>
+<br/>
 
 ### <h2 id="ex12">Exercice 12 – Afficher un `Checkbox` sans interaction</h2>
 
@@ -707,6 +725,9 @@ class MonApp extends StatelessWidget {
   }
 }
 ```
+
+
+[Retour à la table de matière](#toc)
 
 <br/>
 <br/>
@@ -774,6 +795,9 @@ class MonApp extends StatelessWidget {
 }
 ```
 
+
+[Retour à la table de matière](#toc)
+
 <br/>
 <br/>
 <br/>
@@ -825,6 +849,9 @@ class MonApp extends StatelessWidget {
   }
 }
 ```
+
+
+[Retour à la table de matière](#toc)
 
 <br/>
 <br/>
@@ -893,6 +920,9 @@ class MonApp extends StatelessWidget {
   }
 }
 ```
+
+
+[Retour à la table de matière](#toc)
 
 <br/>
 <br/>
@@ -963,10 +993,12 @@ class MonApp extends StatelessWidget {
 }
 ```
 
-<br/>
-<br/>
-<br/>
 
+[Retour à la table de matière](#toc)
+
+<br/>
+<br/>
+<br/>
 
 ### <h2 id="ex17">Exercice 17 – Formulaire avec champs email et mot de passe</h2>
 
@@ -1035,10 +1067,12 @@ class MonApp extends StatelessWidget {
 }
 ```
 
-<br/>
-<br/>
-<br/>
 
+[Retour à la table de matière](#toc)
+
+<br/>
+<br/>
+<br/>
 
 ### <h2 id="ex18">Exercice 18 – Interface avec 3 `TextField` et une `DropdownButton`</h2>
 
@@ -1121,6 +1155,9 @@ class MonApp extends StatelessWidget {
 }
 ```
 
+
+[Retour à la table de matière](#toc)
+
 <br/>
 <br/>
 <br/>
@@ -1192,6 +1229,9 @@ class MonApp extends StatelessWidget {
   }
 }
 ```
+
+
+[Retour à la table de matière](#toc)
 
 <br/>
 <br/>
@@ -1295,4 +1335,10 @@ class MonApp extends StatelessWidget {
 ```
 
 
+
+[Retour à la table de matière](#toc)
+
+<br/>
+<br/>
+<br/>
 
