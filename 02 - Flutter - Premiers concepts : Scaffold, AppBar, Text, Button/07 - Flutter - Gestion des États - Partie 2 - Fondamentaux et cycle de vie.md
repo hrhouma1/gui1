@@ -1,4 +1,4 @@
-# Liste des exercices – Partie 1 : États fondamentaux
+# Liste des exercices – Partie 2 : États fondamentaux
 
 ### <h2 id="ex1">🟢 Exercice 1 – Afficher un compteur statique</h2>
 
