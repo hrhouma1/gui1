@@ -484,6 +484,7 @@ class _MyAppState extends State<MyApp> {
 <br/>
 <br/>
 <br/>
+
 # <h2 id="c-etat29">Exercice 29 – Jouer un son précis et changer de couleur</h2>
 
 
@@ -870,7 +871,7 @@ class _GitHubUsersPageState extends State<GitHubUsersPage> {
 }
 ```
 
----
+
 
 ### Étape 3 – Explication rapide
 
