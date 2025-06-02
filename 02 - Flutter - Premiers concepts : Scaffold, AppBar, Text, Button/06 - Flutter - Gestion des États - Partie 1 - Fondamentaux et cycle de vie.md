@@ -298,3 +298,190 @@ ScaffoldMessenger.of(context).showSnackBar(
 <a href="#table-des-matieres">Retour à la table des matières</a>
 <br/>
 <br/>
+
+
+
+
+# Annexe 1 - Conventions de nommages
+
+
+
+## Si votre widget s'appelle :
+
+```dart
+class A extends StatefulWidget
+```
+
+### Alors **la classe d’état associée** doit s’appeler :
+
+```dart
+class _AState extends State<A>
+```
+
+
+
+| Élément            | Signification                                                       |
+| ------------------ | ------------------------------------------------------------------- |
+| `A`                | Le nom de votre widget avec état (`StatefulWidget`)                 |
+| `_AState`          | Nom de la classe d’état, **privée** (`_`) et associée au widget `A` |
+| `extends State<A>` | Le lien logique : cette classe est **l’état du widget `A`**         |
+
+
+
+### Exemple complet minimal
+
+```dart
+import 'package:flutter/material.dart';
+
+class A extends StatefulWidget {
+  @override
+  _AState createState() => _AState();
+}
+
+class _AState extends State<A> {
+  int compteur = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      onPressed: () {
+        setState(() {
+          compteur++;
+        });
+      },
+      child: Text('Compteur : $compteur'),
+    );
+  }
+}
+```
+
+
+###  À retenir
+
+* `A` est le widget public.
+* `_AState` est sa classe d’état, **privée** (préfixée par `_`), comme recommandé en Dart.
+* `State<A>` indique que cette classe d’état **est liée au widget A**.
+
+
+
+### À Essayer 
+
+
+##  Programme Flutter minimal complet avec `main()`
+
+```dart
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MonApp());
+}
+
+class MonApp extends StatelessWidget {
+  const MonApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        body: Center(
+          child: A(), // On utilise ici notre widget avec état
+        ),
+      ),
+    );
+  }
+}
+
+class A extends StatefulWidget {
+  @override
+  _AState createState() => _AState();
+}
+
+class _AState extends State<A> {
+  int compteur = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      onPressed: () {
+        setState(() {
+          compteur++;
+        });
+      },
+      child: Text('Compteur : $compteur'),
+    );
+  }
+}
+```
+
+
+
+###  Résumé de la structure
+
+| Élément      | Description                                                           |
+| ------------ | --------------------------------------------------------------------- |
+| `main()`     | Point d’entrée du programme. Lance l’application Flutter.             |
+| `MonApp`     | Le widget racine de type `StatelessWidget`.                           |
+| `A`          | Un widget personnalisé **avec état** (compteur qui augmente au clic). |
+| `_AState`    | La classe qui **gère l’état du widget A**.                            |
+| `setState()` | Utilisé pour notifier Flutter qu’on doit **rafraîchir l’interface**.  |
+
+
+<br/>
+<br/>
+
+
+# Annexe 2 - Convention de nommage Flutter pour `StatefulWidget`
+
+### Convention
+
+Si votre widget s'appelle :
+
+```dart
+class MonWidgetStateful extends StatefulWidget
+```
+
+Alors votre classe d’état (la logique interne liée à ce widget) doit s’appeler :
+
+```dart
+class _MonWidgetStatefulState extends State<MonWidgetStateful>
+```
+
+
+
+##  Pourquoi suivre cette convention ?
+
+| Élément                                                                           | But                                                                                                                  |
+| --------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+|  Reprise du nom du widget (`MonWidgetStateful`) dans le nom de la classe d’état | Cela **associe visuellement les deux classes**, ce qui est très utile quand il y en a plusieurs dans un même fichier |
+|  Ajout de `State` à la fin                                                      | Permet d’identifier facilement la classe **qui gère l’état**                                                         |
+|  Le `_` au début du nom d’état                                                  | Rend la classe **privée** au fichier courant (bonne pratique Dart)                                                   |
+
+
+
+##  Exemples concrets
+
+| Widget (`StatefulWidget`) | Classe d'état associée                                           |
+| ------------------------- | ---------------------------------------------------------------- |
+| `class CompteurWidget`    | `class _CompteurWidgetState extends State<CompteurWidget>`       |
+| `class LoginForm`         | `class _LoginFormState extends State<LoginForm>`                 |
+| `class MonWidgetStateful` | `class _MonWidgetStatefulState extends State<MonWidgetStateful>` |
+
+
+## ❗ Est-ce obligatoire ?
+
+Non. Dart et Flutter **ne vous obligent pas** à suivre ce nommage, mais :
+
+* Si vous changez le nom du widget, vous devez aussi le changer dans la classe `State<...>` ;
+* Si vous cassez cette convention, votre code sera **moins lisible** pour les autres développeurs (ou vous-même plus tard).
+
+
+##  À retenir
+
+* Ce sont **des conventions de nommage** (comme `camelCase`, `snake_case` ou `PascalCase`) ;
+* Elles **n’ont pas de valeur technique stricte**, mais permettent de garder un code **cohérent, lisible et maintenable** ;
+* Elles aident à **travailler efficacement en équipe** et à **comprendre rapidement la structure du code**.
+
+
+
+
+
