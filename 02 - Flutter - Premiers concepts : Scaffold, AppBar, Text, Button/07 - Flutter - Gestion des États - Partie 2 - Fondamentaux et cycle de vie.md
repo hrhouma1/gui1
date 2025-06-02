@@ -777,6 +777,69 @@ class _ChoisirCouleurState extends State<ChoisirCouleur> {
 <br/>
 
 
+# Annexe 1 -const ChangerTexte({super.key})
+
+
+```dart
+const ChangerTexte({super.key});
+```
+
+---
+
+## Analyse complète
+
+Cette ligne se trouve dans un widget Flutter, par exemple :
+
+```dart
+class ChangerTexte extends StatefulWidget {
+  const ChangerTexte({super.key});
+  ...
+}
+```
+
+---
+
+### 1. `const` — Constructeur constant
+
+* Le mot-clé `const` déclare que le **constructeur est constant**.
+* Cela signifie que **si le widget est créé avec des valeurs constantes**, Flutter peut optimiser sa création en mémoire.
+* C’est une **bonne pratique** lorsqu’un widget ne dépend pas de valeurs qui changent à l’exécution.
+
+---
+
+### 2. `ChangerTexte(...)` — Constructeur
+
+* C’est le **constructeur de la classe `ChangerTexte`**.
+* Il permet d’instancier ce widget depuis l’extérieur avec la syntaxe `ChangerTexte()`.
+
+---
+
+### 3. `{super.key}` — Paramètre nommé transmis au parent
+
+* Cela signifie : *le constructeur accepte un paramètre nommé `key`* et le **transmet directement au constructeur parent** (`StatefulWidget`).
+* C’est une **forme abrégée** de :
+
+```dart
+const ChangerTexte({Key? key}) : super(key: key);
+```
+
+---
+
+## Pourquoi utiliser `Key` ?
+
+* Une `Key` est un **identifiant unique** pour un widget.
+* Elle permet à Flutter de **comparer les anciens et nouveaux widgets** pendant le rafraîchissement de l’interface (`rebuild`).
+* Cela améliore les performances et évite des bugs visuels dans certains cas.
+
+---
+
+## Résumé
+
+| Élément Dart  | Rôle technique                                                                 |
+| ------------- | ------------------------------------------------------------------------------ |
+| `const`       | Marque le constructeur comme constant et optimisable                           |
+| `{super.key}` | Paramètre facultatif transmis automatiquement au constructeur `StatefulWidget` |
+| `Key`         | Identifiant optionnel pour mieux gérer le cycle de vie du widget               |
 
 
 
