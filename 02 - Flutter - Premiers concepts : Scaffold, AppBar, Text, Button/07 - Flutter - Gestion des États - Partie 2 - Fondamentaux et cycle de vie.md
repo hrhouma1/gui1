@@ -29,8 +29,10 @@
   <li><a href="#c-ex10">Correction Exercice 10</a></li>
 </ol>
 
-<br/>
 <a href="#liste-exercices">Retour à la liste des exercices</a>
+
+<br/>
+
 
 
 
@@ -40,10 +42,13 @@
 
 * Afficher simplement le texte : `Compteur : 0` (rien ne change).
 
+
+
+<a href="#liste-exercices">Retour à la liste des exercices</a>
+
 <br/>
 <br/>
 
-<a href="#liste-exercices">Retour à la liste des exercices</a>
 
 
 
@@ -54,10 +59,13 @@
 * Afficher un bouton `"Clique ici"` qui ne fait rien.
 * Pas d'état, pas de `setState()`.
 
+
+<a href="#liste-exercices">Retour à la liste des exercices</a>
+
 <br/>
 <br/>
 
-<a href="#liste-exercices">Retour à la liste des exercices</a>
+
 
 
 ### <h2 id="ex3">🟢 Exercice 3 – Créer un bouton qui change le texte</h2>
@@ -67,10 +75,12 @@
 * Au clic, le bouton affiche `"Merci !"`.
 * Le texte ne revient pas en arrière.
 
+<a href="#liste-exercices">Retour à la liste des exercices</a>
+
 <br/>
 <br/>
 
-<a href="#liste-exercices">Retour à la liste des exercices</a>
+
 
 
 ### <h2 id="ex4">🟢 Exercice 4 – Incrémenter un compteur</h2>
@@ -80,10 +90,12 @@
 * Afficher `Compteur : 0` puis `Compteur : 1`, `2`, `3` à chaque clic.
 
 
+<a href="#liste-exercices">Retour à la liste des exercices</a>
+
 <br/>
 <br/>
 
-<a href="#liste-exercices">Retour à la liste des exercices</a>
+
 
 ### <h2 id="ex5">🟢 Exercice 5 – Bouton Réinitialiser</h2>
 
@@ -93,10 +105,11 @@
 * Bouton 2 : Réinitialiser à zéro.
 
 
+<a href="#liste-exercices">Retour à la liste des exercices</a>
+
 <br/>
 <br/>
 
-<a href="#liste-exercices">Retour à la liste des exercices</a>
 
 ### <h2 id="ex6">🟢 Exercice 6 – Afficher “Bonjour” ou “Bonsoir”</h2>
 
@@ -105,10 +118,12 @@
 * Texte affiché : `"Bonjour"` (par défaut)
 * Bouton : `"Changer"` → passe à `"Bonsoir"` puis alterne.
 
+<a href="#liste-exercices">Retour à la liste des exercices</a>
+
 <br/>
 <br/>
 
-<a href="#liste-exercices">Retour à la liste des exercices</a>
+
 
 ### <h2 id="ex7">🟢 Exercice 7 – Afficher une couleur différente</h2>
 
@@ -117,10 +132,12 @@
 * Un carré coloré (bleu).
 * Bouton : `"Changer la couleur"` → passe au rouge, puis bleu, etc.
 
+<a href="#liste-exercices">Retour à la liste des exercices</a>
+
 <br/>
 <br/>
 
-<a href="#liste-exercices">Retour à la liste des exercices</a>
+
 
 
 ### <h2 id="ex8">🟢 Exercice 8 – Case à cocher simple</h2>
@@ -130,11 +147,12 @@
 * Afficher une case cochable : `"J'accepte les conditions"`.
 * Elle change dynamiquement quand on clique.
 
-
-<br/>
-<br/>
-
 <a href="#liste-exercices">Retour à la liste des exercices</a>
+
+<br/>
+<br/>
+
+
 
 ### <h2 id="ex9">🟢 Exercice 9 – Affichage conditionnel</h2>
 
@@ -144,11 +162,12 @@
 * Si cliqué : afficher `"Bienvenue"`
 * Sinon : rien.
 
-
-<br/>
-<br/>
-
 <a href="#liste-exercices">Retour à la liste des exercices</a>
+
+<br/>
+<br/>
+
+
 
 ### <h2 id="ex10">🟢 Exercice 10 – Sélecteur avec `DropdownButton`</h2>
 
@@ -157,10 +176,12 @@
 * Liste déroulante : `"Rouge"`, `"Vert"`, `"Bleu"`.
 * Afficher la couleur choisie sous forme de texte.
 
+<a href="#liste-exercices">Retour à la liste des exercices</a
+
 <br/>
 <br/>
 
-<a href="#liste-exercices">Retour à la liste des exercices</a>
+>
 
 
 
@@ -195,11 +216,12 @@ class MonApp extends StatelessWidget {
 }
 ```
 
-
-<br/>
-<br/>
-
 <a href="#liste-exercices">Retour à la liste des exercices</a>
+
+<br/>
+<br/>
+
+
 
 ## <h2 id="c-ex2">🟢 Exercice 2 – Créer un bouton sans action</h2>
 
@@ -229,10 +251,12 @@ class MonApp extends StatelessWidget {
 }
 ```
 
+<a href="#liste-exercices">Retour à la liste des exercices</a>
+
 <br/>
 <br/>
 
-<a href="#liste-exercices">Retour à la liste des exercices</a>
+
 
 ## <h2 id="c-ex3">🟢 Exercice 3 – Bouton qui change le texte</h2>
 
@@ -284,10 +308,12 @@ class _ChangerTexteState extends State<ChangerTexte> {
 }
 ```
 
+<a href="#liste-exercices">Retour à la liste des exercices</a>
+
 <br/>
 <br/>
 
-<a href="#liste-exercices">Retour à la liste des exercices</a>
+
 
 ## <h2 id="c-ex4">🟢 Exercice 4 – Incrémenter un compteur</h2>
 
@@ -339,10 +365,12 @@ class _CompteurPageState extends State<CompteurPage> {
 }
 ```
 
+<a href="#liste-exercices">Retour à la liste des exercices</a>
+
 <br/>
 <br/>
 
-<a href="#liste-exercices">Retour à la liste des exercices</a>
+
 
 ## <h2 id="c-ex5">🟢 Exercice 5 – Bouton Réinitialiser</h2>
 
@@ -414,10 +442,12 @@ class _CompteurResetPageState extends State<CompteurResetPage> {
 }
 ```
 
+<a href="#liste-exercices">Retour à la liste des exercices</a>
+
 <br/>
 <br/>
 
-<a href="#liste-exercices">Retour à la liste des exercices</a>
+
 
 
 ## <h2 id="c-ex6">🟢 Exercice 6 – Afficher “Bonjour” ou “Bonsoir”</h2>
@@ -477,10 +507,12 @@ class _BonjourBonsoirState extends State<BonjourBonsoir> {
 }
 ```
 
+<a href="#liste-exercices">Retour à la liste des exercices</a>
+
 <br/>
 <br/>
 
-<a href="#liste-exercices">Retour à la liste des exercices</a>
+
 
 ## <h2 id="c-ex7">🟢 Exercice 7 – Afficher une couleur différente</h2>
 
@@ -544,10 +576,12 @@ class _ChangerCouleurState extends State<ChangerCouleur> {
 }
 ```
 
+<a href="#liste-exercices">Retour à la liste des exercices</a>
+
 <br/>
 <br/>
 
-<a href="#liste-exercices">Retour à la liste des exercices</a>
+
 
 ## <h2 id="c-ex8">🟢 Exercice 8 – Case à cocher simple</h2>
 
@@ -599,10 +633,12 @@ class _CaseCocheeState extends State<CaseCochee> {
 }
 ```
 
+<a href="#liste-exercices">Retour à la liste des exercices</a>
+
 <br/>
 <br/>
 
-<a href="#liste-exercices">Retour à la liste des exercices</a>
+
 
 ## <h2 id="c-ex9">🟢 Exercice 9 – Affichage conditionnel</h2>
 
@@ -663,10 +699,12 @@ class _MessageConditionnelState extends State<MessageConditionnel> {
 }
 ```
 
+<a href="#liste-exercices">Retour à la liste des exercices</a>
+
 <br/>
 <br/>
 
-<a href="#liste-exercices">Retour à la liste des exercices</a>
+
 
 ## <h2 id="c-ex10">🟢 Exercice 10 – Menu déroulant (Dropdown)</h2>
 
@@ -733,10 +771,12 @@ class _ChoisirCouleurState extends State<ChoisirCouleur> {
 }
 ```
 
+<a href="#liste-exercices">Retour à la liste des exercices</a>
+
 <br/>
 <br/>
 
-<a href="#liste-exercices">Retour à la liste des exercices</a>
+
 
 
 
