@@ -103,7 +103,6 @@ class CoffeeApp extends StatelessWidget {
 }
 ```
 
----
 
 ### 🖼️ Remarques :
 
@@ -164,9 +163,9 @@ class CoffeeApp extends StatelessWidget {
 }
 ```
 
----
 
-### 📝 Explication des changements :
+
+### Explication des changements :
 
 * `backgroundColor: Colors.black` dans le `Scaffold` : fond d'écran noir pour toute l'application.
 * `AppBar` aussi noir, avec texte en **blanc** (`color: Colors.white`) pour rester lisible.
@@ -241,9 +240,9 @@ void main() {
 }
 ```
 
----
 
-### 📁 N'oubliez pas de modifier `pubspec.yaml`
+
+###  N'oubliez pas de modifier `pubspec.yaml`
 
 ```yaml
 flutter:
@@ -340,7 +339,6 @@ class MyApp extends StatelessWidget {
 }
 ```
 
----
 
 ### Fichier `pubspec.yaml`
 
@@ -445,7 +443,7 @@ class MyApp extends StatelessWidget {
 
 
 
-### 📁 pubspec.yaml (rappel)
+###  pubspec.yaml (rappel)
 
 Assurez-vous que l’image est bien déclarée :
 
@@ -480,16 +478,11 @@ flutter:
 
 
 
+<br/>
+<br/>
+<br/>
 
-
-
-
-
-
-
-
-
-### <h2 id="c-ex7">Exercice 7 – Aligner une colonne au centre verticalement avec `MainAxisAlignment`</h2>
+# <h2 id="c-ex7">Exercice 7 – Aligner une colonne au centre verticalement avec `MainAxisAlignment`</h2>
 
 Cet exercice vous apprend à :
 
@@ -497,18 +490,18 @@ Cet exercice vous apprend à :
 * manipuler la propriété `mainAxisAlignment`
 * combiner alignement et widgets visuels (`Container`, `Image.asset`)
 
----
 
-### 🎯 Objectif
+
+###  Objectif
 
 Créer une interface où :
 
 * les conteneurs sont affichés verticalement dans une `Column`
 * l’ensemble de la `Column` est **centré verticalement** au milieu de l’écran
 
----
 
-### ✅ Code complet commenté
+
+###  Code complet commenté
 
 ```dart
 import 'package:flutter/material.dart';
@@ -574,21 +567,15 @@ class MyApp extends StatelessWidget {
 }
 ```
 
----
 
-### 📘 Notion importante
+
+###  Notion importante
 
 * `mainAxisAlignment: MainAxisAlignment.center` :
 
   * Dans une `Column`, cela signifie **centrer verticalement** tous les enfants.
   * Très utile pour équilibrer l’espace vertical dans des écrans vides.
 
----
-
-Souhaitez-vous explorer maintenant :
-
-* `CrossAxisAlignment` pour l’alignement horizontal ?
-* une `Row` avec `mainAxisAlignment: spaceBetween` pour l'exercice 8 ?
 
 
 
@@ -605,13 +592,11 @@ Souhaitez-vous explorer maintenant :
 
 
 
+<br/>
+<br/>
+<br/>
 
-
-
-
-
-
-### <h2 id="c-ex8">Exercice 8 – Tester les types d'alignement vertical dans une `Column`</h2>
+# <h2 id="c-ex8">Exercice 8 – Tester les types d'alignement vertical dans une `Column`</h2>
 
 Dans cet exercice, vous allez :
 
@@ -619,18 +604,17 @@ Dans cet exercice, vous allez :
 * observer comment l’espace est distribué entre les widgets enfants d'une `Column`
 * comprendre l’impact visuel de `start`, `center`, `spaceAround`, `spaceEvenly`, `spaceBetween`
 
----
 
-### 🎯 Objectif
+
+###  Objectif
 
 Créer une application avec :
 
 * 4 `Container` colorés de 100x100 px contenant la même image
 * test visuel de **différentes valeurs de `MainAxisAlignment`**
 
----
 
-### ✅ Code de base pour expérimenter
+###  Code de base pour expérimenter
 
 ```dart
 import 'package:flutter/material.dart';
@@ -678,9 +662,8 @@ class MyApp extends StatelessWidget {
 }
 ```
 
----
 
-### 🧪 Valeurs à tester pour `mainAxisAlignment`
+###  Valeurs à tester pour `mainAxisAlignment`
 
 | Valeur                           | Effet                                                              |
 | -------------------------------- | ------------------------------------------------------------------ |
@@ -691,9 +674,9 @@ class MyApp extends StatelessWidget {
 | `MainAxisAlignment.spaceEvenly`  | Espaces strictement égaux entre tous les éléments **et aux bords** |
 | `MainAxisAlignment.spaceBetween` | Espace uniquement entre les éléments (pas de marge au début/fin)   |
 
----
 
-### ✅ Test proposé
+
+###  Test proposé
 
 Modifiez simplement cette ligne :
 
@@ -703,48 +686,34 @@ mainAxisAlignment: MainAxisAlignment.spaceEvenly,
 
 et remplacez-la par les autres valeurs pour observer leur impact.
 
-Souhaitez-vous que je vous prépare un exemple **avec boutons pour changer dynamiquement l’alignement** ?
 
 
 
 
 
+<br/>
+<br/>
+<br/>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-### <h2 id="c-ex9">Exercice 9 – Tester `crossAxisAlignment` dans une `Column`</h2>
+# <h2 id="c-ex9">Exercice 9 – Tester `crossAxisAlignment` dans une `Column`</h2>
 
 Dans cet exercice, vous allez :
 
 * comprendre la différence entre l’axe principal (`mainAxisAlignment`) et l’axe secondaire (`crossAxisAlignment`)
 * tester les différentes options de `CrossAxisAlignment` : `start`, `center`, `end`, `stretch`
 
----
 
-### 🎯 Objectif
+
+###  Objectif
 
 Afficher une colonne avec plusieurs `Container` colorés contenant une image :
 
 * disposer les conteneurs verticalement avec `MainAxisAlignment.spaceAround`
 * tester l’effet de **`CrossAxisAlignment.center`** puis **`end`**, **`start`**, et **`stretch`**
 
----
 
-### ✅ Code de démonstration complet
+
+### Code de démonstration complet
 
 ```dart
 import 'package:flutter/material.dart';
@@ -792,9 +761,9 @@ class MyApp extends StatelessWidget {
 }
 ```
 
----
 
-### 🔁 Instructions de test
+
+###  Instructions de test
 
 Modifiez la ligne :
 
@@ -811,9 +780,9 @@ et testez les valeurs suivantes :
 | `end`     | Alignement à droite                                                                          |
 | `stretch` | Étire les conteneurs pour prendre toute la largeur disponible (nécessite `width` non défini) |
 
----
 
-### 💡 Remarque
+
+###  Remarque
 
 * Si vous utilisez `CrossAxisAlignment.stretch`, supprimez `width` dans le `Container` pour que l’effet soit visible :
 
@@ -827,9 +796,6 @@ Widget buildContainer(Color color) {
 }
 ```
 
----
-
-Souhaitez-vous un **exercice 10** avec une `Row` et les mêmes alignements mais en horizontal ?
 
 
 
@@ -837,30 +803,17 @@ Souhaitez-vous un **exercice 10** avec une `Row` et les mêmes alignements mais 
 
 
 
+<br/>
+<br/>
+<br/>
 
-
-
-
-
-
-
-
-
-
-
-
-
-Très bien. Voici une version **pédagogique détaillée**, où chaque instruction est clairement expliquée pour l'étudiant avec ce qu’il doit faire ligne par ligne.
-
----
-
-### <h2 id="c-ex9">Exercice 9 – Comprendre et tester `CrossAxisAlignment`</h2>
+# <h2 id="c-ex9">Exercice 9 – Comprendre et tester `CrossAxisAlignment`</h2>
 
 Dans cet exercice, vous allez **modifier une application Flutter existante** pour observer l'effet de `CrossAxisAlignment` dans une `Column`.
 
----
 
-### 🎯 Objectif pédagogique
+
+###  Objectif pédagogique
 
 * Comprendre comment les widgets sont alignés horizontalement dans une `Column`
 * Apprendre à utiliser :
@@ -869,9 +822,9 @@ Dans cet exercice, vous allez **modifier une application Flutter existante** pou
   `CrossAxisAlignment.end`,
   `CrossAxisAlignment.stretch`
 
----
 
-### 🧱 Étapes détaillées
+
+###  Étapes détaillées
 
 #### 1. Commencez avec ce code de base :
 
@@ -922,11 +875,11 @@ class MyApp extends StatelessWidget {
 }
 ```
 
----
 
-### 🔧 Étapes à suivre pour tester les alignements
 
-#### ✅ Étape 1 – Tester l’alignement au **centre**
+###  Étapes à suivre pour tester les alignements
+
+####  Étape 1 – Tester l’alignement au **centre**
 
 1. **Localisez** cette ligne :
 
@@ -936,9 +889,9 @@ crossAxisAlignment: CrossAxisAlignment.center,
 
 2. Elle signifie que **tous les conteneurs seront centrés horizontalement**.
 
----
 
-#### ✅ Étape 2 – Aligner à **gauche (début)**
+
+####  Étape 2 – Aligner à **gauche (début)**
 
 1. **Remplacez la ligne** par :
 
@@ -948,9 +901,9 @@ crossAxisAlignment: CrossAxisAlignment.start,
 
 2. **Observez** que les conteneurs sont maintenant collés à gauche de l'écran.
 
----
 
-#### ✅ Étape 3 – Aligner à **droite (fin)**
+
+####  Étape 3 – Aligner à **droite (fin)**
 
 1. **Remplacez la ligne** par :
 
@@ -960,9 +913,9 @@ crossAxisAlignment: CrossAxisAlignment.end,
 
 2. **Observez** que tous les conteneurs sont déplacés vers la droite.
 
----
 
-#### ✅ Étape 4 – Étendre sur toute la largeur (stretch)
+
+####  Étape 4 – Étendre sur toute la largeur (stretch)
 
 1. **Remplacez la ligne** par :
 
@@ -984,9 +937,9 @@ Widget buildContainer(Color color) {
 
 3. **Résultat attendu :** chaque conteneur s'étire **sur toute la largeur** de l'écran.
 
----
 
-### 🧠 À retenir
+
+### À retenir
 
 | Alignement | Résultat                                                        |
 | ---------- | --------------------------------------------------------------- |
@@ -995,9 +948,6 @@ Widget buildContainer(Color color) {
 | `end`      | Widgets alignés à droite                                        |
 | `stretch`  | Widgets étirés horizontalement pour remplir l’espace disponible |
 
----
-
-Souhaitez-vous un **exercice 10** dans le même style mais avec une `Row` et `mainAxisAlignment` horizontal ?
 
 
 
@@ -1008,21 +958,11 @@ Souhaitez-vous un **exercice 10** dans le même style mais avec une `Row` et `ma
 
 
 
+<br/>
+<br/>
+<br/>
 
-
-
-
-
-
-
-
-
-
-Parfait. Voici l’exercice 10 rédigé dans le même style pédagogique, ligne par ligne, pour explorer l’**alignement horizontal** avec une `Row` en Flutter.
-
----
-
-### <h2 id="c-ex10">Exercice 10 – Comprendre `mainAxisAlignment` avec une `Row`</h2>
+# <h2 id="c-ex10">Exercice 10 – Comprendre `mainAxisAlignment` avec une `Row`</h2>
 
 Dans cet exercice, vous allez :
 
@@ -1030,9 +970,9 @@ Dans cet exercice, vous allez :
 * tester différentes valeurs de `mainAxisAlignment` pour comprendre **comment les éléments se répartissent horizontalement**
 * manipuler les propriétés pas à pas avec des instructions précises
 
----
 
-### 🎯 Objectif pédagogique
+
+###  Objectif pédagogique
 
 * Maîtriser l’alignement des widgets **sur l’axe horizontal** avec une `Row`
 * Comprendre le rôle de :
@@ -1044,9 +984,9 @@ Dans cet exercice, vous allez :
   * `MainAxisAlignment.spaceBetween`
   * `MainAxisAlignment.spaceEvenly`
 
----
 
-### ✅ Code de départ
+
+###  Code de départ
 
 ```dart
 import 'package:flutter/material.dart';
@@ -1094,13 +1034,12 @@ class MyApp extends StatelessWidget {
 }
 ```
 
----
 
-### 🔧 Étapes de test : `mainAxisAlignment`
 
----
+###  Étapes de test : `mainAxisAlignment`
 
-#### ✅ Étape 1 – Centrer horizontalement
+
+####  Étape 1 – Centrer horizontalement
 
 ```dart
 mainAxisAlignment: MainAxisAlignment.center,
@@ -1108,9 +1047,8 @@ mainAxisAlignment: MainAxisAlignment.center,
 
 Les conteneurs sont centrés **au milieu de l’écran**, regroupés.
 
----
 
-#### ✅ Étape 2 – Aligner à gauche (début de ligne)
+####  Étape 2 – Aligner à gauche (début de ligne)
 
 ```dart
 mainAxisAlignment: MainAxisAlignment.start,
@@ -1118,9 +1056,9 @@ mainAxisAlignment: MainAxisAlignment.start,
 
 Les conteneurs commencent **au tout début de la ligne (gauche)**.
 
----
 
-#### ✅ Étape 3 – Aligner à droite (fin de ligne)
+
+####  Étape 3 – Aligner à droite (fin de ligne)
 
 ```dart
 mainAxisAlignment: MainAxisAlignment.end,
@@ -1128,9 +1066,9 @@ mainAxisAlignment: MainAxisAlignment.end,
 
 Les conteneurs se collent **au bord droit** de l’écran.
 
----
 
-#### ✅ Étape 4 – Espacement autour (`spaceAround`)
+
+####  Étape 4 – Espacement autour (`spaceAround`)
 
 ```dart
 mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -1138,9 +1076,9 @@ mainAxisAlignment: MainAxisAlignment.spaceAround,
 
 Espace **égal autour** de chaque conteneur (y compris au bord de l’écran).
 
----
 
-#### ✅ Étape 5 – Espacement égal entre (`spaceEvenly`)
+
+#### Étape 5 – Espacement égal entre (`spaceEvenly`)
 
 ```dart
 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -1148,9 +1086,9 @@ mainAxisAlignment: MainAxisAlignment.spaceEvenly,
 
 Espace **strictement égal partout**, y compris entre le bord gauche et le premier widget.
 
----
 
-#### ✅ Étape 6 – Espacement uniquement **entre** (`spaceBetween`)
+
+#### Étape 6 – Espacement uniquement **entre** (`spaceBetween`)
 
 ```dart
 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -1158,9 +1096,8 @@ mainAxisAlignment: MainAxisAlignment.spaceBetween,
 
 Espace seulement **entre les widgets**, rien au bord gauche ni droit.
 
----
 
-### 🧠 Résumé
+### Résumé
 
 | Valeur         | Résultat                                    |
 | -------------- | ------------------------------------------- |
@@ -1171,32 +1108,19 @@ Espace seulement **entre les widgets**, rien au bord gauche ni droit.
 | `spaceEvenly`  | Espace strictement égal partout             |
 | `spaceBetween` | Espacement uniquement **entre** les widgets |
 
----
-
-Souhaitez-vous enchaîner avec un exercice 11 sur `CrossAxisAlignment` dans une `Row` (alignement vertical cette fois) ?
 
 
 
 
 
 
+<br/>
+<br/>
+<br/>
+
+# <h2 id="c-ex11">Exercice 11 – Tester `CrossAxisAlignment` dans une `Row`</h2>
 
 
-
-
-
-
-
-
-
-
-Très bien. Voici **l’exercice 11** réécrit **sans emojis**, avec **plus de détails pédagogiques**, **commentaires ligne par ligne**, et une structure claire pour guider pas à pas l’étudiant.
-
----
-
-### <h2 id="c-ex11">Exercice 11 – Tester `CrossAxisAlignment` dans une `Row`</h2>
-
----
 
 ### Objectif de l’exercice
 
@@ -1210,11 +1134,10 @@ Vous allez tester trois alignements possibles :
 
 Vous utiliserez des `Container` de hauteurs différentes pour bien visualiser l'effet.
 
----
+
 
 ### Instructions pas à pas
 
----
 
 #### Étape 1 – Copier le code suivant
 
@@ -1229,7 +1152,7 @@ void main() {
 }
 ```
 
----
+
 
 #### Étape 2 – Créer la classe MyApp
 
@@ -1283,7 +1206,7 @@ class MyApp extends StatelessWidget {
 }
 ```
 
----
+
 
 ### Étape 3 – Modifier la ligne d’alignement vertical
 
@@ -1295,7 +1218,6 @@ crossAxisAlignment: CrossAxisAlignment.start,
 
 Et testez les valeurs suivantes :
 
----
 
 #### a) Aligner les éléments en haut
 
@@ -1306,7 +1228,7 @@ crossAxisAlignment: CrossAxisAlignment.start,
 Effet visuel :
 Tous les conteneurs sont alignés en haut, en fonction de la hauteur du plus grand élément.
 
----
+
 
 #### b) Aligner les éléments au centre vertical
 
@@ -1317,7 +1239,6 @@ crossAxisAlignment: CrossAxisAlignment.center,
 Effet visuel :
 Les conteneurs sont centrés verticalement dans la ligne, quel que soit leur hauteur.
 
----
 
 #### c) Aligner les éléments en bas
 
@@ -1328,7 +1249,7 @@ crossAxisAlignment: CrossAxisAlignment.end,
 Effet visuel :
 Tous les widgets sont alignés en bas de la `Row`, ce qui est visible surtout lorsque les hauteurs diffèrent.
 
----
+
 
 ### À savoir
 
@@ -1338,7 +1259,7 @@ Tous les widgets sont alignés en bas de la `Row`, ce qui est visible surtout lo
 | `CrossAxisAlignment.center` | Aligne tous les widgets au **centre vertical**  |
 | `CrossAxisAlignment.end`    | Aligne tous les widgets au **bas** de la ligne  |
 
----
+
 
 ### Astuce pédagogique
 
@@ -1347,31 +1268,18 @@ Pour bien voir les effets :
 * **conservez une différence de hauteur** entre au moins deux conteneurs
 * utilisez un fond blanc pour bien visualiser l’alignement
 * activez le **Hot Reload** pour tester rapidement chaque changement
-
----
-
-Souhaitez-vous que l’exercice 12 introduise :
-
-* `Expanded` dans une `Row`
-* ou une `Row` + `Column` combinées pour faire une grille ?
+* https://www.youtube.com/watch?v=FeR09zZ8xrU&ab_channel=HeyFlutter%E2%80%A4com
 
 
 
 
 
+<br/>
+<br/>
+<br/>
 
+# <h2 id="c-ex12">Exercice 12 – Étirement vertical avec `CrossAxisAlignment.stretch`</h2>
 
-
-
-
-
-Parfait. Voici l'exercice 12 détaillé, basé sur l'image que vous avez fournie, avec l'utilisation de `CrossAxisAlignment.stretch` dans une `Row`. Le but est de **remplir verticalement l’espace disponible** pour chaque élément de la ligne.
-
----
-
-### <h2 id="c-ex12">Exercice 12 – Étirement vertical avec `CrossAxisAlignment.stretch`</h2>
-
----
 
 ### Objectif pédagogique
 
@@ -1381,11 +1289,11 @@ Cet exercice vous montre comment :
 * faire **étirer chaque `Container` verticalement** pour qu’il remplisse tout l’espace disponible
 * utiliser `Expanded` pour forcer chaque widget à prendre également de la largeur
 
----
+
 
 ### Étapes à suivre
 
----
+
 
 #### 1. Copier le squelette du projet
 
@@ -1475,23 +1383,14 @@ class MyApp extends StatelessWidget {
 Si vous n’utilisez **pas `Expanded`**, les boîtes ne s'étireront pas automatiquement en largeur.
 Si vous utilisez `stretch` sans `Expanded`, l’effet ne sera **visible que verticalement**, mais les boîtes seront étroites.
 
----
-
-Souhaitez-vous que l’exercice 13 combine `Row` et `Column` pour créer une **grille 2x2** ?
 
 
+<br/>
+<br/>
+<br/>
 
+# <h2 id="c-ex13">Exercice 13 – Liste verticale avec `ListView` contenant une `Column`</h2>
 
-
-
-
-Voici un **exercice pédagogique complet** basé sur votre dernière capture d'écran, qui introduit l'utilisation combinée de `ListView` et `Column` pour **créer une interface défilable avec des éléments en grille verticale**.
-
----
-
-### <h2 id="c-ex13">Exercice 13 – Liste verticale avec `ListView` contenant une `Column`</h2>
-
----
 
 ### Objectif pédagogique
 
@@ -1618,9 +1517,6 @@ flutter:
 
 2. Essayez de rendre chaque `Container` plus large pour voir l’effet visuel.
 
----
-
-Souhaitez-vous un exercice 14 avec **grille (`GridView`)** ou **des boutons interactifs** ?
 
 
 
@@ -1629,25 +1525,13 @@ Souhaitez-vous un exercice 14 avec **grille (`GridView`)** ou **des boutons inte
 
 
 
+<br/>
+<br/>
+<br/>
+
+#  <h2 id="c-ex14">Exercice 14 – Afficher une grille d’éléments avec `GridView.count`</h2>
 
 
-
-
-
-
-
-
-
-
-
-
-Parfait. Voici maintenant **l’exercice 14**, pédagogique, clair et progressif, pour introduire la **grille (`GridView`)** — une disposition très courante dans les interfaces utilisateurs modernes.
-
----
-
-### <h2 id="c-ex14">Exercice 14 – Afficher une grille d’éléments avec `GridView.count`</h2>
-
----
 
 ### Objectif pédagogique
 
@@ -1735,9 +1619,9 @@ class MyApp extends StatelessWidget {
 }
 ```
 
----
 
-### 🧠 Explication pédagogique
+
+###  Explication pédagogique
 
 | Élément Flutter                        | Rôle pédagogique                                |
 | -------------------------------------- | ----------------------------------------------- |
@@ -1767,12 +1651,6 @@ flutter:
 2. Changez `mainAxisSpacing` et `crossAxisSpacing` pour agrandir l’espace entre les blocs.
 3. Remplacez l’image par un `Text` pour voir l’adaptabilité de la grille.
 
----
-
-Souhaitez-vous que l’exercice 15 introduise :
-
-* une **grille dynamique à partir d’une liste d’objets** ?
-* ou un **événement au clic sur chaque bloc** (`GestureDetector`) ?
 
 
 
@@ -1781,21 +1659,13 @@ Souhaitez-vous que l’exercice 15 introduise :
 
 
 
+<br/>
+<br/>
+<br/>
+
+#  <h2 id="c-ex15">Exercice 15 – Liste horizontale avec `ListView` et images défilantes</h2>
 
 
-
-
-
-
-
-
-Voici un exercice complet, structuré et pédagogique, basé sur votre capture, permettant de créer une **liste déroulante horizontale** d’images avec `ListView`.
-
----
-
-### <h2 id="c-ex15">Exercice 15 – Liste horizontale avec `ListView` et images défilantes</h2>
-
----
 
 ### Objectif pédagogique
 
@@ -1928,27 +1798,17 @@ body: ListView(
 
 2. Ajoutez un `GestureDetector` autour de chaque `Container` pour détecter les clics.
 
----
-
-Souhaitez-vous que l’exercice 16 ajoute une **liste dynamique à partir d’un tableau** (ex: `List<Color>` ou `List<Map>`) ?
 
 
 
 
+<br/>
+<br/>
+<br/>
+
+# <h2 id="c-ex16">Exercice 16 – Liste verticale dans un `Container` avec `ListView`</h2>
 
 
-
-
-
-
-
-Voici un exercice complet et structuré pour reproduire exactement l’interface que vous montrez dans votre capture : **une `ListView` verticale dans un `Container`**, contenant plusieurs `Container` colorés avec une image locale centrée.
-
----
-
-### <h2 id="c-ex16">Exercice 16 – Liste verticale dans un `Container` avec `ListView`</h2>
-
----
 
 ### Objectif pédagogique
 
@@ -2060,31 +1920,17 @@ flutter:
 2. Ajoutez **plus d’éléments** pour voir le comportement de défilement.
 3. Ajoutez une `Text` sous chaque image avec un titre (`Text('Dashatar')`).
 
----
-
-Souhaitez-vous que l’exercice 17 introduise :
-
-* **une `ListView.builder` dynamique** ?
-* ou bien un **système de clic sur chaque élément (`GestureDetector`)** ?
 
 
 
 
 
+<br/>
+<br/>
+<br/>
 
+# <h2 id="c-ex17">Exercice 17 – Tester `Row` vs `Column` dans un `SingleChildScrollView` horizontal</h2>
 
-
-
-
-
-
-Très bien. Voici un **exercice structuré, pédagogique et progressif** basé sur votre dernière capture. L’objectif est d’apprendre à utiliser **`SingleChildScrollView` avec `scrollDirection: Axis.horizontal`**, et de tester deux structures différentes : **`Column`** et **`Row`**, pour bien comprendre le comportement du défilement.
-
----
-
-### <h2 id="c-ex17">Exercice 17 – Tester `Row` vs `Column` dans un `SingleChildScrollView` horizontal</h2>
-
----
 
 ### Objectif pédagogique
 
@@ -2097,9 +1943,8 @@ Dans cet exercice, vous allez :
   * une `Row` insérée dans une `SingleChildScrollView` horizontale (**solution correcte**)
 * observer la différence entre une **direction de défilement** et une **structure de disposition**
 
----
 
-### ✅ Étape 1 – Structure avec `Column` dans un défilement horizontal
+### Étape 1 – Structure avec `Column` dans un défilement horizontal
 
 #### A. Code à tester :
 
@@ -2157,9 +2002,8 @@ class MyApp extends StatelessWidget {
 * Le **défilement horizontal est activé**, mais la **`Column` s’affiche verticalement**.
 * L'effet **ne correspond pas au `scrollDirection` demandé**.
 
----
 
-### ✅ Étape 2 – Corriger avec `Row`
+### Étape 2 – Corriger avec `Row`
 
 #### A. Remplacez simplement cette ligne :
 
@@ -2180,18 +2024,16 @@ child: Row(
 * Les conteneurs sont maintenant disposés **horizontalement**.
 * Le **défilement fonctionne correctement dans l’axe horizontal**.
 
----
 
-### 📘 Comparatif pédagogique
+###  Comparatif pédagogique
 
 | Structure utilisée | Résultat dans `Axis.horizontal`                                      |
 | ------------------ | -------------------------------------------------------------------- |
 | `Column(...)`      | Affiche verticalement malgré le scroll horizontal                    |
 | ✅ `Row(...)`       | Comportement correct : éléments affichés en ligne, scroll horizontal |
 
----
 
-### 🔁 À faire par l'étudiant
+###  À faire par vous
 
 1. **Tester les deux versions** l'une après l'autre.
 2. Comprendre que :
@@ -2199,29 +2041,15 @@ child: Row(
    * **`scrollDirection` concerne le scroll du conteneur**
    * **`Row` ou `Column` gère la disposition des enfants**
 
----
-
-Souhaitez-vous que l’exercice 18 introduise :
-
-* `ListView.builder` horizontal dynamique ?
-* ou bien `Wrap` pour gérer automatiquement les débordements ?
 
 
 
+<br/>
+<br/>
+<br/>
 
+#  <h2 id="c-ex18">Exercice 18 – Créer une grille adaptative avec le widget `Wrap`</h2>
 
-
-
-
-
-
-Voici un **exercice pédagogique complet** pour illustrer l’utilisation des widgets **`Wrap`** et **`Stack`** en Flutter, tel qu'on le voit dans votre capture. Nous commencerons ici avec `Wrap`.
-
----
-
-### <h2 id="c-ex18">Exercice 18 – Créer une grille adaptative avec le widget `Wrap`</h2>
-
----
 
 ### Objectif pédagogique
 
@@ -2230,7 +2058,7 @@ Voici un **exercice pédagogique complet** pour illustrer l’utilisation des wi
 * Afficher des conteneurs colorés contenant une image
 * Apprendre à organiser dynamiquement sans `GridView`
 
----
+
 
 ### 🧱 Résultat attendu
 
@@ -2240,9 +2068,8 @@ Une grille fluide :
 * Lorsque la largeur est dépassée, **les conteneurs passent à la ligne suivante**
 * Chaque conteneur affiche une image (`dash.png`) centrée
 
----
 
-### ✅ Code complet
+### Code complet
 
 ```dart
 import 'package:flutter/material.dart';
@@ -2299,9 +2126,9 @@ class MyApp extends StatelessWidget {
 }
 ```
 
----
 
-### 📘 Explication pédagogique
+
+### Explication pédagogique
 
 | Élément                              | Fonction                                                                           |
 | ------------------------------------ | ---------------------------------------------------------------------------------- |
@@ -2311,15 +2138,15 @@ class MyApp extends StatelessWidget {
 | `Container(height: 100, width: 100)` | Crée une case carrée colorée                                                       |
 | `Image.asset(...)`                   | Affiche l’image centrée dans la boîte                                              |
 
----
 
-### ✅ À tester par l’étudiant
+
+###  À tester par vous
 
 1. Réduisez la taille de la fenêtre ou simulez un écran plus étroit.
 2. Observez comment les éléments s’adaptent automatiquement en passant à la ligne.
 3. Modifiez `spacing` et `runSpacing` pour voir l’impact sur l’organisation.
 
----
+
 
 ### 📦 pubspec.yaml
 
@@ -2331,26 +2158,13 @@ flutter:
     - images/dash.png
 ```
 
----
+<br/>
+<br/>
+<br/>
 
-Souhaitez-vous que l’exercice **19** introduise le widget **`Stack`** pour superposer des éléments (ex. une image avec une icône ou du texte par-dessus) ?
-
-
-
-
+# <h2 id="c-ex19">Exercice 19 – Superposer des widgets avec `Stack`</h2>
 
 
-
-
-
-
-Parfait. Voici un **exercice pédagogique complet** pour découvrir le widget **`Stack`**, très utile en Flutter lorsqu’on souhaite **superposer plusieurs widgets** (ex : texte par-dessus une image, icône flottante, etc.).
-
----
-
-### <h2 id="c-ex19">Exercice 19 – Superposer des widgets avec `Stack`</h2>
-
----
 
 ### Objectif pédagogique
 
@@ -2361,18 +2175,18 @@ Dans cet exercice, vous allez :
 * ajouter un **texte** ou une **icône** positionné manuellement par-dessus
 * comprendre le rôle des widgets `Positioned`, `Align` et `Center` dans une pile (`Stack`)
 
----
 
-### 🎯 Résultat attendu
+
+###  Résultat attendu
 
 L’application affiche :
 
 * une boîte colorée (ou une image)
 * par-dessus, un **texte** ou **icône** en **position contrôlée** (ex: coin inférieur droit, centre, etc.)
 
----
 
-### ✅ Code Flutter complet
+
+###  Code Flutter complet
 
 ```dart
 import 'package:flutter/material.dart';
@@ -2444,9 +2258,9 @@ class MyApp extends StatelessWidget {
 }
 ```
 
----
 
-### 🧠 Explication pédagogique
+
+###  Explication pédagogique
 
 | Widget / Propriété     | Rôle pédagogique                                                          |
 | ---------------------- | ------------------------------------------------------------------------- |
@@ -2456,7 +2270,6 @@ class MyApp extends StatelessWidget {
 | `Center` ou `Align`    | Centre un élément dans le `Stack` sans `Positioned`                       |
 | `Icons.favorite`       | Affiche une icône par-dessus l’image                                      |
 
----
 
 ### À faire tester par l’étudiant
 
@@ -2464,29 +2277,18 @@ class MyApp extends StatelessWidget {
 2. **Remplacer `Text` par une autre image ou une `Button`** pour tester des éléments interactifs superposés.
 3. **Changer `Alignment.center` par `Alignment.topRight` dans le `Stack`** pour modifier l’alignement global par défaut.
 
----
-
-Souhaitez-vous que l’exercice **20** combine `Stack` + `GestureDetector` pour rendre un **élément superposé cliquable** ?
 
 
 
 
 
 
+<br/>
+<br/>
+<br/>
 
+# <h2 id="c-ex20">Exercice 20 – Superposition simple avec `Stack` (sans `Positioned`)</h2>
 
-
-
-
-
-
-Voici un **exercice pédagogique complet** basé sur votre capture : il introduit le comportement fondamental du widget **`Stack`**, avec deux `Container` superposés sans positionnement explicite. On observe comment le `Stack` **empile les widgets du bas vers le haut**, et comment **les éléments se centrent par défaut si non positionnés**.
-
----
-
-### <h2 id="c-ex20">Exercice 20 – Superposition simple avec `Stack` (sans `Positioned`)</h2>
-
----
 
 ### Objectif pédagogique
 
@@ -2497,7 +2299,7 @@ Dans cet exercice, vous allez :
 * comprendre comment `Stack` empile ses enfants **par défaut** dans le coin **supérieur gauche**
 * utiliser différents `Container` colorés pour rendre la superposition bien visible
 
----
+
 
 ### Résultat attendu
 
@@ -2505,9 +2307,9 @@ Dans cet exercice, vous allez :
 * Un **petit carré teal** superposé en haut à gauche, **sans utiliser `Positioned`**
 * Visualisation claire de la pile (le dernier élément est dessiné au-dessus du précédent)
 
----
 
-### ✅ Code Flutter complet
+
+###  Code Flutter complet
 
 ```dart
 import 'package:flutter/material.dart';
@@ -2554,7 +2356,7 @@ class MyApp extends StatelessWidget {
 }
 ```
 
----
+
 
 ### Explication pédagogique
 
@@ -2565,9 +2367,7 @@ class MyApp extends StatelessWidget {
 | Pas de `Positioned(...)`   | Les widgets sont tous placés **en haut à gauche**               |
 | `Container(height, width)` | Définit la taille et la couleur pour bien voir la superposition |
 
----
-
-### À faire tester par l’étudiant
+### À faire tester par vous
 
 1. **Inversez l’ordre des `Container`** et observez le résultat : le jaune sera au-dessus du teal.
 2. Essayez d’ajouter un troisième `Container` plus petit (ex : rouge, 25×25).
@@ -2580,29 +2380,17 @@ body: Stack(
 ),
 ```
 
----
-
-Souhaitez-vous un **exercice 21** où les widgets superposés **sont positionnés manuellement** avec `Positioned` ? Ou un exemple où on **détecte les clics** sur les couches avec `GestureDetector` ?
 
 
 
 
+<br/>
+<br/>
+<br/>
+
+# <h2 id="c-ex21">Exercice 21 – Tester tous les `Alignment` dans un `Stack`</h2>
 
 
-
-
-
-
-
-
-
-Parfait, poursuivons l’apprentissage du widget `Stack` avec **différents alignements prédéfinis** grâce à la propriété `alignment`. Voici un exercice détaillé permettant de **tester tous les cas classiques de `Alignment`**.
-
----
-
-### <h2 id="c-ex21">Exercice 21 – Tester tous les `Alignment` dans un `Stack`</h2>
-
----
 
 ### Objectif pédagogique
 
@@ -2610,15 +2398,15 @@ Parfait, poursuivons l’apprentissage du widget `Stack` avec **différents alig
 * Visualiser les **différents emplacements** que permet `Alignment` : haut, bas, centre, coins…
 * Apprendre à contrôler la **position par défaut** d’un widget superposé sans `Positioned`
 
----
+
 
 ### Résultat attendu
 
 L’application affiche une grande boîte (fond jaune), et une plus petite boîte (teal) superposée à un **emplacement contrôlé par `alignment:`**.
 
----
 
-### ✅ Code de base (à modifier pour chaque test)
+
+###  Code de base (à modifier pour chaque test)
 
 ```dart
 import 'package:flutter/material.dart';
@@ -2663,9 +2451,9 @@ class MyApp extends StatelessWidget {
 }
 ```
 
----
 
-### 🔁 À tester : remplacez `Alignment.topCenter` par les valeurs suivantes :
+
+###  À tester : remplacez `Alignment.topCenter` par les valeurs suivantes :
 
 | Alignement Flutter       | Résultat attendu                |
 | ------------------------ | ------------------------------- |
@@ -2679,17 +2467,17 @@ class MyApp extends StatelessWidget {
 | `Alignment.bottomCenter` | Centré en bas                   |
 | `Alignment.bottomRight`  | Coin inférieur droit            |
 
----
 
-### 🧠 Explication pédagogique
+
+###  Explication pédagogique
 
 * `Stack` superpose ses enfants, mais le **positionnement par défaut dépend de `alignment:`**
 * Pas besoin de `Positioned` ici : on garde une structure légère et directe
 * L’ordre des enfants **détermine l’ordre des calques** : le premier est en fond, les suivants au-dessus
 
----
 
-### 🔧 Exemple pratique :
+
+###  Exemple pratique :
 
 ```dart
 alignment: Alignment.bottomRight,
@@ -2697,7 +2485,6 @@ alignment: Alignment.bottomRight,
 
 * Cela place le conteneur teal dans le **coin inférieur droit** du conteneur jaune.
 
----
 
 ### À expérimenter
 
@@ -2710,45 +2497,33 @@ alignment: const Alignment(0.5, -0.5),
 
 Cela permet un positionnement **précis** basé sur les coordonnées (-1.0 à 1.0).
 
----
-
-Souhaitez-vous que l’exercice 22 introduise :
-
-* l’utilisation de `Positioned(...)`
-* ou la combinaison `Stack` + `GestureDetector` (clic sur un élément superposé) ?
 
 
 
+<br/>
+<br/>
+<br/>
+
+# <h2 id="c-ex22">Exercice 22 – Positionner précisément des widgets avec `Positioned` dans un `Stack`</h2>
 
 
 
-
-
-
-Voici maintenant l’**exercice 22** dédié au widget `Positioned`, que vous êtes en train d’explorer dans votre capture. Cet exercice vous montre comment **positionner précisément** des éléments superposés dans un `Stack`.
-
----
-
-### <h2 id="c-ex22">Exercice 22 – Positionner précisément des widgets avec `Positioned` dans un `Stack`</h2>
-
----
-
-### 🎯 Objectif pédagogique
+###  Objectif pédagogique
 
 * Apprendre à utiliser le widget `Positioned` dans un `Stack`
 * Maîtriser les propriétés `top`, `left`, `right`, `bottom` pour **placer un widget manuellement**
 * Visualiser comment `Positioned` **remplace `alignment:`** pour un positionnement précis
 
----
 
-### ✅ Résultat attendu
+
+### Résultat attendu
 
 * Un grand carré jaune placé en fond (100×100)
 * Un petit carré teal (50×50) **placé à 10 px du bord gauche** et **20 px du haut**
 
----
 
-### ✅ Code Flutter complet
+
+###  Code Flutter complet
 
 ```dart
 import 'package:flutter/material.dart';
@@ -2797,9 +2572,9 @@ class MyApp extends StatelessWidget {
 }
 ```
 
----
 
-### 📘 Explication pédagogique
+
+### Explication pédagogique
 
 | Élément                 | Fonction                                                                           |
 | ----------------------- | ---------------------------------------------------------------------------------- |
@@ -2808,9 +2583,8 @@ class MyApp extends StatelessWidget {
 | `left: 10`, `top: 20`   | Positionne le coin supérieur gauche du widget teal à 10px à gauche et 20px du haut |
 | `child: Container(...)` | Élément visuel (ici un carré teal)                                                 |
 
----
 
-### 🧪 À tester par l’étudiant
+### À tester par vous
 
 1. **Ajoutez `right:` ou `bottom:`** pour placer le carré dans un autre coin :
 
@@ -2826,12 +2600,6 @@ class MyApp extends StatelessWidget {
 
 3. **Ajoutez plusieurs `Positioned` avec des couleurs différentes** pour construire une interface multi-éléments.
 
----
-
-Souhaitez-vous que **l’exercice 23** :
-
-* introduise `Stack + GestureDetector` pour déclencher une action au clic ?
-* ou montre comment faire **un badge de notification** avec `Positioned` et un `Text` ?
 
 
 
@@ -2839,26 +2607,24 @@ Souhaitez-vous que **l’exercice 23** :
 
 
 
+<br/>
+<br/>
+<br/>
+
+# <h2 id="c-ex23">Exercice 23 – Rendre un widget cliquable avec `GestureDetector` dans un `Stack`</h2>
 
 
-Parfait. Voici **l’exercice 23**, conçu de façon **très pédagogique et accessible**, même pour des étudiants débutants (*"nuls"*) en Flutter. L’objectif est de comprendre comment **rendre un widget cliquable dans un `Stack`** avec `GestureDetector`.
 
----
-
-### <h2 id="c-ex23">Exercice 23 – Rendre un widget cliquable avec `GestureDetector` dans un `Stack`</h2>
-
----
-
-### 🎯 Objectif pédagogique
+###  Objectif pédagogique
 
 * Comprendre comment rendre un élément **interactif** avec `GestureDetector`
 * Réagir à un **clic (tap)** sur un widget superposé
 * Afficher un **message dans la console (`print()`)**
 * Introduire doucement la notion de **gestion d’événements**
 
----
 
-### 🧱 Résultat attendu
+
+###  Résultat attendu
 
 L’application affiche :
 
@@ -2866,9 +2632,9 @@ L’application affiche :
 * un petit carré teal superposé (50x50)
 * lorsque l’utilisateur **tape sur le carré teal**, un message s’affiche dans la console.
 
----
 
-### 🧠 Concepts abordés
+
+###  Concepts abordés
 
 | Notion            | Explication simple                              |
 | ----------------- | ----------------------------------------------- |
@@ -2878,9 +2644,9 @@ L’application affiche :
 | `onTap`           | Action déclenchée **lors d’un clic**            |
 | `print(...)`      | Affiche un message dans la **console de debug** |
 
----
 
-### ✅ Code Flutter prêt à tester
+
+### Code Flutter prêt à tester
 
 ```dart
 import 'package:flutter/material.dart';
@@ -2938,18 +2704,18 @@ class MyApp extends StatelessWidget {
 }
 ```
 
----
 
-### 🔎 Étape par étape
+
+### Étape par étape
 
 1. On crée un `Stack` pour empiler deux carrés
 2. Le **carré du dessus** est placé avec `Positioned`
 3. On **entoure** ce carré avec un `GestureDetector`
 4. On écrit ce qui se passe quand on tape dessus : `print("Carré cliqué !");`
 
----
 
-### 💡 Pour bien comprendre
+
+###  Pour bien comprendre
 
 > Le `GestureDetector` est **invisible** mais il **capte les interactions**.
 > On peut l’utiliser pour :
@@ -2958,58 +2724,37 @@ class MyApp extends StatelessWidget {
 > * détecter un glissement (`onPan`)
 > * détecter un appui long (`onLongPress`) — *à voir plus tard*
 
----
 
-### ✅ À faire par l’étudiant
+
+###  À faire par vous
 
 * Modifier le texte dans `print(...)`
 * Remplacer la `Container` par une `Image.asset(...)`
 * Ajouter une autre boîte dans un autre coin avec un autre message (`"Autre clic"`)
 
----
-
-Souhaitez-vous que l’**exercice 24** ajoute :
-
-* un **badge de notification** avec `Positioned` et un nombre ?
-* ou une **animation simple** au clic (par ex : changer la couleur) ?
 
 
 
 
 
+<br/>
+<br/>
+<br/>
+
+# <h2 id="c-etat1">Exercice 24 – Compteur d’images avec `setState()`</h2>
 
 
 
-
-
-
-
-Parfait, commençons une **nouvelle série pédagogique sur les "States" (états)** en Flutter. Voici le **premier exercice**, totalement inspiré de votre capture.
-
----
-
-### <h2 id="c-etat1">Exercice 24 – Compteur d’images avec `setState()`</h2>
-
----
-
-### 🎯 Objectif pédagogique
+###  Objectif pédagogique
 
 * Comprendre la notion **d’état modifiable** (stateful)
 * Utiliser un widget **`StatefulWidget`**
 * Mettre à jour dynamiquement l’interface avec `setState(...)`
 * Réagir à un clic (`onPressed`) pour modifier un compteur
 
----
 
-### ✅ Résultat attendu
 
-* Une image (Dash)
-* Un nombre affiché dans la `AppBar`
-* À chaque clic sur l’image, le compteur **augmente de 1**
-
----
-
-### ✅ Code Flutter complet
+### Code Flutter complet
 
 ```dart
 import 'package:flutter/material.dart';
@@ -3055,9 +2800,8 @@ class _MonAppState extends State<MonApp> {
 }
 ```
 
----
 
-### 🧠 Explication ultra débutant
+###  Explication ultra débutant
 
 | Élément                     | Rôle                                                                            |
 | --------------------------- | ------------------------------------------------------------------------------- |
@@ -3067,9 +2811,9 @@ class _MonAppState extends State<MonApp> {
 | `Text('$count')`            | Affiche le nombre dans la barre bleue                                           |
 | `MaterialButton`            | Rend l’image **cliquable**                                                      |
 
----
 
-### 🧪 À tester par l’étudiant
+
+### À tester par l’étudiant
 
 * Changer `count++` par `count = count + 5` : que se passe-t-il ?
 * Remplacer `Text('$count')` par :
@@ -3079,9 +2823,9 @@ class _MonAppState extends State<MonApp> {
   ```
 * Remplacer l’image par un `Icon(Icons.favorite)` (au lieu de `Image.asset`)
 
----
 
-### 📦 pubspec.yaml (si image)
+
+###  pubspec.yaml (si image)
 
 Vérifiez bien que vous avez déclaré votre image :
 
@@ -3091,32 +2835,16 @@ flutter:
     - images/dash.png
 ```
 
----
-
-Souhaitez-vous que **l’exercice suivant (25)** introduise :
-
-* le **changement de couleur** selon la valeur du compteur ?
-* ou un **reset automatique** après 10 clics ?
 
 
 
+<br/>
+<br/>
+<br/>
+
+# <h2 id="c-etat1">Exercice 24 – Compteur d’images avec `setState()`</h2>
 
 
-
-
-
-
-
-
-
-
-Très bien. Voici la version sans emojis et toujours aussi pédagogique.
-
----
-
-### <h2 id="c-etat1">Exercice 24 – Compteur d’images avec `setState()`</h2>
-
----
 
 ### Objectif pédagogique
 
@@ -3127,7 +2855,7 @@ Cet exercice a pour but de :
 * Mettre à jour l’écran grâce à `setState(...)`
 * Réagir à un appui sur une image pour modifier une variable (`count`)
 
----
+
 
 ### Résultat attendu
 
@@ -3135,7 +2863,7 @@ Cet exercice a pour but de :
 * Un nombre affiché dans la barre supérieure (AppBar)
 * Chaque fois que l’on clique sur l’image, ce nombre augmente de 1
 
----
+
 
 ### Code Flutter complet
 
@@ -3181,7 +2909,7 @@ class _MonAppState extends State<MonApp> {
 }
 ```
 
----
+
 
 ### Explication pas à pas
 
@@ -3191,9 +2919,8 @@ class _MonAppState extends State<MonApp> {
 4. `setState(...)` informe Flutter qu’il faut reconstruire l’écran avec les nouvelles valeurs.
 5. Le texte affiché dans `AppBar` est directement relié à la variable `count`.
 
----
 
-### Ce que l’étudiant peut essayer
+### Ce que vous pouvez essayer
 
 1. Remplacer `count = count + 1` par `count = count + 10`
 2. Modifier la barre de titre comme suit :
@@ -3207,7 +2934,7 @@ class _MonAppState extends State<MonApp> {
    child: Icon(Icons.access_alarm, size: 100),
    ```
 
----
+
 
 ### Vérification des ressources
 
@@ -3219,29 +2946,16 @@ flutter:
     - images/dash.png
 ```
 
----
-
-Souhaitez-vous que **l’exercice 25** montre comment changer la **couleur de fond ou du texte selon la valeur du compteur** ?
-Ou qu’il réinitialise automatiquement le compteur à 0 dès qu’on atteint une certaine valeur (ex : 10) ?
 
 
 
 
+<br/>
+<br/>
+<br/>
 
+# <h2 id="c-etat2">Exercice 25 – Réinitialisation automatique du compteur</h2>
 
-
-
-
-
-
-
-Très bien. Voici l'exercice 25 qui introduit la **réinitialisation automatique du compteur à 0** lorsqu'une certaine limite est atteinte.
-
----
-
-### <h2 id="c-etat2">Exercice 25 – Réinitialisation automatique du compteur</h2>
-
----
 
 ### Objectif
 
@@ -3249,7 +2963,6 @@ Très bien. Voici l'exercice 25 qui introduit la **réinitialisation automatique
 * Réinitialiser une variable lorsque sa valeur atteint un seuil (ici 10)
 * Observer l’effet immédiat d’un changement d’état dans l’interface
 
----
 
 ### Résultat attendu
 
@@ -3258,7 +2971,7 @@ Très bien. Voici l'exercice 25 qui introduit la **réinitialisation automatique
 * À chaque clic, le compteur augmente de 1
 * Lorsqu’il atteint 10, il retourne automatiquement à 0
 
----
+
 
 ### Code Flutter complet
 
@@ -3306,7 +3019,7 @@ class _MonAppState extends State<MonApp> {
 }
 ```
 
----
+
 
 ### Étapes importantes
 
@@ -3315,7 +3028,7 @@ class _MonAppState extends State<MonApp> {
 3. `count = 0` réinitialise la variable
 4. Grâce à `setState`, l’affichage est mis à jour instantanément
 
----
+
 
 ### À tester
 
@@ -3329,12 +3042,6 @@ class _MonAppState extends State<MonApp> {
   }
   ```
 * Remplacer `Image.asset` par une icône ou un autre widget visuel
-
----
-
-Souhaitez-vous que l’exercice suivant introduise **un compteur inverse** (qui part de 10 et descend à 0) ou une **changement de couleur selon la valeur** ?
-
-
 
 
 
