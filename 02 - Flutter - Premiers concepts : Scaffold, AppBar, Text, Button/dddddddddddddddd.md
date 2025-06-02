@@ -1,4 +1,6 @@
-#  Table des matières – Exercices Flutter Débutants
+
+# <h1 id="toc">Table des matières – Widgets Exercices Flutter </h1>
+
 
 <ol>
   <li><a href="#c-ex1">Exercice 1 – Image locale avec AppBar noire</a></li>
