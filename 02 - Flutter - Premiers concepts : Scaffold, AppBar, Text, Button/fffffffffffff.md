@@ -46,6 +46,7 @@ Quand on appelle `setState(...)` dans un `StatefulWidget` :
 <br/>
 <br/>
 <br/>
+
 # <h2 id="stateful-vs-stateless">Comparaison entre `StatefulWidget` et `StatelessWidget`</h2>
 
 <table border="1" cellpadding="8" cellspacing="0">
@@ -123,7 +124,7 @@ Quand on appelle `setState(...)` dans un `StatefulWidget` :
 * Chaque clic change la couleur de fond du haut (AppBar) et du corps (Scaffold)
 * Les couleurs sont choisies aléatoirement à partir d’une liste prédéfinie
 
----
+
 
 ### Code Flutter complet
 
