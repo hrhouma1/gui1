@@ -1193,6 +1193,8 @@ class MonApp extends StatelessWidget {
 ```
 
 
+### Question:   Comment avoir un Dropdown menu actif ?
+
 [Retour à la table de matière](#toc)
 
 <br/>
@@ -2101,3 +2103,107 @@ Scaffold(
 <br/>
 <br/>
 <br/>
+
+
+
+
+
+
+
+# Annexe 8 -  Version corrigée avec Dropdown actif
+
+```dart
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MonApp());
+}
+
+class MonApp extends StatelessWidget {
+  const MonApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        body: const Padding(
+          padding: EdgeInsets.all(24),
+          child: MonFormulaire(),
+        ),
+      ),
+    );
+  }
+}
+
+// Widget avec état
+class MonFormulaire extends StatefulWidget {
+  const MonFormulaire({super.key});
+
+  @override
+  State<MonFormulaire> createState() => _MonFormulaireState();
+}
+
+class _MonFormulaireState extends State<MonFormulaire> {
+  String paysSelectionne = 'Canada'; // Valeur par défaut
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        const TextField(
+          decoration: InputDecoration(labelText: 'Prénom'),
+        ),
+        const SizedBox(height: 12),
+        const TextField(
+          decoration: InputDecoration(labelText: 'Nom'),
+        ),
+        const SizedBox(height: 12),
+        const TextField(
+          decoration: InputDecoration(labelText: 'Ville'),
+        ),
+        const SizedBox(height: 12),
+        DropdownButton<String>(
+          value: paysSelectionne,
+          onChanged: (String? nouvelleValeur) {
+            setState(() {
+              paysSelectionne = nouvelleValeur!;
+            });
+          },
+          items: const [
+            DropdownMenuItem(value: 'Canada', child: Text('Canada')),
+            DropdownMenuItem(value: 'France', child: Text('France')),
+            DropdownMenuItem(value: 'Tunisie', child: Text('Tunisie')),
+          ],
+        ),
+        const SizedBox(height: 20),
+        ElevatedButton(
+          onPressed: () {
+            // Par exemple, afficher le pays choisi
+            print('Pays sélectionné : $paysSelectionne');
+          },
+          child: const Text("Valider"),
+        ),
+      ],
+    );
+  }
+}
+```
+
+
+
+### Explication 
+
+* **Pourquoi `StatefulWidget` ?**
+
+  * Car `DropdownButton` a besoin d’un état pour gérer la sélection dynamique.
+
+* **Pourquoi `setState()` ?**
+
+  * Pour mettre à jour la variable `paysSelectionne` et redessiner l’interface avec la nouvelle valeur.
+
+* **Pourquoi extraire le formulaire dans `MonFormulaire` ?**
+
+  * Pour isoler la gestion de l’état du formulaire dans une classe dédiée, proprement.
+
+
