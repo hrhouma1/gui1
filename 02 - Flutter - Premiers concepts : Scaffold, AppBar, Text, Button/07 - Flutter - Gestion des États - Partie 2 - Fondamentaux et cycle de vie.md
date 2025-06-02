@@ -1,7 +1,5 @@
-# Liste des exercices – Partie 2 : États fondamentaux
+# <h1 id="liste-exercices">Liste des exercices – Partie 2 : États fondamentaux</h1>
 
-
-<h1 id="liste-exercices">Liste des exercices – Partie 2 : États fondamentaux</h1>
 <ol>
   <li><a href="#ex1">Exercice 1 – Afficher un compteur statique</a></li>
   <li><a href="#ex2">Exercice 2 – Créer un bouton sans action</a></li>
