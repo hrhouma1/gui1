@@ -426,6 +426,67 @@ class _AState extends State<A> {
 | `setState()` | Utilisé pour notifier Flutter qu’on doit **rafraîchir l’interface**.  |
 
 
+
+
+
+
+
+<br/>
+<br/>
+
+
+##  Schéma exemple : Cycle `StatefulWidget` → `State`
+
+```
++------------------------+                          +-----------------------------+
+|                        |                          |                             |
+|  class A extends       |                          | class _AState extends        |
+|  StatefulWidget        |                          | State<A>                     |
+|                        |                          |                             |
+|  + createState()       |      appelle une         |  <- contient l'état         |
+|    => _AState()        +------------------------->|     (ex: compteur = 0)       |
+|                        |                          |                             |
++------------------------+                          +-----------------------------+
+                                                               |
+                                                               | appelle automatiquement
+                                                               | build(context)
+                                                               v
+                                                    +-----------------------------+
+                                                    | Widget affiché à l’écran     |
+                                                    | (ex : ElevatedButton)        |
+                                                    | mis à jour si setState()     |
+                                                    +-----------------------------+
+```
+
+
+
+## Cycle de vie simplifié
+
+1. **`A`** est un `StatefulWidget`. Il est **statique** : il ne gère pas de données lui-même.
+2. Il appelle `createState()` pour créer **\_AState**, la classe **qui détient les variables, les méthodes, etc.**
+3. Flutter exécute ensuite la méthode `build()` dans `_AState`.
+4. Quand une **interaction** a lieu (clic, scroll...), vous appelez `setState()`.
+5. Cela **rafraîchit l’interface** en reconstruisant le widget via `build()`.
+
+
+
+## Résumé 
+
+| Élément          | Rôle                                                        |
+| ---------------- | ----------------------------------------------------------- |
+| `StatefulWidget` | Déclare un composant avec état (ex: `A`)                    |
+| `createState()`  | Crée et retourne une instance de la classe d’état `_AState` |
+| `State<T>`       | Contient les **données modifiables** du widget              |
+| `build()`        | Construit l’interface utilisateur                           |
+| `setState()`     | Indique à Flutter qu’il faut **rafraîchir l’interface**     |
+
+
+
+![21ad22c6-7a9d-40d7-bf44-42d6649ac363](https://github.com/user-attachments/assets/ac35ca39-9073-4a96-a66c-0a6e3e5f0316)
+
+
+
+
 <br/>
 <br/>
 
