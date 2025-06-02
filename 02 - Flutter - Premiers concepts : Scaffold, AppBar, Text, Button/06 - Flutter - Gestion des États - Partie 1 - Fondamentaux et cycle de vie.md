@@ -484,4 +484,237 @@ Non. Dart et Flutter **ne vous obligent pas** à suivre ce nommage, mais :
 
 
 
+<br/>
+<br/>
+
+
+
+# Annexe 3 - **Mots réservés dans ce code Dart**
+
+Ce sont les **mots-clés du langage Dart**. Ils ne peuvent **pas être utilisés comme noms de classes ou de variables**.
+
+| Mot-clé Dart                      | Rôle                                                       |
+| --------------------------------- | ---------------------------------------------------------- |
+| `class`                           | Déclare une nouvelle classe                                |
+| `extends`                         | Indique l’héritage (hérite d’une autre classe)             |
+| `@override`                       | Annotation qui indique qu’on redéfinit une méthode héritée |
+| `int`                             | Type de donnée pour un entier                              |
+| `return` (sous-entendu avec `=>`) | Utilisé dans les fonctions pour retourner une valeur       |
+
+⚠️ **`setState()`** et **`build()`** ne sont **pas des mots réservés**, ce sont des **méthodes héritées** de classes Flutter.
+
+
+### ✍️ **Non réservés (identifiants personnalisés)**
+
+Ce sont les **noms que VOUS créez**. Ils peuvent être changés (tant qu’ils respectent les règles de nommage Dart).
+
+| Élément Dart                 | Rôle                               | Est modifiable ?                                                |
+| ---------------------------- | ---------------------------------- | --------------------------------------------------------------- |
+| `MonWidgetStateful`          | Nom de votre widget                | ✅ Oui                                                           |
+| `_MonWidgetStatefulState`    | Nom de la classe d’état            | ✅ Oui                                                           |
+| `compteur`                   | Variable de compteur               | ✅ Oui                                                           |
+| `createState`                | Méthode obligatoire à surcharger   | ❌ Non (doit exister, mais nom non réservé)                      |
+| `build`                      | Méthode appelée automatiquement    | ❌ Non (doit exister, mais nom non réservé)                      |
+| `context`                    | Paramètre représentant le contexte | ✅ Oui (techniquement) mais conventionnellement utilisé tel quel |
+| `onPressed`, `child`, `Text` | Propriétés de widgets Flutter      | ❌ Non (provenant des classes Flutter)                           |
+
+
+
+##  À retenir
+
+* Les mots **réservés** (comme `class`, `extends`, `int`, `return`) font partie du **langage Dart**.
+* Les autres noms (`MonWidgetStateful`, `compteur`, etc.) sont **des noms créés par le programmeur**, mais certains doivent suivre des **conventions Flutter** (`createState()`, `build()`).
+* Les noms comme `build()` ou `createState()` **ne sont pas réservés** par Dart, **mais attendus par Flutter**. Si vous ne les écrivez pas correctement, l’application ne fonctionnera pas.
+
+
+
+<br/>
+<br/>
+
+# Annexe 4  - Ligne à analyser
+
+
+
+```dart
+@override
+_MonWidgetStatefulState createState() => _MonWidgetStatefulState();
+```
+
+
+
+##  1. `createState()` : méthode spéciale (réservée par Flutter)
+
+* Oui, `createState()` est **une méthode prédéfinie dans Flutter**.
+* Elle **doit être implémentée** quand vous créez un `StatefulWidget`.
+* Elle **retourne une instance de la classe d’état**, celle qui hérite de `State<...>`.
+
+
+##  2. La flèche `=>` (fonction fléchée)
+
+```dart
+createState() => _MonWidgetStatefulState();
+```
+
+* Cette notation est une **forme abrégée** pour une fonction qui retourne une seule valeur.
+* Elle signifie exactement la même chose que :
+
+```dart
+@override
+_MonWidgetStatefulState createState() {
+  return _MonWidgetStatefulState();
+}
+```
+
+C’est **juste du sucre syntaxique** : plus court, mais équivalent.
+
+
+
+##  3. `StatefulWidget` et sa classe `State`
+
+Prenons la structure complète pour bien relier les deux :
+
+```dart
+class MonWidgetStateful extends StatefulWidget {
+  @override
+  _MonWidgetStatefulState createState() => _MonWidgetStatefulState();
+}
+```
+
+* `MonWidgetStateful` est un **StatefulWidget**, donc il doit dire à Flutter **quelle est la classe qui gère son état**.
+* Il le fait via `createState()`, qui retourne une instance de `_MonWidgetStatefulState`.
+
+
+
+##  4. `_MonWidgetStatefulState` : classe privée
+
+```dart
+class _MonWidgetStatefulState extends State<MonWidgetStateful>
+```
+
+* Le nom commence par `_`, donc c’est **une classe privée** dans Dart.
+* Elle **hérite de `State<MonWidgetStateful>`**, ce qui veut dire :
+
+  > Cette classe gère l’état du widget `MonWidgetStateful`.
+
+
+
+##  Pourquoi `<MonWidgetStateful>` après `State<...>` ?
+
+* C’est le **type générique** : on indique **à quel widget** ce `State` est lié.
+* Cela permet à Flutter de savoir **quel widget reconstruire** quand on appelle `setState()`.
+
+👉 Donc quand vous écrivez :
+
+```dart
+class _MonWidgetStatefulState extends State<MonWidgetStateful>
+```
+
+...vous dites à Flutter :
+
+> “Je suis la classe qui contient l’état pour le widget `MonWidgetStateful`.”
+
+
+## Résumé 
+
+| Élément                    | Rôle                                                           |
+| -------------------------- | -------------------------------------------------------------- |
+| `createState()`            | Méthode obligatoire qui retourne la classe de l’état           |
+| `=>`                       | Équivalent abrégé de `return ...`                              |
+| `_MonWidgetStatefulState`  | Classe privée qui contient les données et la logique du widget |
+| `State<MonWidgetStateful>` | Indique à quel widget le `State` est associé                   |
+
+
+
+<br/>
+<br/>
+
+# Anenxe 5 - Différence entre un StatefulWidget et son State associé, ainsi que le rôle de setState()
+
+##  Objectif
+
+Construire un bouton interactif qui **compte les clics** et affiche la valeur mise à jour automatiquement.
+
+
+## Structure du code expliquée
+
+```dart
+class MonWidgetStateful extends StatefulWidget {
+  @override
+  _MonWidgetStatefulState createState() => _MonWidgetStatefulState();
+}
+```
+
+### 1. `StatefulWidget` – Le composant avec état
+
+* `MonWidgetStateful` est un **widget avec état** (*stateful*).
+* Il ne **gère pas directement l’état** lui-même, mais délègue cette responsabilité à une classe `State`.
+* La méthode `createState()` crée une instance de cette classe d’état.
+
+C’est **Flutter** qui appelle `createState()` une seule fois pour **initialiser** le widget.
+
+---
+
+```dart
+class _MonWidgetStatefulState extends State<MonWidgetStateful> {
+  int compteur = 0;
+```
+
+### 2. `_MonWidgetStatefulState` – La logique interne (l'état)
+
+* C’est ici que **l’état du widget est stocké** (`compteur` ici).
+* Le préfixe `_` indique que cette classe est **privée**, c’est une bonne pratique.
+* Elle **étend `State<MonWidgetStateful>`**, ce qui signifie que cette classe est liée à ce widget particulier.
+
+---
+
+```dart
+@override
+Widget build(BuildContext context) {
+```
+
+### 3. `build()` – La méthode qui construit l’interface
+
+* `build()` est **automatiquement appelée** chaque fois que l’état change.
+* Elle retourne un widget Flutter (ici un `ElevatedButton`).
+
+---
+
+```dart
+return ElevatedButton(
+  onPressed: () {
+    setState(() {
+      compteur++;
+    });
+  },
+  child: Text("Compteur : $compteur"),
+);
+```
+
+###  4. `setState()` – Le cœur du mécanisme
+
+* Quand on appuie sur le bouton, on appelle `setState()`.
+* Cela **indique à Flutter** : “Quelque chose a changé, je veux reconstruire l’interface”.
+* `compteur++` incrémente la valeur.
+* Ensuite `build()` est **reconvoqué automatiquement**, donc le texte est mis à jour.
+
+
+
+## Résumé du cycle
+
+1. Flutter affiche le widget avec `compteur = 0`.
+2. L’utilisateur clique.
+3. `setState()` est appelé, `compteur` devient `1`.
+4. Flutter **reconstruit le widget** avec le nouveau texte.
+
+
+
+## À retenir 
+
+* `StatefulWidget` = le *coffre*, qui délègue la gestion de l'état.
+* `State` = la *logique interne* et les données modifiables.
+* `setState()` = déclenche le **rafraîchissement de l'interface**.
+* Sans `setState()`, même si la variable change, **l'interface ne se mettra pas à jour**.
+
+
+
 
