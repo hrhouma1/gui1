@@ -1,3 +1,37 @@
+#  Table des matières – Exercices Flutter Débutants
+
+<ol>
+  <li><a href="#c-ex1">Exercice 1 – Image locale avec AppBar noire</a></li>
+  <li><a href="#c-ex2">Exercice 2 – Image réseau (coffee app)</a></li>
+  <li><a href="#c-ex3">Exercice 3 – Fond noir et image réseau</a></li>
+  <li><a href="#c-ex4">Exercice 4 – Image locale sur fond noir avec AppBar personnalisée</a></li>
+  <li><a href="#c-ex5">Exercice 5 – Container coloré avec image locale dans une colonne</a></li>
+  <li><a href="#c-ex6">Exercice 6 – Plusieurs containers colorés avec images</a></li>
+  <li><a href="#c-ex7">Exercice 7 – Centrage vertical avec Column</a></li>
+  <li><a href="#c-ex8">Exercice 8 – Tester les alignements verticaux (MainAxisAlignment)</a></li>
+  <li><a href="#c-ex9">Exercice 9 – Tester CrossAxisAlignment dans une Column</a></li>
+  <li><a href="#c-ex10">Exercice 10 – Comprendre mainAxisAlignment avec Row</a></li>
+  <li><a href="#c-ex11">Exercice 11 – Tester CrossAxisAlignment dans une Row</a></li>
+  <li><a href="#c-ex12">Exercice 12 – Étirement vertical avec CrossAxisAlignment.stretch</a></li>
+  <li><a href="#c-ex13">Exercice 13 – Liste verticale avec Column dans un ListView</a></li>
+  <li><a href="#c-ex14">Exercice 14 – Affichage en grille avec GridView.count</a></li>
+  <li><a href="#c-ex15">Exercice 15 – Liste horizontale avec ListView et images</a></li>
+  <li><a href="#c-ex16">Exercice 16 – ListView dans un Container</a></li>
+  <li><a href="#c-ex17">Exercice 17 – Row vs Column dans un défilement horizontal</a></li>
+  <li><a href="#c-ex18">Exercice 18 – Grille adaptative avec Wrap</a></li>
+  <li><a href="#c-ex19">Exercice 19 – Superposer avec Stack et Positioned</a></li>
+  <li><a href="#c-ex20">Exercice 20 – Superposition simple avec Stack</a></li>
+  <li><a href="#c-ex21">Exercice 21 – Tester tous les Alignments dans Stack</a></li>
+  <li><a href="#c-ex22">Exercice 22 – Positionnement précis avec Positioned</a></li>
+  <li><a href="#c-ex23">Exercice 23 – Rendre un widget cliquable avec GestureDetector</a></li>
+  <li><a href="#c-etat1">Exercice 24 – Compteur d’images avec setState()</a></li>
+  <li><a href="#c-etat2">Exercice 25 – Réinitialisation automatique du compteur</a></li>
+</ol>
+
+
+
+
+
 
 # Exercice 1
 
