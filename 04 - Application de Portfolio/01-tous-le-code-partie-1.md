@@ -166,7 +166,7 @@ flutter run             # un device mobile connecté
 <br/>
 
 
-# `lib/routes.dart` — version complète abondamment commentée
+# 2 - `lib/routes.dart` — version complète abondamment commentée
 
 ```dart
 // routes.dart
@@ -306,134 +306,6 @@ class Routes {
 
 
 
-### Prochain pas : décortiquer `lib/main.dart`
-
-Pour vos étudiants, c’est le moment idéal d’aborder **le point d’entrée de toute application Flutter** ; ils comprendront ainsi comment tout le reste (routes, pages, Firebase, etc.) se branche.
-
----
-
-## 1. Objectifs pédagogiques de ce chapitre
-
-| Objectif                                                       | Pourquoi c’est important                                                          |
-| -------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| Comprendre `WidgetsFlutterBinding.ensureInitialized()`         | Nécessaire quand on exécute du code asynchrone avant `runApp()` (ici : Firebase). |
-| Savoir initialiser Firebase avec des options multi-plateformes | Essentiel pour les applis cross-platform, prépare la mise en ligne.               |
-| Savoir activer la réécriture d’URL (`url_strategy`)            | Permet des URL propres sur le Web sans le `#`.                                    |
-| Créer et lancer le widget racine (`MyApp`)                     | Point de départ de la navigation et du thème.                                     |
-
-À la fin, chaque étudiant doit pouvoir **expliquer ligne par ligne** ce qui se passe dans `main.dart`, compiler, puis voir l’application démarrer sans erreur.
-
----
-
-## 2. Code complet (commenté ligne par ligne)
-
-```dart
-// lib/main.dart
-//
-// Point d’entrée de l’application.
-// ─────────────────────────────────────────────────────────
-
-// 1. Firebase
-import 'package:firebase_core/firebase_core.dart';
-
-// 2. Flutter
-import 'package:flutter/material.dart';
-
-// 3. Navigation interne
-import 'package:paulina_knop/routes.dart';
-
-// 4. Pour retirer le ‘#/’ des URL sur le Web
-import 'package:url_strategy/url_strategy.dart';
-
-// 5. Fichier généré automatiquement par FlutterFire CLI
-import 'firebase_options.dart';
-
-/// Fonction main — exécute avant tout le reste.
-/// La signature `Future<void>` est requise car on attend
-/// l’initialisation asynchrone de Firebase.
-Future<void> main() async {
-  // Oblige Flutter à lier ses services (indispensable avant du code asynchrone).
-  WidgetsFlutterBinding.ensureInitialized();
-
-  // En Web, supprime le hash dans les URL : /about au lieu de /#/about
-  setPathUrlStrategy();
-
-  // Initialisation de Firebase avec les bons identifiants
-  // (plateforme détectée automatiquement dans firebase_options.dart).
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
-
-  // Lancement de l’application.
-  runApp(const MyApp());
-}
-
-/// Widget racine.
-/// Contient les paramètres globaux : thème, routes, etc.
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      // Désactive le bandeau “debug” en haut à droite.
-      debugShowCheckedModeBanner: false,
-
-      // Utilise le routeur personnalisé défini dans lib/routes.dart
-      onGenerateRoute: Routes.generateRoute,
-
-      // Première page affichée.
-      initialRoute: '/',
-    );
-  }
-}
-```
-
----
-
-## 3. Déroulé pas-à-pas pour la séance
-
-| Étape | Action en classe                                                                                      | Vérification immédiate                                         |
-| ----- | ----------------------------------------------------------------------------------------------------- | -------------------------------------------------------------- |
-| 1     | Chaque étudiant crée `lib/main.dart` tel quel et importe les paquets.                                 | `flutter analyze` ne doit signaler aucune erreur.              |
-| 2     | Expliquer `WidgetsFlutterBinding.ensureInitialized()` et faire commenter son rôle dans le fichier.    | Retirer la ligne provoque un crash (tester pour montrer).      |
-| 3     | Montrer le contenu auto-généré de `firebase_options.dart`, expliquer qu’il varie selon la plateforme. | Changer la valeur de `apiKey` → l’appli ne se connecte plus.   |
-| 4     | Lancer `flutter run -d chrome` et vérifier que l’URL est propre (`/` sans `#/`).                      | Désactiver `setPathUrlStrategy()` pour observer la différence. |
-| 5     | Naviguer vers `http://localhost:xxxx/about` → l’appli doit charger la page About.                     | Confirmer que la route est gérée par `Routes.generateRoute`.   |
-
----
-
-## 4. Exercices d’application
-
-1. **Personnalisation du thème global**
-
-   * Ajouter un `theme: ThemeData(primarySwatch: Colors.teal)` dans `MaterialApp`.
-   * Tester la propagation sur les AppBars des pages mobiles/web.
-
-2. **Ajout d’un SplashScreen simulé**
-
-   * Avant `runApp`, insérer un `await Future.delayed(Duration(seconds:2));`
-   * Expliquer l’impact sur l’expérience utilisateur et pourquoi un vrai Splash devrait être natif.
-
-3. **Gestion d’erreurs Firebase**
-
-   * Entourer `Firebase.initializeApp()` d’un `try/catch` et afficher un `runApp(ErrorWidget)` custom en cas d’échec.
-
----
-
-## 5. Validation de fin de chapitre
-
-* L’application démarre sur mobile et sur Web.
-* Aucune erreur de connexion Firebase dans la console.
-* Les étudiants peuvent expliquer :
-
-  1. Pourquoi on attend Firebase avant `runApp`.
-  2. Le rôle de `Routes.generateRoute`.
-  3. L’effet de `setPathUrlStrategy()`.
-
-
-
-
 
 <br/>
 <br/>
@@ -443,79 +315,8 @@ class MyApp extends StatelessWidget {
 
 
 
-### Code complet **jusqu’à l’étape 4**
 
-*(tout fonctionne hors‐ligne, sans Firebase ; les formulaires et le blog arriveront à l’étape suivante)*
-
----
-
-## 1. `lib/main.dart`
-
-```dart
-// Étape 1 : point d’entrée minimal + navigation générée par Routes
-import 'package:flutter/material.dart';
-import 'routes.dart'; // notre fichier de routes
-
-void main() => runApp(const MyApp());
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      // toutes les pages sortiront de ce générateur de routes
-      onGenerateRoute: Routes.generateRoute,
-      initialRoute: '/',     // page d’accueil
-    );
-  }
-}
-```
-
----
-
-## 2. `lib/routes.dart`
-
-```dart
-// Étape 2 : squelette de navigation responsive (mobile / web)
-import 'package:flutter/material.dart';
-import 'mobile/landing_page_mobile.dart';
-import 'web/landing_page_web.dart';
-
-class Routes {
-  static Route<dynamic> generateRoute(RouteSettings settings) {
-    switch (settings.name) {
-
-      // page d’accueil
-      case '/':
-        return MaterialPageRoute(
-          builder: (_) => LayoutBuilder(
-            builder: (context, constraints) =>
-                constraints.maxWidth > 800
-                    ? const LandingPageWeb()
-                    : const LandingPageMobile(),
-          ),
-        );
-
-      // si la route n’existe pas, on retombe sur l’accueil
-      default:
-        return MaterialPageRoute(
-          builder: (_) => LayoutBuilder(
-            builder: (context, constraints) =>
-                constraints.maxWidth > 800
-                    ? const LandingPageWeb()
-                    : const LandingPageMobile(),
-          ),
-        );
-    }
-  }
-}
-```
-
----
-
-## 3. `lib/components.dart`
+# 3. `lib/components.dart`
 
 ```dart
 // Étape 3 : widgets réutilisables (aucune dépendance réseau)
@@ -1022,4 +823,210 @@ Avant cela, les étudiants travaillent hors-ligne :
 
 
 
+### Prochain pas : décortiquer `lib/main.dart`
+
+Pour vos étudiants, c’est le moment idéal d’aborder **le point d’entrée de toute application Flutter** ; ils comprendront ainsi comment tout le reste (routes, pages, Firebase, etc.) se branche.
+
+---
+
+## 1. Objectifs pédagogiques de ce chapitre
+
+| Objectif                                                       | Pourquoi c’est important                                                          |
+| -------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| Comprendre `WidgetsFlutterBinding.ensureInitialized()`         | Nécessaire quand on exécute du code asynchrone avant `runApp()` (ici : Firebase). |
+| Savoir initialiser Firebase avec des options multi-plateformes | Essentiel pour les applis cross-platform, prépare la mise en ligne.               |
+| Savoir activer la réécriture d’URL (`url_strategy`)            | Permet des URL propres sur le Web sans le `#`.                                    |
+| Créer et lancer le widget racine (`MyApp`)                     | Point de départ de la navigation et du thème.                                     |
+
+À la fin, chaque étudiant doit pouvoir **expliquer ligne par ligne** ce qui se passe dans `main.dart`, compiler, puis voir l’application démarrer sans erreur.
+
+---
+
+## 2. Code complet (commenté ligne par ligne)
+
+```dart
+// lib/main.dart
+//
+// Point d’entrée de l’application.
+// ─────────────────────────────────────────────────────────
+
+// 1. Firebase
+import 'package:firebase_core/firebase_core.dart';
+
+// 2. Flutter
+import 'package:flutter/material.dart';
+
+// 3. Navigation interne
+import 'package:paulina_knop/routes.dart';
+
+// 4. Pour retirer le ‘#/’ des URL sur le Web
+import 'package:url_strategy/url_strategy.dart';
+
+// 5. Fichier généré automatiquement par FlutterFire CLI
+import 'firebase_options.dart';
+
+/// Fonction main — exécute avant tout le reste.
+/// La signature `Future<void>` est requise car on attend
+/// l’initialisation asynchrone de Firebase.
+Future<void> main() async {
+  // Oblige Flutter à lier ses services (indispensable avant du code asynchrone).
+  WidgetsFlutterBinding.ensureInitialized();
+
+  // En Web, supprime le hash dans les URL : /about au lieu de /#/about
+  setPathUrlStrategy();
+
+  // Initialisation de Firebase avec les bons identifiants
+  // (plateforme détectée automatiquement dans firebase_options.dart).
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
+  // Lancement de l’application.
+  runApp(const MyApp());
+}
+
+/// Widget racine.
+/// Contient les paramètres globaux : thème, routes, etc.
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      // Désactive le bandeau “debug” en haut à droite.
+      debugShowCheckedModeBanner: false,
+
+      // Utilise le routeur personnalisé défini dans lib/routes.dart
+      onGenerateRoute: Routes.generateRoute,
+
+      // Première page affichée.
+      initialRoute: '/',
+    );
+  }
+}
+```
+
+---
+
+## 3. Déroulé pas-à-pas pour la séance
+
+| Étape | Action en classe                                                                                      | Vérification immédiate                                         |
+| ----- | ----------------------------------------------------------------------------------------------------- | -------------------------------------------------------------- |
+| 1     | Chaque étudiant crée `lib/main.dart` tel quel et importe les paquets.                                 | `flutter analyze` ne doit signaler aucune erreur.              |
+| 2     | Expliquer `WidgetsFlutterBinding.ensureInitialized()` et faire commenter son rôle dans le fichier.    | Retirer la ligne provoque un crash (tester pour montrer).      |
+| 3     | Montrer le contenu auto-généré de `firebase_options.dart`, expliquer qu’il varie selon la plateforme. | Changer la valeur de `apiKey` → l’appli ne se connecte plus.   |
+| 4     | Lancer `flutter run -d chrome` et vérifier que l’URL est propre (`/` sans `#/`).                      | Désactiver `setPathUrlStrategy()` pour observer la différence. |
+| 5     | Naviguer vers `http://localhost:xxxx/about` → l’appli doit charger la page About.                     | Confirmer que la route est gérée par `Routes.generateRoute`.   |
+
+---
+
+## 4. Exercices d’application
+
+1. **Personnalisation du thème global**
+
+   * Ajouter un `theme: ThemeData(primarySwatch: Colors.teal)` dans `MaterialApp`.
+   * Tester la propagation sur les AppBars des pages mobiles/web.
+
+2. **Ajout d’un SplashScreen simulé**
+
+   * Avant `runApp`, insérer un `await Future.delayed(Duration(seconds:2));`
+   * Expliquer l’impact sur l’expérience utilisateur et pourquoi un vrai Splash devrait être natif.
+
+3. **Gestion d’erreurs Firebase**
+
+   * Entourer `Firebase.initializeApp()` d’un `try/catch` et afficher un `runApp(ErrorWidget)` custom en cas d’échec.
+
+---
+
+## 5. Validation de fin de chapitre
+
+* L’application démarre sur mobile et sur Web.
+* Aucune erreur de connexion Firebase dans la console.
+* Les étudiants peuvent expliquer :
+
+  1. Pourquoi on attend Firebase avant `runApp`.
+  2. Le rôle de `Routes.generateRoute`.
+  3. L’effet de `setPathUrlStrategy()`.
+
+
+
+
+
+
+<br/>
+<br/>
+
+
+
+### Code complet **jusqu’à l’étape 4**
+
+*(tout fonctionne hors‐ligne, sans Firebase ; les formulaires et le blog arriveront à l’étape suivante)*
+
+---
+
+## 1. `lib/main.dart`
+
+```dart
+// Étape 1 : point d’entrée minimal + navigation générée par Routes
+import 'package:flutter/material.dart';
+import 'routes.dart'; // notre fichier de routes
+
+void main() => runApp(const MyApp());
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      // toutes les pages sortiront de ce générateur de routes
+      onGenerateRoute: Routes.generateRoute,
+      initialRoute: '/',     // page d’accueil
+    );
+  }
+}
+```
+
+---
+
+## 2. `lib/routes.dart`
+
+```dart
+// Étape 2 : squelette de navigation responsive (mobile / web)
+import 'package:flutter/material.dart';
+import 'mobile/landing_page_mobile.dart';
+import 'web/landing_page_web.dart';
+
+class Routes {
+  static Route<dynamic> generateRoute(RouteSettings settings) {
+    switch (settings.name) {
+
+      // page d’accueil
+      case '/':
+        return MaterialPageRoute(
+          builder: (_) => LayoutBuilder(
+            builder: (context, constraints) =>
+                constraints.maxWidth > 800
+                    ? const LandingPageWeb()
+                    : const LandingPageMobile(),
+          ),
+        );
+
+      // si la route n’existe pas, on retombe sur l’accueil
+      default:
+        return MaterialPageRoute(
+          builder: (_) => LayoutBuilder(
+            builder: (context, constraints) =>
+                constraints.maxWidth > 800
+                    ? const LandingPageWeb()
+                    : const LandingPageMobile(),
+          ),
+        );
+    }
+  }
+}
+```
+
+---
 
