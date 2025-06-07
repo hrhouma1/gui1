@@ -431,7 +431,10 @@ class _AnimatedCardState extends State<AnimatedCard>
 }
 ```
 
----
+
+<br/>
+<br/>
+<br/>
 
 ## 4-A. `lib/mobile/landing_page_mobile.dart`
 
@@ -530,7 +533,9 @@ class LandingPageMobile extends StatelessWidget {
 }
 ```
 
----
+<br/>
+<br/>
+<br/>
 
 ## 4-B. `lib/web/landing_page_web.dart`
 
@@ -622,7 +627,9 @@ class LandingPageWeb extends StatelessWidget {
 }
 ```
 
----
+<br/>
+<br/>
+<br/>
 
 ### Comment tester maintenant ?
 
@@ -637,6 +644,108 @@ Une fois ces quatre fichiers maîtrisés et fonctionnels, on pourra :
 * Étape 6 : placer les *Drawers* et les *Tabs*.
 * Étape 7 : insérer les formulaires hors-ligne.
 * Étape 9 +: brancher Firebase (écriture, puis lecture dans le blog).
+
+
+
+<br/>
+<br/>
+<br/>
+
+
+<br/>
+<br/>
+<br/>
+
+
+<br/>
+<br/>
+<br/>
+
+
+<br/>
+<br/>
+<br/>
+
+
+<br/>
+<br/>
+<br/>
+
+
+<br/>
+<br/>
+<br/>
+
+
+
+<br/>
+<br/>
+<br/>
+
+
+<br/>
+<br/>
+<br/>
+
+
+<br/>
+<br/>
+<br/>
+
+
+<br/>
+<br/>
+<br/>
+
+
+<br/>
+<br/>
+<br/>
+
+
+<br/>
+<br/>
+<br/>
+
+
+<br/>
+<br/>
+<br/>
+
+
+<br/>
+<br/>
+<br/>
+
+
+<br/>
+<br/>
+<br/>
+
+
+<br/>
+<br/>
+<br/>
+
+
+<br/>
+<br/>
+<br/>
+
+
+<br/>
+<br/>
+<br/>
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -953,6 +1062,7 @@ class MyApp extends StatelessWidget {
 
 
 
+<br/>
 <br/>
 <br/>
 
