@@ -6,7 +6,7 @@
 **Public cible** : Débutants en Flutter
 **Objectif final** : Un site portfolio responsive (web/mobile), connecté à Firebase, avec navigation, formulaire, blog et design personnalisé
 
----
+
 
 ## **Phase 1 — Fondations Flutter**
 
@@ -95,7 +95,7 @@
 * `firebase deploy`
 * Publication du lien en ligne
 
----
+
 
 ## Résumé synthétique
 
@@ -107,6 +107,8 @@
 | Finition   | Responsive avancé, déploiement web    | 11 à 12   |
 
 
+<br/>
+<br/>
 <br/>
 <br/>
 
@@ -127,7 +129,7 @@ mkdir paulina_knop
 cd paulina_knop
 ```
 
----
+
 
 ### 2. Créer le fichier `pubspec.yaml`
 
@@ -160,7 +162,7 @@ flutter:
   uses-material-design: true
 ```
 
----
+
 
 ### 3. Créer le dossier et fichier `lib/main.dart`
 
@@ -169,9 +171,9 @@ mkdir lib
 code lib/main.dart
 ```
 
----
 
-## 🧾 Étape 2 – Écrire le code Flutter minimal dans `main.dart`
+
+## Étape 2 – Écrire le code Flutter minimal dans `main.dart`
 
 Voici le **code complet** à copier dans `lib/main.dart` :
 
@@ -215,9 +217,9 @@ class HomePage extends StatelessWidget {
 }
 ```
 
----
 
-## 🛠️ Étape 3 – Vérifier les dépendances et lancer l'application
+
+## Étape 3 – Vérifier les dépendances et lancer l'application
 
 Dans le terminal, exécute ces deux commandes dans le dossier du projet :
 
@@ -226,9 +228,9 @@ flutter pub get
 flutter run -d chrome
 ```
 
----
 
-## ✅ Résultat attendu
+
+##  Résultat attendu
 
 Tu dois voir dans ton navigateur (ou émulateur) :
 
@@ -239,9 +241,9 @@ Tu dois voir dans ton navigateur (ou émulateur) :
   Bienvenue dans Flutter
   ```
 
----
 
-## 📘 Explication de chaque élément
+
+##  Explication de chaque élément
 
 | Élément       | Rôle                                               |
 | ------------- | -------------------------------------------------- |
@@ -255,9 +257,9 @@ Tu dois voir dans ton navigateur (ou émulateur) :
 | `Center`      | Centre le contenu                                  |
 | `Text`        | Affiche un texte simple à l’écran                  |
 
----
 
-## 🔍 Vérifications et erreurs courantes
+
+## Vérifications et erreurs courantes
 
 | Problème possible                      | Solution                                                               |
 | -------------------------------------- | ---------------------------------------------------------------------- |
@@ -265,25 +267,16 @@ Tu dois voir dans ton navigateur (ou émulateur) :
 | Erreur `runApp` ou `MyApp` non reconnu | Vérifie que le fichier a bien été enregistré                           |
 | L’écran reste noir                     | Vérifie la commande `flutter run -d chrome` et que Chrome est installé |
 
----
-
-Souhaites-tu maintenant :
-
-1. Le **Chapitre 2** (ajout d’une deuxième page et navigation par bouton) ?
-2. Ou que je transforme ce Chapitre 1 en **fiche PDF/Markdown prête à imprimer/distribuer** ?
 
 
+<br/>
+<br/>
+<br/>
+<br/>
 
 
-Parfait. Voici le **Chapitre 2 complet**, **exhaustif**, sans raccourci ni emoji. Il guide l’étudiant pas à pas pour :
 
-* créer une **deuxième page Flutter** (`AboutPage`),
-* modifier l’écran d’accueil (`HomePage`) pour ajouter un bouton,
-* permettre la **navigation vers la deuxième page** via ce bouton.
 
-Chaque ligne est justifiée. Tous les fichiers sont présentés au complet.
-
----
 
 # **Chapitre 2 — Ajouter une deuxième page et naviguer avec un bouton**
 
@@ -291,9 +284,9 @@ Chaque ligne est justifiée. Tous les fichiers sont présentés au complet.
 
 Créer une deuxième page d’interface (`AboutPage`) et naviguer vers celle-ci depuis l’accueil grâce à un bouton.
 
----
 
-## 📁 Étape 1 — Créer le fichier `about_page.dart`
+
+##  Étape 1 — Créer le fichier `about_page.dart`
 
 ### 1. Créer le fichier dans le dossier `lib`
 
@@ -330,9 +323,9 @@ class AboutPage extends StatelessWidget {
 }
 ```
 
----
 
-## 🛠️ Étape 2 — Modifier `main.dart` pour ajouter le bouton de navigation
+
+##  Étape 2 — Modifier `main.dart` pour ajouter le bouton de navigation
 
 ### 1. Ouvrir le fichier `lib/main.dart`
 
@@ -340,7 +333,7 @@ class AboutPage extends StatelessWidget {
 code lib/main.dart
 ```
 
----
+
 
 ### 2. Ajouter l’import de `about_page.dart` en haut du fichier :
 
@@ -383,9 +376,9 @@ class HomePage extends StatelessWidget {
 }
 ```
 
----
 
-## 📘 Récapitulatif complet du fichier `main.dart`
+
+##  Récapitulatif complet du fichier `main.dart`
 
 Voici à quoi `lib/main.dart` doit ressembler **en entier** à ce stade :
 
@@ -440,7 +433,7 @@ class HomePage extends StatelessWidget {
 }
 ```
 
----
+
 
 ## ▶️ Étape 3 — Lancer l’application et tester
 
@@ -453,9 +446,8 @@ flutter run -d chrome
 
 > L'application doit s'ouvrir dans le navigateur ou l’émulateur.
 
----
 
-## ✅ Résultat attendu
+##  Résultat attendu
 
 1. Une page d’accueil s’affiche avec une AppBar (barre de titre) et un bouton intitulé :
 
@@ -470,7 +462,7 @@ flutter run -d chrome
 
 3. La flèche retour dans l’AppBar permet de revenir à la page précédente.
 
----
+
 
 ## 🧠 Explication de chaque élément
 
@@ -483,7 +475,7 @@ flutter run -d chrome
 | `AppBar`                          | Bandeau supérieur avec un titre et une flèche retour |
 | `const AboutPage()`               | Instancie la page que l’on souhaite afficher         |
 
----
+
 
 ## ❗ Erreurs fréquentes et solutions
 
@@ -493,14 +485,12 @@ flutter run -d chrome
 | Erreur "cannot resolve"  | Mauvais nom de classe ou de fichier                      | Vérifier que le nom de la classe est bien `AboutPage` dans les deux fichiers |
 | Rien ne se passe au clic | Oubli du `onPressed:` ou erreur dans `Navigator.of(...)` | Vérifier toute la fonction `onPressed`                                       |
 
----
-
-Souhaites-tu maintenant :
-
-* Le **Chapitre 3** : structuration du projet avec `routes.dart` et navigation nommée ?
-* Ou un **document imprimable** des deux premiers chapitres ?
 
 
+<br/>
+<br/>
+<br/>
+<br/>
 
 
 
@@ -508,15 +498,6 @@ Souhaites-tu maintenant :
 
 
 
-
-
-Très bien. Voici le **Chapitre 3 complet**, parfaitement **exhaustif**, **sans emojis**, **sans raccourci**, et **sans aucune omission**. Ce chapitre restructure proprement le projet en introduisant :
-
-* un fichier `routes.dart` centralisant les routes,
-* une navigation **nominative** via les noms (`'/about'`, `'/home'`),
-* une séparation claire des responsabilités dans l’architecture du code.
-
----
 
 # **Chapitre 3 — Organisation propre et navigation nommée avec routes.dart**
 
@@ -524,7 +505,7 @@ Très bien. Voici le **Chapitre 3 complet**, parfaitement **exhaustif**, **sans 
 
 Remplacer la navigation manuelle (`MaterialPageRoute`) par une **navigation nommée**, plus propre et maintenable, en centralisant les chemins dans un fichier `routes.dart`.
 
----
+
 
 ## 🧱 Étape 1 — Créer `routes.dart` pour organiser les routes
 
@@ -534,7 +515,7 @@ Remplacer la navigation manuelle (`MaterialPageRoute`) par une **navigation nomm
 code lib/routes.dart
 ```
 
----
+
 
 ### 2. Coller ce code complet :
 
@@ -567,7 +548,7 @@ class AppRoutes {
 }
 ```
 
----
+
 
 ## 🧱 Étape 2 — Créer `home_page.dart` (séparer HomePage de main.dart)
 
@@ -577,7 +558,7 @@ class AppRoutes {
 code lib/home_page.dart
 ```
 
----
+
 
 ### 2. Coller ce code complet :
 
@@ -609,7 +590,7 @@ class HomePage extends StatelessWidget {
 }
 ```
 
----
+
 
 ## 🧾 Étape 3 — Modifier `main.dart` pour activer la navigation nommée
 
@@ -619,7 +600,7 @@ class HomePage extends StatelessWidget {
 code lib/main.dart
 ```
 
----
+
 
 ### Supprime tout son contenu, puis colle ce code complet :
 
@@ -646,7 +627,7 @@ class MyApp extends StatelessWidget {
 }
 ```
 
----
+
 
 ## 📄 Récapitulatif des fichiers et rôles
 
@@ -657,7 +638,7 @@ class MyApp extends StatelessWidget {
 | `home_page.dart`  | Contient la page d’accueil avec un bouton               |
 | `about_page.dart` | Contient la page À propos                               |
 
----
+
 
 ## ▶️ Étape 4 — Lancer et tester l’application
 
@@ -668,7 +649,7 @@ flutter pub get
 flutter run -d chrome
 ```
 
----
+
 
 ## ✅ Résultat attendu
 
@@ -685,9 +666,9 @@ flutter run -d chrome
 
 3. Le retour fonctionne grâce à la flèche dans l’AppBar.
 
----
 
-## 📘 Explication de chaque concept
+
+##  Explication de chaque concept
 
 | Élément                 | Rôle                                                                    |
 | ----------------------- | ----------------------------------------------------------------------- |
@@ -708,9 +689,6 @@ flutter run -d chrome
 | Page blanche au lancement             | `initialRoute` ne correspond à aucune route            | S’assurer que `AppRoutes.home = '/'`                     |
 | `HomePage` ou `AboutPage` non reconnu | Fichier `routes.dart` ne contient pas les bons imports | Vérifier `import 'home_page.dart';` et `about_page.dart` |
 
----
-
-Souhaites-tu maintenant que je prépare le **Chapitre 4**, qui introduit la détection de taille d’écran (mobile vs web) avec affichage de `AboutWeb` ou `AboutMobile` ?
 
 
 
@@ -720,6 +698,10 @@ Souhaites-tu maintenant que je prépare le **Chapitre 4**, qui introduit la dét
 
 
 
+<br/>
+<br/>
+<br/>
+<br/>
 
 
 
@@ -731,14 +713,7 @@ Souhaites-tu maintenant que je prépare le **Chapitre 4**, qui introduit la dét
 
 
 
-Voici le **Chapitre 4** au complet, **exhaustif**, **sans emojis**, **sans raccourci**, et **sans omission**.
-Ce chapitre t'apprend à :
 
-* **détecter dynamiquement la taille de l'écran**,
-* **charger une version mobile ou web d'une même page**,
-* et **préparer le projet pour être responsive** sans utiliser de bibliothèque externe.
-
----
 
 # **Chapitre 4 — Affichage conditionnel : version mobile ou web selon la taille de l’écran**
 
@@ -746,7 +721,7 @@ Ce chapitre t'apprend à :
 
 Utiliser `MediaQuery` pour adapter le contenu affiché selon la taille de l’écran. On prépare deux versions d'une même page : mobile et web.
 
----
+
 
 ## Plan du chapitre
 
@@ -754,7 +729,7 @@ Utiliser `MediaQuery` pour adapter le contenu affiché selon la taille de l’é
 2. Utiliser `MediaQuery` pour choisir quelle version afficher
 3. Brancher cette logique dans `routes.dart`
 
----
+
 
 ## 🧱 Étape 1 — Créer la page `about_web.dart`
 
@@ -791,7 +766,7 @@ class AboutWeb extends StatelessWidget {
 }
 ```
 
----
+
 
 ## 🧱 Étape 2 — Créer la page `about_mobile.dart`
 
@@ -828,7 +803,6 @@ class AboutMobile extends StatelessWidget {
 }
 ```
 
----
 
 ## 🧱 Étape 3 — Créer une page intermédiaire `about_page.dart` pour rediriger
 
@@ -864,7 +838,7 @@ class AboutPage extends StatelessWidget {
 }
 ```
 
----
+
 
 ## 🧱 Étape 4 — Mettre à jour `routes.dart`
 
@@ -904,7 +878,7 @@ class AppRoutes {
 }
 ```
 
----
+
 
 ## 📄 Résumé complet des fichiers créés ou modifiés
 
@@ -916,7 +890,6 @@ class AppRoutes {
 | `routes.dart`       | Redirige `/about` vers `AboutPage`, qui décide de la version |
 | `home_page.dart`    | Contient un bouton vers `/about`                             |
 
----
 
 ## ▶️ Étape 5 — Lancer et tester
 
@@ -932,18 +905,18 @@ Ajuste la taille de la fenêtre :
 * **Si largeur > 800**, tu dois voir la version Web.
 * **Si largeur < 800**, tu dois voir la version mobile.
 
----
 
-## ✅ Résultat attendu
+
+##  Résultat attendu
 
 | Largeur de l’écran  | Comportement attendu                                                   |
 | ------------------- | ---------------------------------------------------------------------- |
 | Supérieure à 800 px | Texte affiché : "Bienvenue sur la version Web de la page À propos."    |
 | Inférieure à 800 px | Texte affiché : "Bienvenue sur la version mobile de la page À propos." |
 
----
 
-## 📘 Explication pédagogique
+
+## Explication 
 
 | Élément                                  | Rôle                                                                  |
 | ---------------------------------------- | --------------------------------------------------------------------- |
@@ -953,15 +926,13 @@ Ajuste la taille de la fenêtre :
 | `AboutWeb`, `AboutMobile`                | Deux versions visuelles distinctes du même contenu                    |
 | `Navigator.pushNamed(context, '/about')` | Appelle la route, qui déclenche la logique responsive automatiquement |
 
----
-
-Souhaites-tu que je prépare :
-
-* **Chapitre 5** (création du menu de navigation avec `Drawer` ou `Tabs`) ?
-* ou que je te fournisse un **aperçu HTML imprimable** des chapitres 1 à 4 ?
 
 
 
+<br/>
+<br/>
+<br/>
+<br/>
 
 
 
@@ -972,14 +943,7 @@ Souhaites-tu que je prépare :
 
 
 
-Voici le **Chapitre 5 complet**, **exhaustif**, **sans emojis**, **sans raccourci**, ni omission.
-Ce chapitre enseigne :
 
-* l’ajout d’un **menu de navigation (Drawer)** pour la version **web**,
-* la création d’un widget réutilisable : `DrawersWeb`,
-* l’utilisation des routes nommées pour naviguer entre les pages.
-
----
 
 # **Chapitre 5 — Ajout d’un menu Drawer pour la version Web**
 
@@ -987,7 +951,7 @@ Ce chapitre enseigne :
 
 Créer un menu latéral (Drawer) pour naviguer entre les pages (`/`, `/about`) dans la version Web.
 
----
+
 
 ## Plan du chapitre
 
@@ -996,7 +960,7 @@ Créer un menu latéral (Drawer) pour naviguer entre les pages (`/`, `/about`) d
 3. Ajouter le menu dans `home_page.dart`
 4. Vérifier la navigation entre les pages
 
----
+
 
 ## 🧱 Étape 1 — Créer le fichier `drawers_web.dart`
 
@@ -1006,7 +970,7 @@ Créer un menu latéral (Drawer) pour naviguer entre les pages (`/`, `/about`) d
 code lib/drawers_web.dart
 ```
 
----
+
 
 ### 2. Coller ce code complet :
 
@@ -1057,7 +1021,7 @@ class DrawersWeb extends StatelessWidget {
 }
 ```
 
----
+
 
 ## 🧱 Étape 2 — Modifier `about_web.dart` pour intégrer le menu
 
@@ -1067,7 +1031,7 @@ class DrawersWeb extends StatelessWidget {
 code lib/about_web.dart
 ```
 
----
+
 
 ### 2. Ajouter l'import du Drawer :
 
@@ -1106,7 +1070,7 @@ class AboutWeb extends StatelessWidget {
 }
 ```
 
----
+
 
 ## 🧱 Étape 3 — Modifier `home_page.dart` pour inclure aussi le menu
 
@@ -1116,7 +1080,7 @@ class AboutWeb extends StatelessWidget {
 code lib/home_page.dart
 ```
 
----
+
 
 ### 2. Ajouter l’import :
 
@@ -1124,7 +1088,6 @@ code lib/home_page.dart
 import 'drawers_web.dart';
 ```
 
----
 
 ### 3. Remplacer le contenu de `HomePage` par ce code :
 
@@ -1175,18 +1138,18 @@ class HomePage extends StatelessWidget {
 }
 ```
 
----
 
-## ✅ Résultat attendu
+
+##  Résultat attendu
 
 | Taille de l'écran    | Comportement                                                                                                                         |
 | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
 | **Largeur > 800 px** | Un bouton hamburger est visible en haut à gauche. En cliquant dessus, un menu apparaît avec les options **Accueil** et **À propos**. |
 | **Largeur ≤ 800 px** | Comportement identique à avant : bouton direct pour aller à la page À propos.                                                        |
 
----
 
-## 📘 Explication pédagogique
+
+##  Explication 
 
 | Élément                 | Rôle                                                                    |
 | ----------------------- | ----------------------------------------------------------------------- |
@@ -1197,7 +1160,6 @@ class HomePage extends StatelessWidget {
 | `DrawerHeader`          | Zone en haut du menu pour un titre ou une image                         |
 | `MediaQuery`            | Permet d’adapter le rendu selon la taille de l’écran                    |
 
----
 
 ## ❗ Erreurs fréquentes et solutions
 
@@ -1207,23 +1169,13 @@ class HomePage extends StatelessWidget {
 | Icône hamburger absente      | Pas de `AppBar` ou `AppBar` personnalisée incorrectement | Vérifie que `AppBar` est présent et standard        |
 | `AppRoutes.home` non reconnu | `routes.dart` mal importé ou mal défini                  | Vérifie les imports et le nom des routes            |
 
----
-
-Souhaites-tu maintenant :
-
-* Le **Chapitre 6** avec la création des pages `Contact`, `Works` (mobile/web) ?
-* Ou un aperçu HTML ou PDF récapitulatif des 5 chapitres ?
 
 
+<br/>
+<br/>
+<br/>
+<br/>
 
-
-
-
-
-
-Merci, je comprends que tu veux continuer avec le **Chapitre 6**. Voici le **Chapitre 6** exhaustif, sans raccourci ni emojis.
-
----
 
 # **Chapitre 6 — Ajouter les pages Contact et Réalisations (Works), version mobile et web**
 
@@ -1235,7 +1187,7 @@ Structurer une application multipage avec plusieurs sections :
 * `WorksPage` (mobile + web)
 * Navigation complète via le `Drawer` (menu)
 
----
+
 
 ## Plan du chapitre
 
@@ -1244,7 +1196,7 @@ Structurer une application multipage avec plusieurs sections :
 3. Mettre à jour `routes.dart` pour intégrer ces pages
 4. Ajouter ces nouvelles routes dans le menu `DrawerWeb`
 
----
+
 
 ## 🧱 Étape 1 — Créer les pages web
 
@@ -1280,7 +1232,7 @@ class ContactWeb extends StatelessWidget {
 }
 ```
 
----
+
 
 ### `works_web.dart`
 
@@ -1314,7 +1266,7 @@ class WorksWeb extends StatelessWidget {
 }
 ```
 
----
+
 
 ## 🧱 Étape 2 — Créer les pages mobile
 
@@ -1348,7 +1300,7 @@ class ContactMobile extends StatelessWidget {
 }
 ```
 
----
+
 
 ### `works_mobile.dart`
 
@@ -1380,7 +1332,7 @@ class WorksMobile extends StatelessWidget {
 }
 ```
 
----
+
 
 ## 🧱 Étape 3 — Créer les pages intermédiaires `contact_page.dart` et `works_page.dart`
 
@@ -1411,7 +1363,7 @@ class ContactPage extends StatelessWidget {
 }
 ```
 
----
+
 
 ### `works_page.dart`
 
@@ -1440,7 +1392,7 @@ class WorksPage extends StatelessWidget {
 }
 ```
 
----
+
 
 ## 🧱 Étape 4 — Mettre à jour `routes.dart`
 
@@ -1480,7 +1432,7 @@ class AppRoutes {
 }
 ```
 
----
+
 
 ## 🧱 Étape 5 — Mettre à jour `drawers_web.dart`
 
@@ -1503,9 +1455,9 @@ ListTile(
 ),
 ```
 
----
 
-## ✅ Résultat attendu
+
+##  Résultat attendu
 
 | Route      | Affichage (responsive)                |
 | ---------- | ------------------------------------- |
@@ -1513,17 +1465,11 @@ ListTile(
 | `/contact` | Texte de contact                      |
 | `/works`   | Liste des réalisations                |
 
----
 
-Souhaites-tu maintenant :
-
-* le **Chapitre 7** : ajout d’une page dynamique type blog/portfolio connectée à Firestore ?
-* ou un **récapitulatif HTML imprimable** des 6 chapitres ?
-
-
-
-
-
+<br/>
+<br/>
+<br/>
+<br/>
 
 
 
