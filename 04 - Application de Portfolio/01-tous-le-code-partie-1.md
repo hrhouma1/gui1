@@ -21,7 +21,7 @@ Tout est découpé à l'application, on avance fichier par fichier, chapitre par
 <br/>
 <br/>
 
-#### Contenu exact de chaque chapitre
+#  Contenu de chaque chapitre
 
 1. **Chapitre 0 — Pré-requis et `pubspec.yaml`**
 
@@ -71,7 +71,7 @@ Tout est découpé à l'application, on avance fichier par fichier, chapitre par
 
     * Commandes : `flutter build web`, `firebase init hosting`, `firebase deploy`; `flutter build apk`.
 
----
+
 
 ### Conseils de progression
 
@@ -85,10 +85,11 @@ Tout est découpé à l'application, on avance fichier par fichier, chapitre par
 
 <br/>
 <br/>
+<br/>
 
 
 
-#### Code 1 — `lib/main.dart`
+# 1 - Code 1 — `lib/main.dart`
 
 Copiez / collez tel quel ; chaque bloc est abondamment commenté pour aider vos étudiants à comprendre ligne par ligne.
 
@@ -150,7 +151,7 @@ class MyApp extends StatelessWidget {
   * `onGenerateRoute` renvoie une fonction qui crée chaque page (voir `routes.dart`).
   * `initialRoute` est le chemin affiché au démarrage (`'/'`).
 
-Vos étudiants peuvent maintenant :
+Vous pouvez maintenant exécuter :
 
 ```bash
 flutter run -d chrome   # test Web
@@ -160,50 +161,12 @@ flutter run             # un device mobile connecté
 
 
 
-
-
-
-
+<br/>
 <br/>
 <br/>
 
 
-```
-.
-├── pubspec.yaml
-├── assets/
-│   ├── image-circle.png
-│   ├── profile2-circle.png
-│   ├── webL.png
-│   ├── app.png
-│   ├── firebase.png
-│   ├── works.jpg
-│   ├── web.jpg
-│   ├── contact_image.jpg
-│   ├── blog.jpg
-│   └── portfolio_screenshot.PNG
-└── lib/
-    ├── firebase_options.dart
-    ├── main.dart
-    ├── routes.dart          ← fichier demandé ci-dessous
-    ├── components.dart
-    ├── common/
-    │   └── blog.dart
-    ├── mobile/
-    │   ├── about_mobile.dart
-    │   ├── contact_mobile.dart
-    │   ├── landing_page_mobile.dart
-    │   └── works_mobile.dart
-    └── web/
-        ├── about_web.dart
-        ├── contact_web.dart
-        ├── landing_page_web.dart
-        └── works_web.dart
-```
-
----
-
-## `lib/routes.dart` — version complète abondamment commentée
+# `lib/routes.dart` — version complète abondamment commentée
 
 ```dart
 // routes.dart
@@ -474,116 +437,7 @@ class MyApp extends StatelessWidget {
 
 <br/>
 <br/>
-
-
-
-### Arborescence du projet (`lib/`) en ASCII
-
-```
-lib
-├── common
-│   └── blog.dart
-├── mobile
-│   ├── about_mobile.dart
-│   ├── contact_mobile.dart
-│   ├── landing_page_mobile.dart
-│   └── works_mobile.dart
-├── web
-│   ├── about_web.dart
-│   ├── contact_web.dart
-│   ├── landing_page_web.dart
-│   └── works_web.dart
-├── components.dart
-├── firebase_options.dart        # généré par FlutterFire CLI
-├── main.dart
-└── routes.dart
-```
-
----
-
-## Séquence de développement (code-par-code, test-par-test)
-
-| Étape  | Fichier(s) à créer / compléter                                   | Contenu à développer                                                                                                                                                                                                                                               | Comment tester immédiatement                                                                                                              |
-| ------ | ---------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| **1**  | `pubspec.yaml`, `assets/`                                        | – Définir les dépendances déjà listées.<br>– Ajouter l’entrée `assets:`.                                                                                                                                                                                           | `flutter pub get` doit se terminer sans erreur.<br>`flutter analyze` ➜ zéro warning critiques.                                            |
-| **2**  | `lib/main.dart` **(déjà fourni)**                                | – Initialisation Firebase.<br>– `setPathUrlStrategy()`.<br>– `MyApp` racine (MaterialApp + routes).                                                                                                                                                                | `flutter run -d chrome` puis `http://localhost:xxxx/` doit lancer l’app vide sans bandeau *debug*.                                        |
-| **3**  | `lib/firebase_options.dart`                                      | Fichier auto-généré par **FlutterFire CLI**.<br>Aucune modification manuelle.                                                                                                                                                                                      | Supprimer volontairement `apiKey` ➜ l’app plante (démonstration). Remettre la valeur.                                                     |
-| **4**  | `lib/components.dart`                                            | Créer **tous les widgets réutilisables** :<br>– `Sans`, `SansBold`, `AbelCustom` (typographie)<br>– `AnimatedCard` (animation)<br>– Form widgets :`TextForm`, `ContactFormWeb`, `ContactFormMobile`<br>– Navigation drawers & tabs (`DrawersWeb`, `TabsWeb`, etc.) | Depuis `main.dart`, instancier un simple `Scaffold` qui affiche `AnimatedCard`. L’animation doit se jouer (preuve visuelle).              |
-| **5**  | `lib/routes.dart`                                                | Méthode `generateRoute` déjà fournie : <br>– gérer `/`, `/contact`, `/about`, `/blog`, `/works`.<br>– Utiliser `LayoutBuilder` pour choisir mobile/web.                                                                                                            | Dans un navigateur : taper successivement `/about`, `/contact`… La bonne page doit s’ouvrir et le *hot-reload* ne doit pas casser l’état. |
-| **6**  | `lib/mobile/landing_page_mobile.dart`                            | Page d’accueil mobile :<br>photo, présentation, compétences, CTA contact.                                                                                                                                                                                          | Dans l’émulateur mobile, largeur < 800 px ➜ la page mobile apparaît correctement, scroll fluide.                                          |
-| **7**  | `lib/web/landing_page_web.dart`                                  | Page d’accueil web (mise en page en `Row`, typographies plus grandes).                                                                                                                                                                                             | Navigateur desktop : largeur > 800 px ➜ version web, vérifier responsive en redimensionnant la fenêtre.                                   |
-| **8**  | `lib/mobile/about_mobile.dart` <br> `lib/web/about_web.dart`     | Section “About”. Réutilise `AnimatedCard`, `tealContainer()`.                                                                                                                                                                                                      | Cliquer sur l’onglet *About* dans le drawer ; vérifier responsive mobile/web.                                                             |
-| **9**  | `lib/mobile/contact_mobile.dart` <br> `lib/web/contact_web.dart` | Section “Contact” + formulaires.<br>Connexions à Firestore via `AddDataFirestore`.                                                                                                                                                                                 | Remplir le formulaire ➜ message “Success”. Dans Firebase console, un nouveau document doit apparaître.                                    |
-| **10** | `lib/mobile/works_mobile.dart` <br> `lib/web/works_web.dart`     | Galerie de projets : images + descriptions.                                                                                                                                                                                                                        | Cliquer sur l’onglet *Works* : cartes animées visibles, textes lisibles.                                                                  |
-| **11** | `lib/common/blog.dart`                                           | Liste des articles Firestore (\<collection `articles`>).<br>Widget `BlogPost` extensible.                                                                                                                                                                          | Ajouter 1-2 documents *title/body* dans Firestore ➜ la liste s’affiche en live-reload.                                                    |
-| **12** | **Tests finaux**                                                 | – Navigation fluide entre toutes les routes.<br>– Aucune erreur dans la console.<br>– Hot-reload fonctionne.<br>– Formulaires valident les champs requis.                                                                                                          | Faire une **revue de code + démonstration** : chaque étudiant présente, puis push sur Git ; run CI (`flutter test`, `flutter analyze`).   |
-
----
-
-### Conseils pédagogiques supplémentaires
-
-1. **Découpage progressif**
-   Abordez chaque fichier comme un mini-projet : copier le squelette, expliquer chaque import, lancer, observer ; *jamais* plus d’un écran de code avant de tester.
-
-2. **Validation automatisée**
-   Proposez un script simple (GitHub Actions ou `melos run lint:test`) qui exécute : `flutter analyze`, `flutter test`, `flutter build web`. Les étudiants voient rouge/vert après chaque push.
-
-3. **Debug visuel**
-   Encouragez l’usage de *Flutter DevTools* : Timeline (FPS de l’animation), Inspect Widget (vérifier paddings).
-
-4. **Journal de bord**
-   Demandez à chacun de tenir un fichier `progress.md` : *Étape accomplie / Problème rencontré / Solution*.
-
-Suivez cet ordre, testez à chaque sous-étape, et les débutants garderont toujours une application fonctionnelle tout en apprenant les bases de Flutter, Firebase et du responsive design.
-
-
-
-
-
-
-
-
-
-
 <br/>
-<br/>
-
-
-
-## Ordre précis des ajouts de code
-
-> Objectif pédagogique : les débutants voient **rapidement** quelque chose s’afficher, puis enrichissent pas-à-pas. On différera Firebase jusqu’à ce que l’UI soit solide.
-
-| Rang   | Ce qu’on **crée ou modifie**                                                                                                                                                                                                           | Pourquoi maintenant ?                                                      | À tester immédiatement                                                                              |
-| ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
-| **0**  | `pubspec.yaml` (dépendances déjà listées) + dossier `assets/`                                                                                                                                                                          | Base du projet                                                             | `flutter pub get` doit réussir ; `flutter run` sur un projet vide affiche l’écran blanc par défaut. |
-| **1**  | `lib/main.dart` **minimal**  <br>`dart<br>void main() => runApp(const MaterialApp(home: Scaffold()));<br>`                                                                                                                             | Vérifier que Flutter compile sur chaque poste avant d’écrire plus de code. | `flutter run` sur Chrome/émulateur : écran vide blanc sans erreurs.                                 |
-| **2**  | `lib/routes.dart` **squelette**  (classe `Routes` avec `generateRoute` renvoyant toujours un `Placeholder`)                                                                                                                            | Introduire la notion de navigation **avant** de créer des pages réelles.   | Passer `initialRoute: '/about'` → placeholder visible.                                              |
-| **3**  | `lib/components.dart`  <br>– `Sans`, `SansBold`, `AbelCustom` <br>– `AnimatedCard` (image fixe)                                                                                                                                        | Avoir les widgets réutilisables dès le départ pour éviter la duplication.  | Placer `AnimatedCard` dans `home:` et observer l’animation.                                         |
-| **4**  | **Pages d’accueil statiques**  <br>`landing_page_mobile.dart` et `landing_page_web.dart` **sans aucune logique** (texte et images en dur)                                                                                              | Les étudiants voient tout de suite la différence mobile/web.               | Dans Chrome (largeur > 800) vs. smartphone (largeur < 800).                                         |
-| **5**  | Compléter `Routes.generateRoute`  pour choisir la bonne page selon la largeur (code déjà fourni).                                                                                                                                      | Toute l’app pourra maintenant changer de section.                          | Cliquer sur les routes (`/works`, `/about`…) en changeant le navigateur.                            |
-| **6**  | `DrawersWeb`, `DrawersMobile`, `TabsWeb`, `TabsMobile`  (navigations)                                                                                                                                                                  | Permettre de **bouger** dans l’app avant d’ajouter du contenu dynamique.   | Ouvrir/fermer le drawer, cliquer sur *Blog* etc.                                                    |
-| **7**  | **Sections statiques restantes**  <br>`about_mobile.dart`, `about_web.dart`, `works_*`, `contact_*` **sans formulaire**                                                                                                                | L’UI ressemble déjà au produit final → motivation.                         | Scroll fluide, pas d’exception de layout.                                                           |
-| **8**  | **Formulaires** (classe `TextForm`, validation locale) mais **sans** appel Firestore : <br>`ContactFormMobile`, `ContactFormWeb` ➜ afficher simplement un `SnackBar("OK")`                                                             | Les débutants apprennent la validation sans dépendances réseau.            | Laisser un champ vide → message d’erreur ; remplir → SnackBar.                                      |
-| **9**  | **Intégration Firebase CLI**  (exécuter `flutterfire configure`) <br>génère `firebase_options.dart` puis **mettre à jour `main.dart`** :  `dart<br>await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);<br>` | Maintenant que l’IU est stable, on introduit Firestore.                    | L’app compile toujours (pas encore de lecture/écriture).                                            |
-| **10** | Classe utilitaire `AddDataFirestore` + remplacement du `SnackBar` par l’appel `addResponse()` dans les formulaires                                                                                                                     | On voit une **écriture** dans Firebase.                                    | Remplir le formulaire → document dans collection `messages`.                                        |
-| **11** | `Blog` : remplacer la liste factice par  `StreamBuilder<QuerySnapshot>` (code déjà fourni).                                                                                                                                            | Introduction à la **lecture** temps-réel.                                  | Ajouter un doc dans `articles` → l’app se met à jour automatiquement.                               |
-| **12** | Derniers détails : `AnimatedCard.reverse`, images réelles, mise au point responsive, suppression des warnings `flutter analyze`                                                                                                        | Fignoler et consolider.                                                    | Tour complet de l’app sur mobile + web, aucune erreur console.                                      |
-
-### Réponse à ta question : Firebase on le laisse à la fin ?
-
-Oui : **étapes 9 à 11 seulement**.
-Avant cela, les étudiants travaillent hors-ligne :
-
-* UI statique → navigation → validation locale.
-* Une fois à l’aise, on active Firebase (écriture), puis la lecture temps-réel pour le blog.
-
-
-<br/>
-<br/>
-
-
-
 
 
 
@@ -1010,6 +864,161 @@ paulina_knop/
 │   ├── main.dart
 │   └── routes.dart
 ```
+
+
+
+
+# Annexe 2
+
+
+```
+.
+├── pubspec.yaml
+├── assets/
+│   ├── image-circle.png
+│   ├── profile2-circle.png
+│   ├── webL.png
+│   ├── app.png
+│   ├── firebase.png
+│   ├── works.jpg
+│   ├── web.jpg
+│   ├── contact_image.jpg
+│   ├── blog.jpg
+│   └── portfolio_screenshot.PNG
+└── lib/
+    ├── firebase_options.dart
+    ├── main.dart
+    ├── routes.dart          ← fichier demandé ci-dessous
+    ├── components.dart
+    ├── common/
+    │   └── blog.dart
+    ├── mobile/
+    │   ├── about_mobile.dart
+    │   ├── contact_mobile.dart
+    │   ├── landing_page_mobile.dart
+    │   └── works_mobile.dart
+    └── web/
+        ├── about_web.dart
+        ├── contact_web.dart
+        ├── landing_page_web.dart
+        └── works_web.dart
+```
+
+
+
+
+
+# Annexe 6
+
+
+
+
+
+
+### Arborescence du projet (`lib/`) en ASCII
+
+```
+lib
+├── common
+│   └── blog.dart
+├── mobile
+│   ├── about_mobile.dart
+│   ├── contact_mobile.dart
+│   ├── landing_page_mobile.dart
+│   └── works_mobile.dart
+├── web
+│   ├── about_web.dart
+│   ├── contact_web.dart
+│   ├── landing_page_web.dart
+│   └── works_web.dart
+├── components.dart
+├── firebase_options.dart        # généré par FlutterFire CLI
+├── main.dart
+└── routes.dart
+```
+
+---
+
+## Séquence de développement (code-par-code, test-par-test)
+
+| Étape  | Fichier(s) à créer / compléter                                   | Contenu à développer                                                                                                                                                                                                                                               | Comment tester immédiatement                                                                                                              |
+| ------ | ---------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| **1**  | `pubspec.yaml`, `assets/`                                        | – Définir les dépendances déjà listées.<br>– Ajouter l’entrée `assets:`.                                                                                                                                                                                           | `flutter pub get` doit se terminer sans erreur.<br>`flutter analyze` ➜ zéro warning critiques.                                            |
+| **2**  | `lib/main.dart` **(déjà fourni)**                                | – Initialisation Firebase.<br>– `setPathUrlStrategy()`.<br>– `MyApp` racine (MaterialApp + routes).                                                                                                                                                                | `flutter run -d chrome` puis `http://localhost:xxxx/` doit lancer l’app vide sans bandeau *debug*.                                        |
+| **3**  | `lib/firebase_options.dart`                                      | Fichier auto-généré par **FlutterFire CLI**.<br>Aucune modification manuelle.                                                                                                                                                                                      | Supprimer volontairement `apiKey` ➜ l’app plante (démonstration). Remettre la valeur.                                                     |
+| **4**  | `lib/components.dart`                                            | Créer **tous les widgets réutilisables** :<br>– `Sans`, `SansBold`, `AbelCustom` (typographie)<br>– `AnimatedCard` (animation)<br>– Form widgets :`TextForm`, `ContactFormWeb`, `ContactFormMobile`<br>– Navigation drawers & tabs (`DrawersWeb`, `TabsWeb`, etc.) | Depuis `main.dart`, instancier un simple `Scaffold` qui affiche `AnimatedCard`. L’animation doit se jouer (preuve visuelle).              |
+| **5**  | `lib/routes.dart`                                                | Méthode `generateRoute` déjà fournie : <br>– gérer `/`, `/contact`, `/about`, `/blog`, `/works`.<br>– Utiliser `LayoutBuilder` pour choisir mobile/web.                                                                                                            | Dans un navigateur : taper successivement `/about`, `/contact`… La bonne page doit s’ouvrir et le *hot-reload* ne doit pas casser l’état. |
+| **6**  | `lib/mobile/landing_page_mobile.dart`                            | Page d’accueil mobile :<br>photo, présentation, compétences, CTA contact.                                                                                                                                                                                          | Dans l’émulateur mobile, largeur < 800 px ➜ la page mobile apparaît correctement, scroll fluide.                                          |
+| **7**  | `lib/web/landing_page_web.dart`                                  | Page d’accueil web (mise en page en `Row`, typographies plus grandes).                                                                                                                                                                                             | Navigateur desktop : largeur > 800 px ➜ version web, vérifier responsive en redimensionnant la fenêtre.                                   |
+| **8**  | `lib/mobile/about_mobile.dart` <br> `lib/web/about_web.dart`     | Section “About”. Réutilise `AnimatedCard`, `tealContainer()`.                                                                                                                                                                                                      | Cliquer sur l’onglet *About* dans le drawer ; vérifier responsive mobile/web.                                                             |
+| **9**  | `lib/mobile/contact_mobile.dart` <br> `lib/web/contact_web.dart` | Section “Contact” + formulaires.<br>Connexions à Firestore via `AddDataFirestore`.                                                                                                                                                                                 | Remplir le formulaire ➜ message “Success”. Dans Firebase console, un nouveau document doit apparaître.                                    |
+| **10** | `lib/mobile/works_mobile.dart` <br> `lib/web/works_web.dart`     | Galerie de projets : images + descriptions.                                                                                                                                                                                                                        | Cliquer sur l’onglet *Works* : cartes animées visibles, textes lisibles.                                                                  |
+| **11** | `lib/common/blog.dart`                                           | Liste des articles Firestore (\<collection `articles`>).<br>Widget `BlogPost` extensible.                                                                                                                                                                          | Ajouter 1-2 documents *title/body* dans Firestore ➜ la liste s’affiche en live-reload.                                                    |
+| **12** | **Tests finaux**                                                 | – Navigation fluide entre toutes les routes.<br>– Aucune erreur dans la console.<br>– Hot-reload fonctionne.<br>– Formulaires valident les champs requis.                                                                                                          | Faire une **revue de code + démonstration** : chaque étudiant présente, puis push sur Git ; run CI (`flutter test`, `flutter analyze`).   |
+
+---
+
+### Conseils pédagogiques supplémentaires
+
+1. **Découpage progressif**
+   Abordez chaque fichier comme un mini-projet : copier le squelette, expliquer chaque import, lancer, observer ; *jamais* plus d’un écran de code avant de tester.
+
+2. **Validation automatisée**
+   Proposez un script simple (GitHub Actions ou `melos run lint:test`) qui exécute : `flutter analyze`, `flutter test`, `flutter build web`. Les étudiants voient rouge/vert après chaque push.
+
+3. **Debug visuel**
+   Encouragez l’usage de *Flutter DevTools* : Timeline (FPS de l’animation), Inspect Widget (vérifier paddings).
+
+4. **Journal de bord**
+   Demandez à chacun de tenir un fichier `progress.md` : *Étape accomplie / Problème rencontré / Solution*.
+
+Suivez cet ordre, testez à chaque sous-étape, et les débutants garderont toujours une application fonctionnelle tout en apprenant les bases de Flutter, Firebase et du responsive design.
+
+
+
+
+
+
+
+
+
+
+<br/>
+<br/>
+
+
+
+## Ordre précis des ajouts de code
+
+> Objectif pédagogique : les débutants voient **rapidement** quelque chose s’afficher, puis enrichissent pas-à-pas. On différera Firebase jusqu’à ce que l’UI soit solide.
+
+| Rang   | Ce qu’on **crée ou modifie**                                                                                                                                                                                                           | Pourquoi maintenant ?                                                      | À tester immédiatement                                                                              |
+| ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| **0**  | `pubspec.yaml` (dépendances déjà listées) + dossier `assets/`                                                                                                                                                                          | Base du projet                                                             | `flutter pub get` doit réussir ; `flutter run` sur un projet vide affiche l’écran blanc par défaut. |
+| **1**  | `lib/main.dart` **minimal**  <br>`dart<br>void main() => runApp(const MaterialApp(home: Scaffold()));<br>`                                                                                                                             | Vérifier que Flutter compile sur chaque poste avant d’écrire plus de code. | `flutter run` sur Chrome/émulateur : écran vide blanc sans erreurs.                                 |
+| **2**  | `lib/routes.dart` **squelette**  (classe `Routes` avec `generateRoute` renvoyant toujours un `Placeholder`)                                                                                                                            | Introduire la notion de navigation **avant** de créer des pages réelles.   | Passer `initialRoute: '/about'` → placeholder visible.                                              |
+| **3**  | `lib/components.dart`  <br>– `Sans`, `SansBold`, `AbelCustom` <br>– `AnimatedCard` (image fixe)                                                                                                                                        | Avoir les widgets réutilisables dès le départ pour éviter la duplication.  | Placer `AnimatedCard` dans `home:` et observer l’animation.                                         |
+| **4**  | **Pages d’accueil statiques**  <br>`landing_page_mobile.dart` et `landing_page_web.dart` **sans aucune logique** (texte et images en dur)                                                                                              | Les étudiants voient tout de suite la différence mobile/web.               | Dans Chrome (largeur > 800) vs. smartphone (largeur < 800).                                         |
+| **5**  | Compléter `Routes.generateRoute`  pour choisir la bonne page selon la largeur (code déjà fourni).                                                                                                                                      | Toute l’app pourra maintenant changer de section.                          | Cliquer sur les routes (`/works`, `/about`…) en changeant le navigateur.                            |
+| **6**  | `DrawersWeb`, `DrawersMobile`, `TabsWeb`, `TabsMobile`  (navigations)                                                                                                                                                                  | Permettre de **bouger** dans l’app avant d’ajouter du contenu dynamique.   | Ouvrir/fermer le drawer, cliquer sur *Blog* etc.                                                    |
+| **7**  | **Sections statiques restantes**  <br>`about_mobile.dart`, `about_web.dart`, `works_*`, `contact_*` **sans formulaire**                                                                                                                | L’UI ressemble déjà au produit final → motivation.                         | Scroll fluide, pas d’exception de layout.                                                           |
+| **8**  | **Formulaires** (classe `TextForm`, validation locale) mais **sans** appel Firestore : <br>`ContactFormMobile`, `ContactFormWeb` ➜ afficher simplement un `SnackBar("OK")`                                                             | Les débutants apprennent la validation sans dépendances réseau.            | Laisser un champ vide → message d’erreur ; remplir → SnackBar.                                      |
+| **9**  | **Intégration Firebase CLI**  (exécuter `flutterfire configure`) <br>génère `firebase_options.dart` puis **mettre à jour `main.dart`** :  `dart<br>await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);<br>` | Maintenant que l’IU est stable, on introduit Firestore.                    | L’app compile toujours (pas encore de lecture/écriture).                                            |
+| **10** | Classe utilitaire `AddDataFirestore` + remplacement du `SnackBar` par l’appel `addResponse()` dans les formulaires                                                                                                                     | On voit une **écriture** dans Firebase.                                    | Remplir le formulaire → document dans collection `messages`.                                        |
+| **11** | `Blog` : remplacer la liste factice par  `StreamBuilder<QuerySnapshot>` (code déjà fourni).                                                                                                                                            | Introduction à la **lecture** temps-réel.                                  | Ajouter un doc dans `articles` → l’app se met à jour automatiquement.                               |
+| **12** | Derniers détails : `AnimatedCard.reverse`, images réelles, mise au point responsive, suppression des warnings `flutter analyze`                                                                                                        | Fignoler et consolider.                                                    | Tour complet de l’app sur mobile + web, aucune erreur console.                                      |
+
+### Réponse à ta question : Firebase on le laisse à la fin ?
+
+Oui : **étapes 9 à 11 seulement**.
+Avant cela, les étudiants travaillent hors-ligne :
+
+* UI statique → navigation → validation locale.
+* Une fois à l’aise, on active Firebase (écriture), puis la lecture temps-réel pour le blog.
+
+
+<br/>
+<br/>
 
 
 
