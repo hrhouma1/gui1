@@ -1,28 +1,3 @@
-# Arborescence et code 
-
-```
-paulina_knop/
-├── lib/
-│   ├── common/
-│   │   └── blog.dart
-│   ├── mobile/
-│   │   ├── about_mobile.dart
-│   │   ├── contact_mobile.dart
-│   │   ├── landing_page_mobile.dart
-│   │   └── works_mobile.dart
-│   ├── web/
-│   │   ├── about_web.dart
-│   │   ├── contact_web.dart
-│   │   ├── landing_page_web.dart
-│   │   └── works_web.dart
-│   ├── components.dart
-│   ├── firebase_options.dart
-│   ├── main.dart
-│   └── routes.dart
-```
-
-
-
 
 
 <br/>
@@ -1012,4 +987,35 @@ Une fois ces quatre fichiers maîtrisés et fonctionnels, on pourra :
 * Étape 6 : placer les *Drawers* et les *Tabs*.
 * Étape 7 : insérer les formulaires hors-ligne.
 * Étape 9 +: brancher Firebase (écriture, puis lecture dans le blog).
+
+
+
+<br/>
+<br/>
+
+# Annexe 1 - Arborescence
+
+```
+paulina_knop/
+├── lib/
+│   ├── common/
+│   │   └── blog.dart
+│   ├── mobile/
+│   │   ├── about_mobile.dart
+│   │   ├── contact_mobile.dart
+│   │   ├── landing_page_mobile.dart
+│   │   └── works_mobile.dart
+│   ├── web/
+│   │   ├── about_web.dart
+│   │   ├── contact_web.dart
+│   │   ├── landing_page_web.dart
+│   │   └── works_web.dart
+│   ├── components.dart
+│   ├── firebase_options.dart
+│   ├── main.dart
+│   └── routes.dart
+```
+
+
+
 
