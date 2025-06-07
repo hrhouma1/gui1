@@ -1,12 +1,4 @@
-
-
-<br/>
-<br/>
-
-
-
-
-### Plan de distribution du code — Application `paulina_knop`
+# Plan 
 
 Tout est découpé à l'application, on avance fichier par fichier, chapitre par chapitre.
 
@@ -24,7 +16,10 @@ Tout est découpé à l'application, on avance fichier par fichier, chapitre par
 | 9        | Ajustements responsives, nettoyage et assets                                                                                                                                                      | contrôle visuel                                                                                                                               | liste de vérifications           |
 | 10       | Déploiement web (`flutter build web`, `firebase hosting:deploy`) et génération APK                                                                                                                | -                                                                                                                                             | commandes terminal               |
 
----
+
+<br/>
+<br/>
+<br/>
 
 #### Contenu exact de chaque chapitre
 
