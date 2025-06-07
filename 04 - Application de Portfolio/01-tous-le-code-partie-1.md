@@ -652,6 +652,511 @@ Une fois ces quatre fichiers maîtrisés et fonctionnels, on pourra :
 <br/>
 
 
+
+## 5-A – `lib/mobile/about_mobile.dart`
+
+```dart
+// AboutMobile
+// ─────────────────────────────────────────────────────────────
+// Section “About me” pour les terminaux mobiles.
+//
+// • Page purement statique (aucune requête réseau)
+// • Utilise les widgets utilitaires présents dans components.dart
+// • S’insère via Routes.generateRoute (case '/about' + mobile)
+
+import 'package:flutter/material.dart';
+import '../components.dart';
+
+class AboutMobile extends StatelessWidget {
+  const AboutMobile({super.key});
+
+  @override
+  Widget build(BuildContext context) => SafeArea(
+    child: Scaffold(
+      extendBodyBehindAppBar: true,
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        iconTheme: const IconThemeData(size: 35, color: Colors.black),
+      ),
+      endDrawer: const DrawersMobile(),
+
+      /// ---------------------- CONTENU ----------------------
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        child: ListView(
+          children: [
+
+            /// --------- Photo de profil circulaire ---------
+            const CircleAvatar(
+              radius: 117, backgroundColor: Colors.tealAccent,
+              child: CircleAvatar(
+                radius: 113, backgroundColor: Colors.black,
+                child: CircleAvatar(
+                  radius: 110, backgroundColor: Colors.white,
+                  backgroundImage: AssetImage('assets/profile2-circle.png'),
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 20),
+
+            /// --------- Texte principal ---------
+            const SansBold('About me', 35),
+            const SizedBox(height: 10),
+            const Sans("Hello! I'm Paulina Knop. I specialize in Flutter development", 15),
+            const Sans("I strive to deliver astounding performance with top-notch security across Android, iOS, Web, Mac & Linux.", 15),
+            const SizedBox(height: 15),
+
+            /// --------- Compétences ---------
+            Wrap(
+              spacing: 7, runSpacing: 7,
+              children: [
+                tealContainer('Flutter'),
+                tealContainer('Firebase'),
+                tealContainer('Android'),
+                tealContainer('Windows'),
+              ],
+            ),
+
+            const SizedBox(height: 40),
+
+            /// --------- Services détaillés ---------
+            const _ServiceCard(image: 'assets/webL.png', title: 'Web development'),
+            const _ServiceCard(image: 'assets/app.png', title: 'App development', reverse: true),
+            const _ServiceCard(image: 'assets/firebase.png', title: 'Back-end development'),
+          ],
+        ),
+      ),
+    ),
+  );
+}
+
+/// Petit helper interne pour éviter la répétition.
+class _ServiceCard extends StatelessWidget {
+  final String image;
+  final String title;
+  final bool reverse;
+  const _ServiceCard({
+    required this.image,
+    required this.title,
+    this.reverse = false,
+  });
+
+  @override
+  Widget build(BuildContext context) => Column(
+    crossAxisAlignment: CrossAxisAlignment.center,
+    children: [
+      const SizedBox(height: 20),
+      AnimatedCard(imagePath: image, width: 200, reverse: reverse),
+      const SizedBox(height: 30),
+      SansBold(title, 20),
+      const SizedBox(height: 10),
+      const Sans('...', 15),   // Placeholder text, libre à vous de l’allonger
+    ],
+  );
+}
+```
+
+<br/>
+<br/>
+<br/>
+
+## 5-B – `lib/web/about_web.dart`
+
+```dart
+// AboutWeb
+// ─────────────────────────────────────────────────────────────
+// Version “desktop” (large écran) de la page About.
+//
+// Particularités :
+//   • Mise en page Row (texte à gauche, avatar à droite).
+//   • Trois sous-sections services avec AnimatedCard.
+
+import 'package:flutter/material.dart';
+import '../components.dart';
+
+class AboutWeb extends StatelessWidget {
+  const AboutWeb({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+
+    return Scaffold(
+      drawer: const DrawersWeb(),
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        elevation: 0,
+        iconTheme: const IconThemeData(size: 25, color: Colors.black),
+        title: const TabsWebList(),
+      ),
+
+      /// ---------------------- CONTENU ----------------------
+      body: ListView(
+        children: [
+
+          /// --------- Bandeau “À propos de moi” ---------
+          SizedBox(
+            height: 500,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+
+                /// Texte
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const SansBold('À propos de moi', 40),
+                    const SizedBox(height: 15),
+                    const Sans("Bonjour ! Je suis Paulina Knop, spécialiste Flutter.", 15),
+                    const Sans("Objectif : performance & sécurité sur toutes plateformes.", 15),
+                    const SizedBox(height: 10),
+                    Row(
+                      children: [
+                        tealContainer('Flutter'),
+                        const SizedBox(width: 7),
+                        tealContainer('Firebase'),
+                        const SizedBox(width: 7),
+                        tealContainer('Android'),
+                        const SizedBox(width: 7),
+                        tealContainer('iOS'),
+                        const SizedBox(width: 7),
+                        tealContainer('Windows'),
+                      ],
+                    ),
+                  ],
+                ),
+
+                /// Avatar
+                const CircleAvatar(
+                  radius: 147, backgroundColor: Colors.tealAccent,
+                  child: CircleAvatar(
+                    radius: 143, backgroundColor: Colors.black,
+                    child: CircleAvatar(
+                      radius: 140, backgroundColor: Colors.white,
+                      backgroundImage: AssetImage('assets/profile2-circle.png'),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+
+          const SizedBox(height: 20),
+
+          /// --------- Service : Web ---------
+          _serviceRow(
+            width, leftCard: true,
+            image: 'assets/webL.png', title: 'Développement web',
+            text: "Applications web haute performance, fully responsive.",
+          ),
+
+          /// --------- Service : Apps ---------
+          _serviceRow(
+            width, leftCard: false,
+            image: 'assets/app.png', title: 'Développement d’applications',
+            text: "Applications mobiles natives via Flutter pour Android & iOS.",
+          ),
+
+          /// --------- Service : Back-end ---------
+          _serviceRow(
+            width, leftCard: true,
+            image: 'assets/firebase.png', title: 'Back-end sécurisé',
+            text: "Stack Firebase : auth, hosting, storage, functions…",
+          ),
+
+          const SizedBox(height: 40),
+        ],
+      ),
+    );
+  }
+
+  /// Helper → évite la répétition des trois blocs
+  Widget _serviceRow(double width,
+      {required bool leftCard,
+       required String image,
+       required String title,
+       required String text}) {
+
+    final card = AnimatedCard(imagePath: image, height: 250, width: 250,
+                              reverse: !leftCard);
+    final description = SizedBox(
+      width: width / 3,
+      child: Column(children: [
+        SansBold(title, 30),
+        const SizedBox(height: 15),
+        Sans(text, 15),
+      ]),
+    );
+
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: leftCard ? [card, description] : [description, card],
+    );
+  }
+}
+```
+
+<br/>
+<br/>
+<br/>
+
+## 6-A – `lib/mobile/works_mobile.dart`
+
+```dart
+// WorksMobile
+// ─────────────────────────────────────────────────────────────
+// Affiche un « portfolio » sur mobile.
+//   – Entête image + titre “Works”
+//   – Une carte animée pointant vers un projet (ici Portfolio)
+
+import 'package:flutter/material.dart';
+import '../components.dart';
+
+class WorksMobile extends StatelessWidget {
+  const WorksMobile({super.key});
+
+  @override
+  Widget build(BuildContext context) => SafeArea(
+    child: Scaffold(
+      extendBodyBehindAppBar: true,
+      backgroundColor: Colors.white,
+      endDrawer: const DrawersMobile(),
+      body: NestedScrollView(
+        headerSliverBuilder: (ctx, _) => [
+          SliverAppBar(
+            expandedHeight: 400,
+            backgroundColor: Colors.white,
+            iconTheme: const IconThemeData(size: 35, color: Colors.black),
+            flexibleSpace: FlexibleSpaceBar(
+              background: Image.asset('assets/works.jpg', fit: BoxFit.cover),
+            ),
+          ),
+        ],
+        body: ListView(
+          children: [
+            const SizedBox(height: 20),
+            const SansBold('Works', 35),
+            const SizedBox(height: 20),
+
+            /// Exemple de projet
+            const AnimatedCard(
+              imagePath: 'assets/portfolio_screenshot.PNG',
+              height: 150, width: 300, fit: BoxFit.contain,
+            ),
+            const SizedBox(height: 30),
+            const SansBold('Portfolio', 20),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              child: Sans(
+                'Application déployée sur Android, iOS et Web. '
+                'UI Flutter + back-end Firebase.',
+                15,
+              ),
+            ),
+            const SizedBox(height: 20),
+          ],
+        ),
+      ),
+    ),
+  );
+}
+```
+
+
+<br/>
+<br/>
+<br/>
+
+## 6-B – `lib/web/works_web.dart`
+
+```dart
+// WorksWeb
+// ─────────────────────────────────────────────────────────────
+// Même contenu que WorksMobile mais en layout “desktop”
+// avec description et capture côte à côte.
+
+import 'package:flutter/material.dart';
+import '../components.dart';
+
+class WorksWeb extends StatelessWidget {
+  const WorksWeb({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+
+    final width = MediaQuery.of(context).size.width;
+
+    return Scaffold(
+      drawer: const DrawersWeb(),
+      backgroundColor: Colors.white,
+      body: NestedScrollView(
+        headerSliverBuilder: (_, __) => [
+          SliverAppBar(
+            expandedHeight: 500,
+            backgroundColor: Colors.white,
+            iconTheme: const IconThemeData(size: 25, color: Colors.black),
+            flexibleSpace: FlexibleSpaceBar(
+              background: Image.asset('assets/works.jpg',
+                  fit: BoxFit.cover, filterQuality: FilterQuality.high),
+            ),
+            title: const TabsWebList(),
+          ),
+        ],
+        body: ListView(
+          children: [
+            const SizedBox(height: 30),
+            const SansBold('Works', 40),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+
+                /// Capture
+                const AnimatedCard(
+                  imagePath: 'assets/portfolio_screenshot.PNG',
+                  height: 200, width: 300,
+                ),
+
+                /// Description
+                SizedBox(
+                  width: width / 3,
+                  child: Column(
+                    children: const [
+                      SansBold('Portfolio', 30),
+                      SizedBox(height: 15),
+                      Sans(
+                        'Déployé sur Android, iOS et Web ; UI Flutter + Firebase back-end.',
+                        15,
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 40),
+          ],
+        ),
+      ),
+    );
+  }
+}
+```
+
+<br/>
+<br/>
+<br/>
+
+## 7-A – `lib/mobile/contact_mobile.dart`
+
+```dart
+// ContactMobile
+// ─────────────────────────────────────────────────────────────
+// Contient uniquement l’en-tête + le formulaire réutilisable
+// `ContactFormMobile` défini dans components.dart
+
+import 'package:flutter/material.dart';
+import '../components.dart';
+
+class ContactMobile extends StatelessWidget {
+  const ContactMobile({super.key});
+
+  @override
+  Widget build(BuildContext context) => SafeArea(
+    child: Scaffold(
+      extendBodyBehindAppBar: true,
+      backgroundColor: Colors.white,
+      endDrawer: const DrawersMobile(),
+      body: NestedScrollView(
+        headerSliverBuilder: (_, __) => [
+          SliverAppBar(
+            expandedHeight: 400,
+            backgroundColor: Colors.white,
+            iconTheme: const IconThemeData(size: 35, color: Colors.black),
+            flexibleSpace: FlexibleSpaceBar(
+              background: Image.asset('assets/contact_image.jpg',
+                  fit: BoxFit.cover),
+            ),
+          ),
+        ],
+        body: const SingleChildScrollView(
+          padding: EdgeInsets.symmetric(vertical: 25),
+          child: ContactFormMobile(),
+        ),
+      ),
+    ),
+  );
+}
+```
+
+<br/>
+<br/>
+<br/>
+
+## 7-B – `lib/web/contact_web.dart`
+
+```dart
+// ContactWeb
+// ─────────────────────────────────────────────────────────────
+// Version desktop du formulaire de contact (ContactFormWeb)
+
+import 'package:flutter/material.dart';
+import '../components.dart';
+
+class ContactWeb extends StatelessWidget {
+  const ContactWeb({super.key});
+
+  @override
+  Widget build(BuildContext context) => Scaffold(
+    drawer: const DrawersWeb(),
+    backgroundColor: Colors.white,
+    body: NestedScrollView(
+      headerSliverBuilder: (_, __) => [
+        SliverAppBar(
+          expandedHeight: 500,
+          backgroundColor: Colors.white,
+          iconTheme: const IconThemeData(size: 25, color: Colors.black),
+          flexibleSpace: FlexibleSpaceBar(
+            background: Image.asset('assets/contact_image.jpg',
+                fit: BoxFit.cover, filterQuality: FilterQuality.high),
+          ),
+          title: const TabsWebList(),
+        ),
+      ],
+      body: const SingleChildScrollView(child: ContactFormWeb()),
+    ),
+  );
+}
+```
+
+
+
+### Vérifications immédiates
+
+1. **Navigation** : depuis la Landing page mobile, ouvrez le drawer → appuyez sur **About** ou **Works** pour vérifier l’affichage correct.
+2. **Responsive** : réduisez/agrandissez le navigateur autour de 800 px ; observez le basculement mobile/web.
+3. **Formulaires** : validation côté client (champ vide) fonctionne déjà, mais l’envoi vers Firestore ne marchera qu’après la future étape Firebase (numéro 9).
+
+Vous disposez maintenant des codes **1 → 7-B**.
+La prochaine étape (#8) ajoutera `common/blog.dart` (lecture Firestore) puis #9 activera réellement Firebase (clé + règles).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <br/>
 <br/>
 <br/>
