@@ -1,0 +1,140 @@
+
+ Objectif : 
+ 
+ - Créer une application Flutter utilisant Dio pour récupérer les informations d'utilisateur depuis l'API GitHub. 
+ 
+ - Commençons par créer une nouvelle application Flutter avec Dio pour récupérer les informations d'utilisateur GitHub. 
+ - Commençons par créer la structure de l'application Flutter.
+		
+		flutter create github_user_app
+		cd github_user_app
+
+Maintenant, ajoutons la dépendance Dio au projet Flutter :
+
+		flutter pub add dio
+
+Sinon, vérifions le contenu du répertoire et ajoutons manuellement la dépendance :
+
+		*******************************************
+		(FICHIER 1) ==­>  pubspec.yaml
+		*******************************************
+
+
+	- Commençons par créer le modèle de données pour l'utilisateur GitHub
+	
+		*******************************************
+		(FICHIER 2) ==­> github_user.dart
+		*******************************************
+
+	- Maintenant, créons le service qui utilise Dio pour récupérer les informations d'utilisateur depuis l'API GitHub :
+
+		*******************************************
+		(FICHIER 3) ==­>  github_service.dart
+		*******************************************
+
+	- Maintenant, créons l'interface utilisateur principale de l'application :
+
+		*******************************************
+		(FICHIER 4) ==­>  home_screen.dart
+		*******************************************
+
+	- Maintenant, créons l'écran principal de l'application :
+
+		*******************************************
+		(FICHIER 5) ==­>  main.dart
+		*******************************************
+
+	- Maintenant, créons l'écran de détails de l'utilisateur :
+
+		*******************************************
+		(FICHIER 6) ==­> user_detail_screen.dart
+		*******************************************
+
+
+
+	- Maintenant, mettons à jour les dépendances et testons l'application :
+
+
+		flutter pub get
+
+	- Créons également un fichier README pour documenter l'application :
+	
+		*******************************************
+		(FICHIER 1) ==­>  pubspec.yaml
+		*******************************************
+
+	-	Enfin, testons si l'application compile correctement :
+
+		flutter analyze
+
+	- Testons maintenant si l'application peut démarrer :
+
+		flutter test
+
+Excellent ! Tous les tests passent ! 
+Maintenant, créons un fichier de structure du projet pour faciliter la navigation :
+
+		###  Structure du projet
+
+		```
+		github_user_app/
+		├── lib/
+		│   ├── models/
+		│   │   └── github_user.dart          # Modèle de données
+		│   ├── services/
+		│   │   └── github_service.dart       # Service Dio pour l'API GitHub
+		│   ├── screens/
+		│   │   ├── home_screen.dart          # Écran principal de recherche
+		│   │   └── user_detail_screen.dart   # Détails de l'utilisateur
+		│   └── main.dart                     # Point d'entrée
+		├── test/
+		│   ├── github_service_test.dart      # Tests du service
+		│   └── widget_test.dart              # Tests de l'interface
+		├── pubspec.yaml                      # Dépendances (incluant Dio)
+		└── README.md                         # Documentation complète
+		```
+
+
+
+##  Application Flutter GitHub User Info - Complète !
+
+###  Fonctionnalités principales
+- Recherche d'utilisateurs GitHub avec Dio
+- Une requête HTTP par utilisateur comme spécifié 
+- Interface moderne avec Material 3
+- Écran de détails complet pour chaque utilisateur
+- Gestion d'erreurs robuste
+- Tests unitaires inclus
+
+
+
+###  API GitHub utilisée
+- Endpoint : `https://api.github.com/users/{username}`
+- Principe : Une requête HTTP individuelle par utilisateur
+- Bibliothèque : Dio avec intercepteurs et gestion d'erreurs
+
+###  Comment utiliser
+1. Lancer l'app : `flutter run`
+2. Rechercher un utilisateur : entrez un nom d'utilisateur GitHub
+3. Voir les détails : cliquez sur un utilisateur pour plus d'infos
+4. Exemples : utilisez le bouton "Exemples" pour des utilisateurs populaires
+
+###  Tests fonctionnels
+Tous les tests passent et démontrent :
+-  Récupération d'utilisateurs valides (ex: `octocat`, `torvalds`)
+-  Gestion des utilisateurs inexistants
+-  Requêtes multiples (une par utilisateur)
+-  Parsing correct des données JSON
+-  Interface utilisateur fonctionnelle
+
+###  Exemples d'utilisateurs inclus
+- `torvalds` - Linus Torvalds (créateur de Linux)
+- `gaearon` - Dan Abramov (équipe React)  
+- `sindresorhus` - Développeur prolifique
+- `addyosmani` - Google Chrome team
+- `tj` - Créateur d'Express.js
+
+L'application est prête à être utilisée et démontre parfaitement l'utilisation de Dio avec l'API GitHub.
+
+
+
