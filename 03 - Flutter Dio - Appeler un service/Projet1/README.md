@@ -1,6 +1,17 @@
 # Architecture MVC simple
 
 ```
+git clone https://github.com/hrhouma1/flutter-01-projet01.git
+flutter pub get
+flutter doctor
+flutter analyze
+flutter test
+flutter run
+```
+
+# Architecture MVC simple
+
+```
 lib/
 ├── main.dart
 ├── models/
