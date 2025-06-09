@@ -124,7 +124,7 @@ class _UsersPageState extends State<UsersPage> {
 <br/>
 <br/>
 
-# Annxe 1 - Exercice formatif 1 - Projet Flutter – Chargement d'utilisateurs via une API avec Dio
+# Annexe 1 - Exercice formatif 1 - Projet Flutter – Chargement d'utilisateurs via une API avec Dio
 
 
 
