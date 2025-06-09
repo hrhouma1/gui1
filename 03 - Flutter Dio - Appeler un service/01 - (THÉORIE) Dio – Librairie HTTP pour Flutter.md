@@ -46,3 +46,9 @@ void main() async {
 | Envoi de fichiers            | Basique        | Oui           |
 | Annulation de requêtes       | Non            | Oui           |
 
+
+# Évaluation formative de recherche :
+
+- C'est qui les Intercepteurs ?
+
+...................................................................
