@@ -121,10 +121,10 @@ class _UsersPageState extends State<UsersPage> {
 
 
 
-
+<br/>
 <br/>
 
-# Exercice formatif 1 - Projet Flutter – Chargement d'utilisateurs via une API avec Dio
+# Annxe 1 - Exercice formatif 1 - Projet Flutter – Chargement d'utilisateurs via une API avec Dio
 
 
 
@@ -284,15 +284,12 @@ return Scaffold(
 
 
 
-
+<br/>
 <br/>
 
-# Correction exercice formatif 1
+# Annexe 2 - Pipeline
 
 
-Voici une **explication pédagogique complète** de ce projet Flutter utilisant la bibliothèque **Dio** pour effectuer un appel API. Chaque partie est commentée comme le ferait un enseignant pour bien guider ses étudiants débutants.
-
----
 
 <h1 id="flutter-pipeline-dio">0. Pipeline de lancement de l'application Flutter</h1>
 
@@ -300,7 +297,7 @@ Voici une **explication pédagogique complète** de ce projet Flutter utilisant 
 
 Comprendre qui appelle quoi dans le code, et dans quel ordre les composants s'enchaînent.
 
----
+
 
 ```dart
 main() 
@@ -316,7 +313,7 @@ initState()  // méthode appelée automatiquement dès l’affichage
 fetchUsers()  // lance l'appel API avec Dio
 ```
 
----
+
 
 ### Organigramme des classes et méthodes
 
@@ -341,7 +338,7 @@ _UsersPageState (State<UsersPage>)
              - ListView.builder()
 ```
 
----
+
 
 <h1 id="dynamic-keyword">1. Le terme `dynamic`</h1>
 
@@ -354,7 +351,7 @@ List<dynamic> _users = [];
 * Comme ces objets n’ont pas encore de type défini, on les stocke dans une liste dynamique.
 * Plus tard, on pourrait créer une classe `User` pour mieux typer les données.
 
----
+
 
 <h1 id="initstate-explained">2. La méthode `initState()`</h1>
 
@@ -371,7 +368,7 @@ void initState() {
 * `super.initState()` appelle la méthode parente (obligatoire).
 * Ensuite, on appelle `fetchUsers()` pour charger les données depuis l’API.
 
----
+
 
 <h1 id="future-async">3. La méthode `fetchUsers()` avec `Future<void>`</h1>
 
@@ -385,7 +382,7 @@ Future<void> fetchUsers() async {
 * Le mot-clé `async` permet d’utiliser `await` à l’intérieur.
 * L’utilisation de `await` suspend l’exécution jusqu’à ce que le résultat de la requête soit disponible, **sans bloquer l'interface**.
 
----
+
 
 <h1 id="await-dio-get">4. Requête avec `Dio`</h1>
 
@@ -400,7 +397,7 @@ final response = await _dio.get(url);
   * `response.data` → les données récupérées (ici, des utilisateurs)
   * `response.statusCode` → le code HTTP (200, 404, etc.)
 
----
+
 
 <h1 id="build-scaffold-listview">5. Construction de la vue avec `Scaffold` et `ListView.builder`</h1>
 
@@ -439,4 +436,95 @@ return Scaffold(
       * `leading` → un avatar circulaire avec la première lettre du nom.
       * `title` → le nom complet.
       * `subtitle` → l’email.
+
+
+
+<br/>
+<br/>
+
+
+
+# Annexe 3 - ListView\.builder – Alternatives à `ListTile`
+
+## Contexte
+
+Lorsque vous utilisez un `ListView.builder`, vous avez deux choix :
+
+1. Utiliser le widget intégré `ListTile` (rapide et stylisé).
+2. Construire manuellement chaque ligne avec d'autres widgets (`Row`, `Column`, `Container`, etc.).
+
+
+
+## Exemple standard avec `ListTile`
+
+```dart
+ListView.builder(
+  itemCount: _users.length,
+  itemBuilder: (context, index) {
+    final user = _users[index];
+    return ListTile(
+      leading: CircleAvatar(child: Text(user['name'][0])),
+      title: Text(user['name']),
+      subtitle: Text(user['email']),
+      trailing: Icon(Icons.arrow_forward),
+      onTap: () {
+        print('Utilisateur cliqué');
+      },
+    );
+  },
+);
+```
+
+
+
+## Exemple équivalent sans `ListTile`
+
+```dart
+ListView.builder(
+  itemCount: _users.length,
+  itemBuilder: (context, index) {
+    final user = _users[index];
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Row(
+        children: [
+          CircleAvatar(child: Text(user['name'][0])),
+          SizedBox(width: 12),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(user['name'], style: TextStyle(fontWeight: FontWeight.bold)),
+                Text(user['email']),
+              ],
+            ),
+          ),
+          Icon(Icons.arrow_forward),
+        ],
+      ),
+    );
+  },
+);
+```
+
+
+
+## Tableau comparatif des composants
+
+| Élément visuel      | Avec `ListTile`              | Sans `ListTile` (équivalent manuel)                |
+| ------------------- | ---------------------------- | -------------------------------------------------- |
+| Avatar à gauche     | `leading: CircleAvatar(...)` | `CircleAvatar(...)` dans un `Row`                  |
+| Texte principal     | `title: Text(...)`           | `Text(...)` dans un `Column`                       |
+| Texte secondaire    | `subtitle: Text(...)`        | `Text(...)` en dessous du titre                    |
+| Icône à droite      | `trailing: Icon(...)`        | `Icon(...)` à droite dans le `Row`                 |
+| Espacement / layout | Géré automatiquement         | `Row`, `Column`, `SizedBox`, `Expanded`, `Padding` |
+| Action au clic      | `onTap: () { ... }`          | `GestureDetector` ou `InkWell` autour du `Row`     |
+
+
+
+## Conclusion
+
+* Utilisez `ListTile` si vous souhaitez gagner du temps et rester dans le style Material Design.
+* Utilisez `Row` + `Column` si vous avez besoin d’un design personnalisé ou non standard.
+
 
