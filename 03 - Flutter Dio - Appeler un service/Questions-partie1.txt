@@ -1,0 +1,69 @@
+flutter --version
+flutter doctor
+flutter create demodio1
+flutter pub get
+flutter pub get dio 5.4.0
+flutter analyze
+flutter test
+flutter run
+
+----------------------------------------
+0. Expliquez la pipeline (qui appelle qui ?)
+----------------------------------------
+
+main() ==> MyApp() ==> UsersPage() ==> Crée un état  _UsersPageState(); ==> fetchUsers(); 
+
+
+Représentez l'organigramme des méthodes par classe
+
+
+----------------------------------------
+1. Le terme dynamic ?
+----------------------------------------
+
+ List<dynamic> _users = [];
+
+
+----------------------------------------
+2. Expliquez cette partie 
+----------------------------------------
+
+ @override
+  void initState() {
+    super.initState();
+    fetchUsers();
+  }
+
+
+----------------------------------------
+3. Expliquez 
+----------------------------------------
+
+Future<void> fetchUsers() async {
+
+----------------------------------------
+4. Expliquez : 
+----------------------------------------
+
+final response = await _dio.get(url);
+
+
+----------------------------------------
+5. Expliquez cette partie 
+----------------------------------------
+
+
+return Scaffold(
+      appBar: AppBar(title: const Text('Utilisateurs')),
+      body: ListView.builder(
+        itemCount: _users.length,
+        itemBuilder: (context, index) {
+          final user = _users[index];
+          return ListTile(
+            leading: CircleAvatar(child: Text(user['name'][0])),
+            title: Text(user['name']),
+            subtitle: Text(user['email']),
+          );
+        },
+      ),
+    );
