@@ -527,4 +527,17 @@ ListView.builder(
 * Utilisez `ListTile` si vous souhaitez gagner du temps et rester dans le style Material Design.
 * Utilisez `Row` + `Column` si vous avez besoin d’un design personnalisé ou non standard.
 
+<br/>
+<br/>
+
+# Annexe 4 (Exercice) 
+
+- Modifiez le code pour déclanchez l'appel API avec un clique sur un bouton !
+
+<br/>
+<br/>
+
+# Annexe 5 (Exercice) 
+
+- Utilisez la deuxième méthode pour afficher un élément unitaire alternativement à la première méthode qui consiste à utiliser un ListTile intégré.
 
