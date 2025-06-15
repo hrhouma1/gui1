@@ -8,9 +8,24 @@
 <br/>
 <br/>
 
-## 🌟 Projets Flutter à explorer
+
+## 🌟 Projets Flutter GitHub
 
 - 🔗 [Dashatar App (par sagnik150699)](https://github.com/sagnik150699/my_dashatar_app)
 - 🔗 [Paulina Knop (projet Flutter complet)](https://github.com/paulinaknop/paulina_knop)
 - 🔗 [Budget App – Projet Complet (par sagnik150699)](https://github.com/sagnik150699/budget_app_complete_project)
+
+---
+
+## 🎵 Packages Flutter utiles
+
+- 🎧 [audioplayers (pub.dev)](https://pub.dev/packages/audioplayers)
+- 📚 [Documentation officielle audioplayers](http://docs.flutter.dev/data-and-backend/state-mgmt/options)
+
+---
+
+## 🧠 Gestion d’état Flutter
+
+- 🛠️ [Flutter: State Management Options – Official Docs](http://docs.flutter.dev/data-and-backend/state-mgmt/options)
+```
 
