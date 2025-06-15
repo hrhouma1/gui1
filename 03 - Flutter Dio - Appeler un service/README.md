@@ -5,9 +5,12 @@
 - Projet 3 : projet qui utilise l'API de chatgpt (open AI) avec 4 sous modules.
 
 
+<br/>
+<br/>
 
+## 🌟 Projets Flutter à explorer
 
-- https://github.com/sagnik150699/my_dashatar_app
-- https://github.com/paulinaknop/paulina_knop
-- https://github.com/sagnik150699/budget_app_complete_project
+- 🔗 [Dashatar App (par sagnik150699)](https://github.com/sagnik150699/my_dashatar_app)
+- 🔗 [Paulina Knop (projet Flutter complet)](https://github.com/paulinaknop/paulina_knop)
+- 🔗 [Budget App – Projet Complet (par sagnik150699)](https://github.com/sagnik150699/budget_app_complete_project)
 
