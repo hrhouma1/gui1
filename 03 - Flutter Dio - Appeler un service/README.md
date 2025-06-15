@@ -31,3 +31,16 @@ https://github.com/sagnik150699/budget_app_complete_project
 - 🛠️ [Flutter: State Management Options – Official Docs](http://docs.flutter.dev/data-and-backend/state-mgmt/options)
 
 
+
+## 📁 Ressources partagées (Google Drive)
+
+- 🔗 [📂 Accéder au dossier Google Drive partagé](https://drive.google.com/drive/folders/1Fg5JXQvfMtNb6lqjohHtKVWWoC2ix3jm?usp=sharing)
+
+Ce dossier contient des documents, fichiers projet ou ressources complémentaires utiles à votre apprentissage ou collaboration Flutter.
+
+---
+
+## 🔗 Dossier partagé sur Google Drive
+
+[Ouvrir le dossier](https://drive.google.com/drive/folders/1Fg5JXQvfMtNb6lqjohHtKVWWoC2ix3jm?usp=sharing)
+
