@@ -1,1 +1,4 @@
-
+- Dio : Théorie + exercices 
+- Projet 1 : simple
+- Projet 2 : projet qui utilise l'API de chatgpt (open AI)
+- Projet 3 : CV paulina knop   
