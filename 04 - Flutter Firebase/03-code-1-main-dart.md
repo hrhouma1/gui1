@@ -184,3 +184,12 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 ```
+
+
+# Commandes à exécuter
+
+```
+flutter clean
+flutter pub get
+flutter run
+```
