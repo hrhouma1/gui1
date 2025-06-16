@@ -1,4 +1,4 @@
-### Ressources vidéo : Configurer Firebase & architecturer vos apps Flutter
+# 1 - Ressources vidéo : Configurer Firebase & architecturer vos apps Flutter
 
 | Sujet                                                                    | Lien                                                                                                                                                                                          |
 | ------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -11,7 +11,7 @@
 
 
 
-### Références tutoriels Flutter + Firebase
+# 2 - Références tutoriels Flutter + Firebase
 
 - **Complete Flutter App Using Flutter, Firebase & Provider – Recipe App** — *Eng. Mohamed Elsayed*  
   🎥 Durée : **1 h 57 min 32 s**  
@@ -32,4 +32,34 @@
 - **How to Setup Firebase for Flutter 2024 | Connect with Android, iOS & Web** — *CodeWorm – Shah Wali*  
   🎥 Durée : **17 min 04 s**  
   🔗 [Regarder sur YouTube](https://www.youtube.com/watch?v=FYcYVkTowRs)
+
+
+
+
+
+# 3 -  Tutoriels sur la configuration de Firebase avec Flutter
+
+- **How to Configure Firebase in Flutter : Step-by-Step Guide (2025 Edition)** — *Yaqoob Developer*  
+  🎥 Durée : **24 min 56 s**  
+  🔗 [Regarder sur YouTube](https://www.youtube.com/watch?v=T6B6sj6ZfqU)
+
+- **Firebase Setup in Flutter (Android) — Playlist complète** — *Yaqoob Developer*  
+  📚 Playlist : *"Firebase Setup in Android"*  
+  🔗 [Voir la playlist (vidéo #1)](https://www.youtube.com/watch?v=6PMax_4LkMs&list=PLOEXB48nQMqMLSmTl4map86azcuB2EqwI&index=1)
+
+- **Flutter Firebase Setup – Android & iOS (2024)** — *Auteur : inconnu (vérification requise)*  
+  🎥 Durée : **15 min 42 s**  
+  🔗 [Regarder sur YouTube](https://www.youtube.com/watch?v=Hf8qwqjRIdo)
+
+- **How to Setup Firebase for Flutter 2024 | Connect with Android, iOS & Web** — *CodeWorm – Shah Wali*  
+  🎥 Durée : **17 min 04 s**  
+  🔗 [Regarder sur YouTube](https://www.youtube.com/watch?v=FYcYVkTowRs)
+
+- **Comment configurer Firebase dans Flutter 2025** — *(Doublon du premier, probablement la même vidéo que bZNjqnI2xiM)*  
+  🎥 Durée : **24 min 56 s**  
+  🔗 [Regarder sur YouTube](https://www.youtube.com/watch?v=bZNjqnI2xiM)
+
+- **How to Connect Flutter Project with Firebase || Firebase Setup in Android** — *Chaîne : Androidist*  
+  🎥 Durée : **13 min 08 s**  
+  🔗 [Regarder sur YouTube](https://www.youtube.com/watch?v=6PMax_4LkMs)
 
