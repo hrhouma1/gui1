@@ -32,8 +32,20 @@ Les équipes doivent remettre un livrable composé de deux éléments :
 | **Interface 2 (Flutter)**             | Cohérente avec la première, complémentaire, claire et utile pour l’objectif global                       | /15    |
 | **Connexion à une source de données** | Appel à une API ou lecture depuis une base ou un fichier JSON local, correctement intégré et fonctionnel | /20    |
 | **Qualité du code**                   | Propreté, lisibilité, séparation logique des composants, respect des bonnes pratiques Flutter            | /15    |
-| **Présentation des choix et documentation**            | Explication des interfaces, justification des choix techniques, pertinence de la démarche                | /15    |
+| **Présentation des choix et documentation (commits Github)**            | Explication des interfaces, justification des choix techniques, pertinence de la démarche                | /15    |
 
 **Note totale : /100**
+
+
+
+
+<br/>
+
+# *Remarques*
+
+* Vous êtes libres de choisir une application existante à reproduire ou de proposer votre propre idée.
+* Vous pouvez utiliser toute source de données pertinente (API, Firebase, SQLite, JSON local, etc.).
+* **La documentation peut être fournie sous forme de commits GitHub clairs et commentés**, à condition que l’historique reflète bien les étapes de travail et les choix faits.
+* Une courte explication récapitulative est attendue dans un fichier `README.md` ou dans le dépôt.
 
 
