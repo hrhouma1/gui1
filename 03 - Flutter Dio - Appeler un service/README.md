@@ -5,7 +5,9 @@
 - Projet 3 : projet qui utilise l'API de chatgpt (open AI) avec 4 sous modules.
 - Projet 4 : projet budget + Firebase
 - Projet 5 : projet 5 Complete Flutter App Using Flutter Firebase and Provider - Recipe App - WTF code - https://www.youtube.com/watch?v=JdVu04EC7kE
-- Projet 6 : projet 6 Pizza app - https://github.com/romain-girou/pizza_app - https://www.youtube.com/watch?v=MQ1_wPyVLVc 
+- Projet 6 : projet 6 Pizza app
+- https://github.com/romain-girou/pizza_app
+- https://www.youtube.com/watch?v=MQ1_wPyVLVc 
   
 https://github.com/sagnik150699/budget_app_complete_project
 
