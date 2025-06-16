@@ -1,5 +1,5 @@
 
-## Code 1 à ajouter dans main.dart
+## Code 1 à ajouter dans lib/main.dart
 
 ```bash
 import 'package:flutter/material.dart';
