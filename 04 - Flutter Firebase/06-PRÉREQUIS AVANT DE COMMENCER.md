@@ -118,3 +118,94 @@ ramen-noodles.jpg
 ![image](https://github.com/user-attachments/assets/c7bc92a2-1a05-485a-890c-308655299d40)
 
 
+<br/>
+
+
+# Annexe -  **6 exemples complets de tables/documents** avec 7 champs (tous `string`) que tu peux insérer dans Firestore (collection `"Complete-Flutter-App"`). 
+
+
+- Chaque ligne représente un document structuré avec :
+
+* `cal` : calories
+* `category` : type de repas
+* `image` : lien d’image
+* `name` : nom du plat
+* `rating` : note utilisateur
+* `reviews` : nombre de commentaires
+* `time` : durée de préparation (en minutes)
+
+
+
+### 🍽️ Exemples de documents (7 champs string)
+
+| Clé        | Exemple de valeur                        |
+| ---------- | ---------------------------------------- |
+| `cal`      | `"450"`                                  |
+| `category` | `"Dinner"`                               |
+| `image`    | `"https://example.com/images/steak.jpg"` |
+| `name`     | `"Grilled Beef Steak"`                   |
+| `rating`   | `"4.8"`                                  |
+| `reviews`  | `"25"`                                   |
+| `time`     | `"30"`                                   |
+
+---
+
+| Clé        | Exemple de valeur                           |
+| ---------- | ------------------------------------------- |
+| `cal`      | `"320"`                                     |
+| `category` | `"Breakfast"`                               |
+| `image`    | `"https://example.com/images/pancakes.jpg"` |
+| `name`     | `"Blueberry Pancakes"`                      |
+| `rating`   | `"4.5"`                                     |
+| `reviews`  | `"40"`                                      |
+| `time`     | `"20"`                                      |
+
+---
+
+| Clé        | Exemple de valeur                              |
+| ---------- | ---------------------------------------------- |
+| `cal`      | `"600"`                                        |
+| `category` | `"Lunch"`                                      |
+| `image`    | `"https://example.com/images/bowl_quinoa.jpg"` |
+| `name`     | `"Quinoa Power Bowl"`                          |
+| `rating`   | `"4.9"`                                        |
+| `reviews`  | `"31"`                                         |
+| `time`     | `"25"`                                         |
+
+---
+
+| Clé        | Exemple de valeur                          |
+| ---------- | ------------------------------------------ |
+| `cal`      | `"150"`                                    |
+| `category` | `"Snack"`                                  |
+| `image`    | `"https://example.com/images/granola.jpg"` |
+| `name`     | `"Granola Energy Bar"`                     |
+| `rating`   | `"4.2"`                                    |
+| `reviews`  | `"12"`                                     |
+| `time`     | `"10"`                                     |
+
+---
+
+| Clé        | Exemple de valeur                                |
+| ---------- | ------------------------------------------------ |
+| `cal`      | `"500"`                                          |
+| `category` | `"Brunch"`                                       |
+| `image`    | `"https://example.com/images/eggs_benedict.jpg"` |
+| `name`     | `"Eggs Benedict with Spinach"`                   |
+| `rating`   | `"4.6"`                                          |
+| `reviews`  | `"18"`                                           |
+| `time`     | `"35"`                                           |
+
+---
+
+| Clé        | Exemple de valeur                                   |
+| ---------- | --------------------------------------------------- |
+| `cal`      | `"180"`                                             |
+| `category` | `"Dessert"`                                         |
+| `image`    | `"https://example.com/images/chocolate_mousse.jpg"` |
+| `name`     | `"Dark Chocolate Mousse"`                           |
+| `rating`   | `"4.9"`                                             |
+| `reviews`  | `"50"`                                              |
+| `time`     | `"15"`                                              |
+
+
