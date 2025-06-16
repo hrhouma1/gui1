@@ -1,10 +1,35 @@
 ## Plan de séance – Application Flutter « Recipe App » avec Firebase & Provider
 
-**Durée :** 8h00–12h00, 13h15–17h15 (7h30 effectives)
-**Vidéo de référence (2h) :** [YouTube – Complete Flutter App](https://www.youtube.com/watch?v=JdVu04EC7kE)
-**Objectif :** Reproduire une application complète de gestion de recettes connectée à Firebase, avec navigation, Provider, Firestore et une interface responsive.
+- **Durée :** 8h00–12h00, 13h15–17h15 (7h30 effectives)
+- **Vidéo de référence (2h) :** [YouTube – Complete Flutter App](https://www.youtube.com/watch?v=JdVu04EC7kE)
+- **Objectif :** Reproduire une application complète de gestion de recettes connectée à Firebase, avec navigation, Provider, Firestore et une interface responsive.
 
 
+<br/>
+
+
+# 8 commits requis
+
+| Heure             | Travail demandé (vidéo + développement)     | Commit attendu                           |
+| ----------------- | ------------------------------------------- | ---------------------------------------- |
+| **08h00 – 09h00** | Mise en place du projet et configuration    | `commit: projet initial + dépendances`   |
+| **09h00 – 10h00** | Connexion à Firebase                        | `commit: configuration backend Firebase` |
+| **10h00 – 11h00** | Implémentation de la logique métier         | `commit: provider et modèle de données`  |
+| **11h00 – 12h00** | Affichage dynamique des données             | `commit: affichage liste recettes`       |
+| **13h15 – 14h15** | Navigation vers les écrans de détails       | `commit: navigation + page détails`      |
+| **14h15 – 15h15** | Recherche et filtres                        | `commit: recherche et filtres`           |
+| **15h15 – 16h15** | Fonctionnalité de favoris                   | `commit: favoris fonctionnels`           |
+| **16h15 – 17h15** | Authentification + ajout de contenu (bonus) | `commit: auth + ajout de recette`        |
+
+
+
+Chaque étudiant est attendu à la fin de la journée avec **au moins 8 commits clairs et logiques** dans leur dépôt Git.
+
+
+
+
+
+# Annexe 
 
 | Heure       | Bloc pédagogique                                                                                               | Objectif technique                               | Présence enseignant     |
 | ----------- | -------------------------------------------------------------------------------------------------------------- | ------------------------------------------------ | ----------------------- |
