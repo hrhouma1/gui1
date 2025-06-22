@@ -1,3 +1,16 @@
+
+# *Important:*
+
+**Complete Flutter App Using Flutter, Firebase & Provider – Recipe App** — *Eng. Mohamed Elsayed*
+  🎥 Durée : **1 h 57 min 32 s**
+  🔗 [Regarder sur YouTube](https://www.youtube.com/watch?v=JdVu04EC7kE)
+  💻 [Code source sur GitHub (public)](https://github.com/Nabinji/Flutter_UI-Design/tree/main/lib/Food%20Delivery%20App)
+  💻 [Code source complet corrigé (privé)](https://github.com/hrhouma1/flutter-01-projet05)
+  📄 [Documentation complémentaire](https://github.com/hrhouma1/workshop-flutter-recipe-App/blob/main/README.md)
+
+
+
+
 # 1 - Ressources vidéo : Configurer Firebase & architecturer vos apps Flutter
 
 | Sujet                                                                    | Lien                                                                                                                                                                                          |
