@@ -1,4 +1,4 @@
-## 📘 Chapitre : Explication complète des widgets utilisés
+## Chapitre : Explication complète des widgets utilisés
 
 
 
