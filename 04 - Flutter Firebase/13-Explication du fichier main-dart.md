@@ -22,7 +22,7 @@ Ce fichier importe :
 
 
 
-## **2. La fonction `main()`**
+# **2. La fonction `main()`**
 
 ```dart
 void main() async {
@@ -45,7 +45,7 @@ void main() async {
 
 
 
-## **3. Le widget racine `MyApp`**
+# **3. Le widget racine `MyApp`**
 
 ```dart
 class MyApp extends StatelessWidget {
@@ -69,7 +69,7 @@ class MyApp extends StatelessWidget {
 
 
 
-## **4. Explication de `MultiProvider`**
+# **4. Explication de `MultiProvider`**
 
 ### **Pourquoi Provider ?**
 
@@ -88,7 +88,7 @@ C’est un type spécial de `Provider` qui **écoute un changement** dans un obj
 
 
 
-## **5. Matérialisation de l’interface**
+# **5. Matérialisation de l’interface**
 
 ```dart
 child: const MaterialApp(
@@ -102,7 +102,7 @@ child: const MaterialApp(
 
 
 
-## **6. Résumé du flux de l’application**
+# **6. Résumé du flux de l’application**
 
 Voici **l’ordre de lancement et d’appel des interfaces** :
 
@@ -122,7 +122,7 @@ main.dart
 
 
 
-## **7. Visualisation sous forme de diagramme ASCII**
+# **7. Visualisation sous forme de diagramme ASCII**
 
 ```
 main.dart
@@ -141,7 +141,7 @@ main.dart
 
 
 
-## **8. Conclusion pédagogique**
+# **8. Conclusion pédagogique**
 
 * Le fichier `main.dart` est **le point d’entrée obligatoire** d’une app Flutter.
 * L’utilisation de `Firebase.initializeApp()` est **essentielle pour connecter Firebase.**
