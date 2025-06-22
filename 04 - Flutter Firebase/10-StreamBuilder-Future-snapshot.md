@@ -1,16 +1,12 @@
-# 01 - snapshot
 
-En Flutter, un **`snapshot`** est un objet transmis par un widget comme `StreamBuilder` ou `FutureBuilder`, qui représente **l’état courant d’un flux de données** (ou d’une opération asynchrone). Il contient plusieurs informations utiles : si les données sont prêtes (`hasData`), si une erreur est survenue (`hasError`), si l’opération est en cours (`connectionState`), et bien sûr les **données elles-mêmes**, accessibles via `snapshot.data`. Lorsqu’on utilise Firestore avec `StreamBuilder`, par exemple, `snapshot` contient une collection ou un ensemble de documents mis à jour en temps réel. C’est à travers ce `snapshot` que l’interface peut être reconstruite automatiquement chaque fois que les données changent dans la base, sans intervention manuelle du développeur.
 
-<br/>
-
-# 02 - Explication complète du widget `StreamBuilder` (Flutter)
+# 01 - Explication complète du widget `StreamBuilder` (Flutter)
 
 Le widget `StreamBuilder` est un composant **réactif** de Flutter qui permet d’écouter un **flux de données (stream)** et de reconstruire automatiquement une partie de l’interface utilisateur à chaque fois que de **nouvelles données** arrivent. C’est un outil essentiel lorsqu’on travaille avec des bases de données **en temps réel**, comme **Cloud Firestore**, ou avec des flux continus d’événements, comme des capteurs, des sockets, ou des mises à jour d’état.
 
 
 
-### Comment fonctionne `StreamBuilder` ?
+### 01.1. Comment fonctionne `StreamBuilder` ?
 
 Un `StreamBuilder` reçoit en paramètre :
 
@@ -21,7 +17,7 @@ Un `StreamBuilder` reçoit en paramètre :
 
 
 
-### Structure typique :
+### 01.2. Structure typique :
 
 ```dart
 StreamBuilder<QuerySnapshot>(
@@ -43,7 +39,7 @@ StreamBuilder<QuerySnapshot>(
 
 
 
-### Que contient le `snapshot` dans un `StreamBuilder` ?
+### 01.3. Que contient le `snapshot` dans un `StreamBuilder` ?
 
 * `snapshot.hasData` → les données sont prêtes (on peut utiliser `snapshot.data`)
 * `snapshot.hasError` → une erreur est survenue dans le flux
@@ -51,7 +47,7 @@ StreamBuilder<QuerySnapshot>(
 
 
 
-### Cas d’usage courant avec Firestore :
+### 01.4 Cas d’usage courant avec Firestore :
 
 ```dart
 stream: FirebaseFirestore.instance
@@ -64,7 +60,7 @@ stream: FirebaseFirestore.instance
 * Chaque fois qu’un document est ajouté, modifié ou supprimé dans Firestore, le `StreamBuilder` **reçoit la nouvelle version** et met l’interface à jour **sans action manuelle**
 
 
-### Pourquoi utiliser `StreamBuilder` ?
+### 01.5. Pourquoi utiliser `StreamBuilder` ?
 
 * Pour **réagir automatiquement aux changements** dans une source de données
 * Pour éviter de **recharger manuellement** les écrans ou d’écrire du code répétitif
@@ -72,7 +68,7 @@ stream: FirebaseFirestore.instance
 
 
 
-### À retenir
+### 01.6. À retenir
 
 | Élément       | Rôle                                                                 |
 | ------------- | -------------------------------------------------------------------- |
@@ -85,7 +81,7 @@ Le `StreamBuilder` est un composant fondamental de Flutter pour toute applicatio
 
 <br/>
 
-# 03 - Explication du widget `FutureBuilder` en Flutter
+# 02 - Explication du widget `FutureBuilder` en Flutter
 
 Le widget `FutureBuilder` est un composant Flutter qui permet de **gérer l’affichage d’un résultat asynchrone**. Contrairement à `StreamBuilder` (qui écoute un **flux continu**), `FutureBuilder` est utilisé pour des **opérations ponctuelles** qui retournent une seule fois un résultat, généralement après un délai, comme :
 
@@ -97,13 +93,13 @@ Le widget `FutureBuilder` est un composant Flutter qui permet de **gérer l’af
 
 
 
-## 1. Qu’est-ce qu’un `Future` ?
+## 02.1. Qu’est-ce qu’un `Future` ?
 
 Un `Future` est une promesse de valeur disponible **dans le futur**, c’est-à-dire **pas immédiatement**. Par exemple, une fonction qui attend une réponse d’un serveur renvoie un `Future<String>`. On ne connaît pas encore le résultat au moment de l'appel, mais on l’obtiendra plus tard.
 
 
 
-## 2. Structure typique de `FutureBuilder`
+## 02.2. Structure typique de `FutureBuilder`
 
 ```dart
 FutureBuilder<String>(
@@ -124,14 +120,14 @@ FutureBuilder<String>(
 
 
 
-## 3. Paramètres essentiels
+## 02.3. Paramètres essentiels
 
 * `future:` → une fonction asynchrone qui retourne un `Future`
 * `builder:` → une fonction appelée automatiquement par Flutter à chaque changement d’état du `Future`. Elle reçoit un **`snapshot`**, qui décrit l’état actuel.
 
 
 
-## 4. Le `snapshot` dans `FutureBuilder`
+## 02.4. Le `snapshot` dans `FutureBuilder`
 
 L’objet `snapshot` contient des informations sur l'état de l’appel :
 
@@ -145,7 +141,7 @@ L’objet `snapshot` contient des informations sur l'état de l’appel :
 
 
 
-## 5. Exemple concret avec Firestore
+## 02.5. Exemple concret avec Firestore
 
 ```dart
 FutureBuilder<DocumentSnapshot>(
@@ -167,7 +163,7 @@ Ici, on récupère **une seule fois** un document Firestore (par exemple pour pr
 
 
 
-## 6. Différence avec `StreamBuilder`
+## 02.6. Différence avec `StreamBuilder`
 
 | Caractéristique | `FutureBuilder`                      | `StreamBuilder`                            |
 | --------------- | ------------------------------------ | ------------------------------------------ |
@@ -177,7 +173,7 @@ Ici, on récupère **une seule fois** un document Firestore (par exemple pour pr
 
 
 
-## 7. Bonnes pratiques
+## 02.7. Bonnes pratiques
 
 * Ne pas appeler une fonction dans `future:` qui crée un nouveau `Future` à chaque build. Utilisez une variable ou l’initier dans `initState()` si nécessaire.
 * Toujours vérifier `snapshot.connectionState` pour ne pas afficher un résultat vide pendant le chargement.
@@ -185,15 +181,21 @@ Ici, on récupère **une seule fois** un document Firestore (par exemple pour pr
 
 
 
-## 8. Conclusion
+## 02.8. Conclusion
 
 Le `FutureBuilder` est un outil fondamental pour intégrer **des données asynchrones ponctuelles** dans une interface Flutter. Il permet de **synchroniser automatiquement l’affichage avec l’arrivée des résultats**, tout en gérant proprement les états de **chargement, succès ou erreur**, sans devoir écrire manuellement du code de contrôle complexe.
 
 <br/>
 
-# 04 - snapshot
+# 03 - snapshot
 
-### Explication complète de `snapshot` en Flutter
+### 03.1 - Le snapshot en bref
+
+En Flutter, un **`snapshot`** est un objet transmis par un widget comme `StreamBuilder` ou `FutureBuilder`, qui représente **l’état courant d’un flux de données** (ou d’une opération asynchrone). Il contient plusieurs informations utiles : si les données sont prêtes (`hasData`), si une erreur est survenue (`hasError`), si l’opération est en cours (`connectionState`), et bien sûr les **données elles-mêmes**, accessibles via `snapshot.data`. Lorsqu’on utilise Firestore avec `StreamBuilder`, par exemple, `snapshot` contient une collection ou un ensemble de documents mis à jour en temps réel. C’est à travers ce `snapshot` que l’interface peut être reconstruite automatiquement chaque fois que les données changent dans la base, sans intervention manuelle du développeur.
+
+<br/>
+
+###  03.2 - Explication détaillé de `snapshot` en Flutter avec des exemples
 
 Le terme **`snapshot`** désigne, dans Flutter, **l’état courant d’une opération asynchrone**. Il est utilisé dans les widgets réactifs comme `FutureBuilder` et `StreamBuilder`. Chaque fois que Flutter doit construire une interface en fonction d’un `Future` (résultat unique à venir) ou d’un `Stream` (flux continu de données), il passe à la fonction `builder` un objet appelé **`snapshot`**.
 
@@ -206,7 +208,7 @@ Ce `snapshot` contient **tout ce que vous devez savoir** à un instant donné su
 
 
 
-## Propriétés principales de `snapshot`
+### 03.3. Propriétés principales de `snapshot`
 
 | Propriété                  | Description                                                                    |
 | -------------------------- | ------------------------------------------------------------------------------ |
@@ -218,7 +220,7 @@ Ce `snapshot` contient **tout ce que vous devez savoir** à un instant donné su
 
 
 
-## Exemple avec `FutureBuilder`
+### 03.4. Exemple avec `FutureBuilder`
 
 ```dart
 FutureBuilder(
@@ -245,7 +247,7 @@ Dans ce cas :
 
 
 
-## Exemple avec `StreamBuilder`
+### 03.5. Exemple avec `StreamBuilder`
 
 ```dart
 StreamBuilder(
@@ -340,7 +342,7 @@ Ici, `snapshot` contient :
 
 
 
-## Explication pédagogique des états
+## Explication des états
 
 | État                      | Utilisé par                   | Signification pédagogique                                                       |
 | ------------------------- | ----------------------------- | ------------------------------------------------------------------------------- |
