@@ -4,9 +4,13 @@
 Pourquoi utilise-t-on le widget `SafeArea` dans une application Flutter moderne ?
 
 **Choix :**
+
 A) Pour appliquer une bordure décorative aux écrans
+
 B) Pour éviter que des contenus soient recouverts par les éléments système (notch, barre de statut)
+
 C) Pour centrer une `Column`
+
 D) Pour créer des marges extérieures automatiques
 
 ---
