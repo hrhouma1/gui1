@@ -4,6 +4,7 @@
 - Différence entre SingleChildScrollView, ListView et GridView
 - Inspecteur de code pour flutter ? Plugin VS Code ? (Use the Flutter inspector)
 - Hoat reload
+- Rouler l'application pratique sur android (evaluationformative dio + Future)
 - Est-ce qu'il y a des différences significatives entre stringBuilder et stringBuffer (Dart)?
 - Comment choisir les paramètres pour l'espacement ?
 - Questions 8 à 12
