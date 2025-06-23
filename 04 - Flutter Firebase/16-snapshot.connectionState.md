@@ -1,8 +1,9 @@
-Voici un **schéma explicatif clair** représentant les **transitions possibles d’un `snapshot.connectionState`** dans les widgets `FutureBuilder` et `StreamBuilder`. Il vous permet de comprendre visuellement le **cycle de vie** d’un `snapshot` et les actions attendues à chaque étape.
+- Je vous présente **un schéma explicatif clair** représentant les **transitions possibles d’un `snapshot.connectionState`** dans les widgets `FutureBuilder` et `StreamBuilder`. 
 
----
+*Ce document vous permet de comprendre visuellement le **cycle de vie** d’un `snapshot` et les actions attendues à chaque étape.*
 
-## Schéma visuel (format texte – ASCII)
+
+# Schéma visuel (format texte – ASCII)
 
 ```
                              [Initialisation]
@@ -46,7 +47,7 @@ Voici un **schéma explicatif clair** représentant les **transitions possibles 
                                  +----------------------------+
 ```
 
----
+
 
 ## Explication pédagogique des états
 
@@ -57,7 +58,7 @@ Voici un **schéma explicatif clair** représentant les **transitions possibles 
 | `ConnectionState.active`  | StreamBuilder                 | Le `stream` **émet des données en temps réel** (Firestore, capteurs, etc.)      |
 | `ConnectionState.done`    | FutureBuilder / StreamBuilder | L’opération est **terminée** (le `Future` a répondu ou le `Stream` s’est fermé) |
 
----
+
 
 ## Recommandations pédagogiques
 
@@ -78,6 +79,3 @@ builder: (context, snapshot) {
 }
 ```
 
----
-
-Souhaitez-vous que je transforme ce schéma en image SVG, PNG ou Mermaid pour Thinkific, ou bien que je crée une version imprimable A4 pour vos supports de cours ?
