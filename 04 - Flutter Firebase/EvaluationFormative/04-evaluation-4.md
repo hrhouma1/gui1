@@ -20,7 +20,7 @@ Dans une application de recettes, à quel moment serait-il plus approprié d’u
 **4. SafeArea et Responsive Design — Réflexion**
 Expliquez pourquoi `SafeArea` ne suffit pas toujours pour garantir un affichage optimal sur tous les types d’écrans (encoches, tablettes, etc.). Que faut-il ajouter ?
 
----
+
 
 **5. Firestore – Indexation automatique**
 Lorsque vous utilisez une clause `where` combinée à `orderBy` dans une requête Firestore, une erreur s’affiche concernant l’index. Pourquoi ? Et que faire ?
