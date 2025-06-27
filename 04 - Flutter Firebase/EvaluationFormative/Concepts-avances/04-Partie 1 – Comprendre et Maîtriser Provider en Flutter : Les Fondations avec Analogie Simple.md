@@ -98,7 +98,7 @@ ElevatedButton(
 
 ##  **Mots simples à retenir**
 
-| Mot               | Traduction pour cerveau fatigué                           |
+| Mot               | Explication                        |
 | ----------------- | --------------------------------------------------------- |
 | Provider          | Endroit où on stocke des infos pour tout le monde         |
 | Consumer          | Quelqu’un qui lit ces infos et réagit s’il y a changement |
