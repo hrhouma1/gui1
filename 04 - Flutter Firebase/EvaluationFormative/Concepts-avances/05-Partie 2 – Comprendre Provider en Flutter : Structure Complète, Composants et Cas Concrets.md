@@ -1,6 +1,5 @@
-# Comprendre Provider en Flutter : Cours pour grands débutants
+# Comprendre Provider en Flutter
 
----
 
 ## 1. Pourquoi utiliser `Provider` ?
 
@@ -11,7 +10,7 @@ Le problème : comment partager ces données **entre plusieurs écrans**, sans d
 La solution : un système central qui **garde les données à jour** et **prévient l’interface** dès qu’il y a un changement.
 C’est exactement ce que `Provider` permet.
 
----
+
 
 ## 2. Analogie simple : une radio dans une maison
 
@@ -24,7 +23,7 @@ Dans le salon, il y a une **radio centrale** qui annonce les infos importantes.
 > En Flutter, cette "radio" est représentée par une classe `ChangeNotifier`.
 > Les pièces qui l’écoutent sont des `Consumer`.
 
----
+
 
 ## 3. Composants du Provider
 
@@ -37,7 +36,7 @@ Voici les **éléments de base** pour utiliser le système Provider :
 | `Consumer`               | Lit les données et se reconstruit automatiquement quand ça change |
 | `notifyListeners()`      | Méthode qui déclenche la reconstruction des `Consumer` abonnés    |
 
----
+
 
 ## 4. Cas concret : un compteur
 
@@ -49,7 +48,6 @@ Créer une application avec :
 * Un bouton pour l’augmenter
 * Une mise à jour automatique de l’interface
 
----
 
 ### Étape 1 : Créer la classe du Provider
 
@@ -71,7 +69,7 @@ class CounterProvider extends ChangeNotifier {
 }
 ```
 
----
+
 
 ### Étape 2 : Fournir cette classe à l’application entière
 
@@ -90,7 +88,7 @@ void main() {
 }
 ```
 
----
+
 
 ### Étape 3 : Utiliser la donnée dans l’interface
 
@@ -123,7 +121,7 @@ class MyApp extends StatelessWidget {
 }
 ```
 
----
+
 
 ## 5. Détails importants à comprendre
 
@@ -132,7 +130,7 @@ class MyApp extends StatelessWidget {
 Cette méthode est **le signal d’alerte**. Elle indique que les données ont changé.
 Tous les widgets qui utilisent `Consumer` vont être reconstruits automatiquement.
 
----
+
 
 ### `Consumer`
 
@@ -147,7 +145,7 @@ Consumer<MonProvider>(
 )
 ```
 
----
+
 
 ### `context.read<T>()` vs `context.watch<T>()`
 
@@ -156,7 +154,7 @@ Consumer<MonProvider>(
 | `read<Provider>()`  | Lire une donnée une seule fois (ex : dans onPressed) | Non                        |
 | `watch<Provider>()` | Lire et écouter les changements                      | Oui                        |
 
----
+
 
 ## 6. Exemple intermédiaire : favoris avec Firestore
 
@@ -166,7 +164,7 @@ Dans une app de recettes, on souhaite :
 * sauvegarder ces données dans Firestore
 * mettre à jour automatiquement l’interface
 
----
+
 
 ### Étapes :
 
@@ -174,7 +172,7 @@ Dans une app de recettes, on souhaite :
 2. Utiliser `toggleFavorite()` pour ajouter ou retirer une recette.
 3. Utiliser `Consumer` dans la vue pour afficher un cœur rouge ou gris selon l’état.
 
----
+
 
 ## 7. Tableau comparatif : outils d’état en Flutter
 
@@ -185,7 +183,7 @@ Dans une app de recettes, on souhaite :
 | `Riverpod`   | Avancé     | Gestion plus fine, testable, scalable          |
 | `Bloc`       | Difficile  | Architecture d’entreprise avec logique séparée |
 
----
+
 
 ## 8. Résumé final
 
