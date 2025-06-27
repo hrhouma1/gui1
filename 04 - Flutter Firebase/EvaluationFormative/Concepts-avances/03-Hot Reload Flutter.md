@@ -127,3 +127,11 @@ Dans ces cas, relancer **Hot Restart** ou `flutter run` complet.
 
 
 Avec ce guide, vous disposez d’un scénario pas-à-pas fiable pour démontrer le Hot Reload devant des étudiants ou collègues, tout en expliquant ses avantages, ses limites et les bonnes pratiques professionnelles.
+
+# Références :
+
+- https://www.youtube.com/watch?v=TYtyyvbxYmY
+- https://www.youtube.com/watch?v=9qJLZ41nrIw
+- https://medium.com/@ugamakelechi501/mastering-hot-reload-and-hot-restart-in-flutter-094a2e90c45d
+- https://levelup.gitconnected.com/flutter-and-hot-reload-17b219362260
+- https://theflutterist.medium.com/how-does-hot-reload-or-hot-restart-actually-works-an-insight-under-the-hood-da7c1a44bed2
