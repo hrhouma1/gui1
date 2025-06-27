@@ -109,3 +109,86 @@ Si vous n’avez pas besoin de toute cette flexibilité :
 * Mais si vous atteignez une limite (AppBar qui doit se replier, etc.), passez à `CustomScrollView` + `Slivers`.
 
 
+
+
+# Annexe : version vulgarisée
+
+
+
+### 1. L’idée en deux phrases
+
+1. `ListView` = un seul rouleau de papier toilette : tu déroules, ça reste le même truc tout le long.
+2. **Slivers** = des briques : tu mets bout à bout ce que tu veux (liste, grille, AppBar qui se replie) et tout défile dans un seul scroll.
+
+---
+
+### 2. Pourquoi ça existe ?
+
+* Parce qu’un seul rouleau, c’est pratique… **sauf** quand tu veux changer le motif au milieu.
+* Avec les slivers, tu peux dire : *« Je veux d’abord une AppBar qui disparaît, puis 20 cartes, puis une grille de photos. »* Tout ça **dans le même mouvement de doigt**.
+
+---
+
+### 3. À quoi ça ressemble ?
+
+```dart
+CustomScrollView(
+  slivers: [
+    SliverAppBar(            // le haut qui s’étire/reste collé
+      pinned: true,
+      expandedHeight: 150,
+      flexibleSpace: FlexibleSpaceBar(title: Text('Yo')),
+    ),
+    SliverList(              // ta liste classique
+      delegate: SliverChildBuilderDelegate(
+        (c, i) => ListTile(title: Text('Item $i')),
+        childCount: 30,
+      ),
+    ),
+    SliverGrid(              // hop, une grille juste après
+      delegate: SliverChildBuilderDelegate(
+        (c, i) => Container(color: Colors.blueGrey, child: Text('Case $i')),
+        childCount: 12,
+      ),
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 3,
+      ),
+    ),
+    SliverToBoxAdapter(      // n’importe quel widget random
+      child: Padding(
+        padding: EdgeInsets.all(16),
+        child: Text('Fin du scroll'),
+      ),
+    ),
+  ],
+)
+```
+
+*Lis pas le code ? Retiens juste : `CustomScrollView` = le sac à dos, `slivers[]` = tout ce que tu balances dedans.*
+
+---
+
+### 4. Comment retenir vite ?
+
+* **Sliver** ≈ « tranche » de contenu défilable.
+* **CustomScrollView** ≈ le rail qui fait glisser ces tranches.
+* **SliverAppBar / SliverList / SliverGrid** ≈ les différentes tranches possibles.
+
+---
+
+### 5. Quand l’utiliser ?
+
+* Tu veux mélanger plusieurs mises en page **dans un seul scroll**.
+* Tu veux une AppBar qui se **cache** ou qui **colle** en haut.
+* Tu trouves que `ListView` te **bloque** pour faire un truc un peu sexy.
+
+---
+
+### 6. Si tu n’en as rien à foutre de tout ça
+
+Reste sur `ListView`. Sérieux, si ta page c’est juste quinze items qui se suivent, **n’utilise pas** les slivers. Trop de discours pour rien.
+
+
+
+Voilà. `ListView` = rouleau ; slivers = Lego.
+C’est tout.
