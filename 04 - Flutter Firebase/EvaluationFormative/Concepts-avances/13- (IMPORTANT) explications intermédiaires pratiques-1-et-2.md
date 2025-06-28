@@ -21,8 +21,8 @@
 
 ## Codes :
 
-<a href="#11-1 equivalent-watch">`Provider` vs `SharedPreferences`</a>
-<a href="#11-2 equivalent-colorProvider">C’est quoi `context` dans Flutter ?</a>
+- <a href="#11-1 equivalent-watch">`Provider` vs `SharedPreferences`</a>
+- <a href="#11-2 equivalent-colorProvider">C’est quoi `context` dans Flutter ?</a>
 
 
 <br/>
