@@ -1377,7 +1377,7 @@ Voici un tour d’horizon **complet et comparatif** des **moyens de partager des
 
 
 
-## <h1 id="moyens-partage-etat">📦 1. Les 5 principales façons de partager des données entre widgets</h1>
+## <h1 id="moyens-partage-etat"> 12.1. Les 5 principales façons de partager des données entre widgets</h1>
 
 | Méthode                            | Scalable ?       | Facile ?       | Reactive ?         | Utilisée où ?                     |
 | ---------------------------------- | ---------------- | -------------- | ------------------ | --------------------------------- |
@@ -1412,7 +1412,7 @@ class Parent extends StatefulWidget {
 
 
 
-### 💡 2. `Provider` (recommandé)
+### 12.2. `Provider` (recommandé)
 
 * Tu crées une classe `ChangeNotifier`
 * Tu l’injectes en haut avec `ChangeNotifierProvider`
@@ -1422,7 +1422,7 @@ class Parent extends StatefulWidget {
 
 
 
-### 🧬 3. `InheritedWidget` (bas niveau)
+### 12.3. `InheritedWidget` (bas niveau)
 
 Tu peux faire ça toi-même :
 
@@ -1446,7 +1446,7 @@ class MyInheritedData extends InheritedWidget {
 
 
 
-###  4. GetX, Bloc, Riverpod…
+###  12.4. GetX, Bloc, Riverpod…
 
 Des alternatives à `Provider` :
 
@@ -1456,9 +1456,9 @@ Des alternatives à `Provider` :
 | `Bloc`     | Archi claire (input/output, events) | Projets très stricts, entreprise |
 | `GetX`     | Ultra rapide, sans boilerplate      | Pour protos ou apps rapides      |
 
----
 
-### ☠️ 5. Singleton global (anti-pattern)
+
+### 12.5. Singleton global (anti-pattern)
 
 ```dart
 class GlobalUser {
@@ -1721,7 +1721,7 @@ class _CounterPageState extends State<CounterPage> {
 
 * Ne permet pas de partager l’état entre plusieurs pages ou composants.
 
----
+
 
 ## <h2 id="4-partage-global-avec-provider">4. Partage global et réactif avec `Provider`</h2>
 
@@ -1770,7 +1770,7 @@ final count = context.watch<CounterProvider>().count;
 * Nécessite l’ajout d’un package (`provider`).
 * Courbe d’apprentissage plus longue pour débutants.
 
----
+
 
 ## <h2 id="5-sharedpreferences-stockage-persistant">5. `SharedPreferences` – Stockage persistant</h2>
 
