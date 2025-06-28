@@ -97,8 +97,12 @@ Je vous propose de chercher des exemples avec le build time, logs, taille d'APK,
   </a>
 </span>
 
-
 <br/>
+<br/>
+
+
+
+
 
 # 2 - Frameworks de tests intégrés  dans Flutter
 
@@ -208,7 +212,23 @@ dev_dependencies:
 
 
 
+
+
+
+
+
+
+
+
+<span style="display:inline-block; margin-top:1em;">
+  <a href="#table-matières" style="text-decoration:none; color:#3366cc;">
+    ⬅️ Retour à la table des matières
+  </a>
+</span>
+
 <br/>
+<br/>
+
 
 # 3 - Hot Reload et Hot Restart 
 
@@ -270,7 +290,15 @@ Tu lances l’app, tu cliques 5 fois. Le compteur affiche **5**.
 
 
 
+<span style="display:inline-block; margin-top:1em;">
+  <a href="#table-matières" style="text-decoration:none; color:#3366cc;">
+    ⬅️ Retour à la table des matières
+  </a>
+</span>
+
 <br/>
+<br/>
+
 
 # 4 - Explication d'un bout de code
 
@@ -392,7 +420,17 @@ void main() {
 | `ChangeNotifierProvider` | Fournit notre classe à toute l’app              |
 
 
+
+
+<span style="display:inline-block; margin-top:1em;">
+  <a href="#table-matières" style="text-decoration:none; color:#3366cc;">
+    ⬅️ Retour à la table des matières
+  </a>
+</span>
+
 <br/>
+<br/>
+
 
 # 6 -  Provider vs Rebuild manuel
 
@@ -513,6 +551,16 @@ Consumer<CounterProvider>(
 
 
 
+
+
+
+<span style="display:inline-block; margin-top:1em;">
+  <a href="#table-matières" style="text-decoration:none; color:#3366cc;">
+    ⬅️ Retour à la table des matières
+  </a>
+</span>
+
+<br/>
 <br/>
 
 # 7 -  Quand utiliser Provider 
@@ -599,6 +647,16 @@ Puis tu peux l'utiliser partout avec `Consumer<UserProvider>` ou `Provider.of<Us
 
 
 
+
+
+
+<span style="display:inline-block; margin-top:1em;">
+  <a href="#table-matières" style="text-decoration:none; color:#3366cc;">
+    ⬅️ Retour à la table des matières
+  </a>
+</span>
+
+<br/>
 <br/>
 
 # 8 -  .watch vs .read
@@ -737,7 +795,18 @@ class CounterPage extends StatelessWidget {
 | Changer la couleur si nombre pair | `provider.isEven` via `watch()` | La UI doit changer automatiquement                                  |
 
 
+
+
+
+<span style="display:inline-block; margin-top:1em;">
+  <a href="#table-matières" style="text-decoration:none; color:#3366cc;">
+    ⬅️ Retour à la table des matières
+  </a>
+</span>
+
 <br/>
+<br/>
+
 
 # 8 - Quand je supprime le watch, ça marche plus
 
@@ -831,7 +900,16 @@ Ainsi, seul le `Text` est rebuild, pas toute la page.
 
 
 
+
+<span style="display:inline-block; margin-top:1em;">
+  <a href="#table-matières" style="text-decoration:none; color:#3366cc;">
+    ⬅️ Retour à la table des matières
+  </a>
+</span>
+
 <br/>
+<br/>
+
 
 # 9 - Autres techniques et logiques de consommation d’état
 
@@ -961,6 +1039,15 @@ class ColorBanner extends StatelessWidget {
 * **Optimisation fine (grosse UI) → `Selector` + extraction dans méthodes/Widgets**.
 
 
+
+
+<span style="display:inline-block; margin-top:1em;">
+  <a href="#table-matières" style="text-decoration:none; color:#3366cc;">
+    ⬅️ Retour à la table des matières
+  </a>
+</span>
+
+<br/>
 <br/>
 
 # 10 - Méthodes principales pour « consommer » un Provider
@@ -1067,7 +1154,18 @@ Ainsi, `Consumer` n’est qu’une *des* méthodes ; `watch`, `read`, `select` e
 
 
 
+
+
+
+<span style="display:inline-block; margin-top:1em;">
+  <a href="#table-matières" style="text-decoration:none; color:#3366cc;">
+    ⬅️ Retour à la table des matières
+  </a>
+</span>
+
 <br/>
+<br/>
+
 
 # 11 - Équivalent de watch : c’est Consumer<ColorProvider>
 
@@ -1221,7 +1319,16 @@ Widget build(BuildContext context) {
 
 
 
+<span style="display:inline-block; margin-top:1em;">
+  <a href="#table-matières" style="text-decoration:none; color:#3366cc;">
+    ⬅️ Retour à la table des matières
+  </a>
+</span>
+
 <br/>
+<br/>
+
+
 
 # 12 - Méthodes principales pour « consommer » un Provider
 
@@ -1371,10 +1478,17 @@ class GlobalUser {
 
 
 
-
-
+<span style="display:inline-block; margin-top:1em;">
+  <a href="#table-matières" style="text-decoration:none; color:#3366cc;">
+    ⬅️ Retour à la table des matières
+  </a>
+</span>
 
 <br/>
+<br/>
+
+
+
 
 # 13 - Comparaison avec des méthodes des concepts **Android natifs (Java/Kotlin)** avec **Flutter (Dart)**.
 
@@ -1465,7 +1579,16 @@ final value = prefs.getInt('count');
 
 
 
+<span style="display:inline-block; margin-top:1em;">
+  <a href="#table-matières" style="text-decoration:none; color:#3366cc;">
+    ⬅️ Retour à la table des matières
+  </a>
+</span>
+
 <br/>
+<br/>
+
+
 
 # 14 -  Mécanismes pour passer des variables et partager des informations en Flutter - partie 1
 
@@ -1718,8 +1841,15 @@ Pour les applications modernes et maintenables :
 
 
 
+<span style="display:inline-block; margin-top:1em;">
+  <a href="#table-matières" style="text-decoration:none; color:#3366cc;">
+    ⬅️ Retour à la table des matières
+  </a>
+</span>
 
 <br/>
+<br/>
+
 
 # 15 -  Mécanismes pour passer des variables et partager des informations en Flutter - partie 2
 
@@ -1969,8 +2099,15 @@ Pour les applications modernes et maintenables :
 
 
 
+<span style="display:inline-block; margin-top:1em;">
+  <a href="#table-matières" style="text-decoration:none; color:#3366cc;">
+    ⬅️ Retour à la table des matières
+  </a>
+</span>
 
 <br/>
+<br/>
+
 
 # 16 - Différence entre `Provider` et `SharedPreferences` :
 
@@ -1982,7 +2119,16 @@ Pour les applications modernes et maintenables :
 
 
 
+
+<span style="display:inline-block; margin-top:1em;">
+  <a href="#table-matières" style="text-decoration:none; color:#3366cc;">
+    ⬅️ Retour à la table des matières
+  </a>
+</span>
+
 <br/>
+<br/>
+
 
 # 17 - C’est quoi `context` dans Flutter ?
 
