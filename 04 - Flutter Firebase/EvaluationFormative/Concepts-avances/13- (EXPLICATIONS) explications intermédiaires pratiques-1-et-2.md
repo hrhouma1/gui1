@@ -93,6 +93,32 @@ Je vous propose de chercher des exemples avec le build time, logs, taille d'APK,
 
 <br/>
 
+
+
+
+
+<ul>
+  <li><a href="#1-modes-flutter-run">1. Modes de flutter run</a></li>
+  <li><a href="#2-frameworks-tests-flutter">2. Frameworks de tests intégrés dans Flutter</a></li>
+  <li><a href="#3-hot-reload-restart">3. Hot Reload vs Hot Restart</a></li>
+  <li><a href="#4-explication-provider">4. Explication d’un ChangeNotifierProvider</a></li>
+  <li><a href="#5-provider-vs-rebuild">5. Provider vs Rebuild manuel</a></li>
+  <li><a href="#6-quand-utiliser-provider">6. Quand utiliser Provider</a></li>
+  <li><a href="#7-watch-vs-read">7. Différences .watch vs .read</a></li>
+  <li><a href="#8-sans-watch-ca-marche-pas">8. Pourquoi sans watch, ça ne marche plus</a></li>
+  <li><a href="#9-autres-consommations-provider">9. Autres techniques de consommation d’état</a></li>
+  <li><a href="#10-methodes-consommation-provider">10. Méthodes principales pour consommer un Provider</a></li>
+  <li><a href="#11-equivalent-watch">11. Équivalent de watch : Consumer&lt;T&gt;</a></li>
+  <li><a href="#12-passer-variables-flutter">12. Mécanismes pour passer des variables dans Flutter</a></li>
+  <li><a href="#13-flutter-vs-android">13. Comparaison avec Android natif</a></li>
+  <li><a href="#14-mecanismes-partage-etat-1">14. Mécanismes de partage de données – Partie 1</a></li>
+  <li><a href="#15-mecanismes-partage-etat-2">15. Mécanismes de partage de données – Partie 2</a></li>
+  <li><a href="#16-provider-vs-sharedpreferences">16. Provider vs SharedPreferences</a></li>
+  <li><a href="#17-context-flutter">17. C’est quoi context dans Flutter ?</a></li>
+</ul>
+
+
+
 # 2 - Frameworks de tests intégrés  dans Flutter
 
 
