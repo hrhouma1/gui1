@@ -1268,10 +1268,18 @@ C’est **strictement équivalent fonctionnellement** à ton `Consumer`, **mais 
 
 
 
+<span style="display:inline-block; margin-top:1em;">
+  <a href="#table-matières" style="text-decoration:none; color:#3366cc;">
+    ⬅️ Retour à la table des matières
+  </a>
+</span>
 
 
 <br/>
 <br/>
+
+
+
 
 
 <h1 id="11-1 equivalent-watch">11-1 context.watch()</h1>
@@ -1352,7 +1360,11 @@ colorProvider.currentColor.withOpacity(0.6)
 ```
 
 
-
+<span style="display:inline-block; margin-top:1em;">
+  <a href="#table-matières" style="text-decoration:none; color:#3366cc;">
+    ⬅️ Retour à la table des matières
+  </a>
+</span>
 
 <br/>
 <br/>
