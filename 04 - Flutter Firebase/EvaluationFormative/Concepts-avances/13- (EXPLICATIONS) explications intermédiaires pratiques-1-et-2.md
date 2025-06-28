@@ -24,7 +24,8 @@
 
 <br/>
 
-# 1 - Modes de flutter run
+<h1 id="1-modes-flutter-run">1 - Modes de flutter run</h1>
+
 
 ```
 flutter run
@@ -104,7 +105,8 @@ Je vous propose de chercher des exemples avec le build time, logs, taille d'APK,
 
 
 
-# 2 - Frameworks de tests intégrés  dans Flutter
+<h1 id="2-frameworks-tests-flutter">2 - Frameworks de tests intégrés dans Flutter</h1>
+
 
 
 
@@ -230,7 +232,8 @@ dev_dependencies:
 <br/>
 
 
-# 3 - Hot Reload et Hot Restart 
+<h1 id="3-hot-reload-restart">3 - Hot Reload et Hot Restart</h1>
+
 
 
 *Différence claire entre **Hot Reload** et **Hot Restart** en Flutter :*
@@ -300,7 +303,8 @@ Tu lances l’app, tu cliques 5 fois. Le compteur affiche **5**.
 <br/>
 
 
-# 4 - Explication d'un bout de code
+<h1 id="4-explication-provider">4 - Explication d'un bout de code</h1>
+
 
 *Explication ligne par ligne du code avec `ChangeNotifierProvider`*
 
