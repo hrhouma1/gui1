@@ -114,7 +114,7 @@ En Flutter, il existe **trois grands types de tests** avec leurs **frameworks in
 
 
 
-## <h1 id="types-tests-flutter">🔍 1. Types de tests Flutter</h1>
+## <h1 id="types-tests-flutter"> 2.1. Types de tests Flutter</h1>
 
 | Type de test         | Objectif principal                                | Exemple                                        |
 | -------------------- | ------------------------------------------------- | ---------------------------------------------- |
@@ -124,7 +124,7 @@ En Flutter, il existe **trois grands types de tests** avec leurs **frameworks in
 
 ---
 
-## <h1 id="frameworks-tests-flutter">🧪 2. Frameworks de test Flutter</h1>
+## <h1 id="frameworks-tests-flutter"> 2.2. Frameworks de test Flutter</h1>
 
 ### 2.1. **flutter\_test** (officiel, pour tests unitaires et widget)
 
@@ -145,7 +145,7 @@ void main() {
 }
 ```
 
----
+
 
 ### 2.2. **integration\_test** (officiel pour tests d’intégration)
 
@@ -170,7 +170,7 @@ void main() {
 }
 ```
 
----
+
 
 ### 2.3. **Mockito** (mocking)
 
@@ -183,14 +183,14 @@ dev_dependencies:
   build_runner: ^2.0.0
 ```
 
----
+
 
 ### 2.4. **flutter\_driver** (obsolète)
 
 * Ancien framework de test d’intégration
 * **Déprécié** en faveur de `integration_test`
 
----
+
 
 ### 2.5. Autres outils compatibles
 
@@ -200,9 +200,9 @@ dev_dependencies:
 | **golden\_toolkit** | Tests visuels pixel-par-pixel |
 | **mocktail**        | Alternative à `mockito`       |
 
----
 
-## <h1 id="conclusion-tests">✅ Conclusion</h1>
+
+## <h1 id="conclusion-tests"> Conclusion</h1>
 
 | Type de test          | Framework principal             |
 | --------------------- | ------------------------------- |
@@ -240,7 +240,7 @@ dev_dependencies:
 
 
 
-## <h1 id="diff-hot-reload-restart">🔥 Hot Reload vs Hot Restart</h1>
+## <h1 id="diff-hot-reload-restart"> 3.1. Hot Reload vs Hot Restart</h1>
 
 | Critère                  | 🔁 **Hot Reload**                      | 🔄 **Hot Restart**                                                    |
 | ------------------------ | -------------------------------------- | --------------------------------------------------------------------- |
@@ -303,7 +303,7 @@ Tu lances l’app, tu cliques 5 fois. Le compteur affiche **5**.
 <br/>
 
 
-<h1 id="4-explication-provider">4 - Explication d'un bout de code</h1>
+<h1 id="4-explication-provider"> 4 - Explication d'un bout de code</h1>
 
 
 *Explication ligne par ligne du code avec `ChangeNotifierProvider`*
@@ -689,7 +689,7 @@ Puis tu peux l'utiliser partout avec `Consumer<UserProvider>` ou `Provider.of<Us
 
 
 
-## <h1 id="vulgarisation-provider">🧠 1. Vulgarisation : `.watch` vs `.read`</h1>
+## <h1 id="vulgarisation-provider"> 1. Vulgarisation : `.watch` vs `.read`</h1>
 
 Imagine que :
 
