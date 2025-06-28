@@ -436,7 +436,13 @@ void main() {
 <br/>
 
 
-# 6 -  Provider vs Rebuild manuel
+
+
+<h1 id="5-provider-vs-rebuild">5 - Provider vs Rebuild manuel</h1>
+
+<h1 id="6-quand-utiliser-provider">6 - Quand utiliser Provider</h1>
+
+
 
 
 *Je vous propose une **explication simple et pédagogique** de la différence entre :*
@@ -567,7 +573,12 @@ Consumer<CounterProvider>(
 <br/>
 <br/>
 
-# 7 -  Quand utiliser Provider 
+
+
+
+<h1 id="7-watch-vs-read">7 - .watch vs .read</h1>
+
+
 
 ***Quand** et **Pourquoi** tu dois utiliser `Provider` en Flutter ?*
 
@@ -663,7 +674,10 @@ Puis tu peux l'utiliser partout avec `Consumer<UserProvider>` ou `Provider.of<Us
 <br/>
 <br/>
 
-# 8 -  .watch vs .read
+
+
+<h1 id="7-watch-vs-read">7 - .watch vs .read</h1>
+
 
 
 *Explication ultra vulgarisée**, pour comprendre **le rôle de `.watch` et `.read`** dans `Provider`, et **comment réagir quand on incrémente et que c’est pair** (changement de couleur par exemple).
@@ -812,6 +826,14 @@ class CounterPage extends StatelessWidget {
 <br/>
 
 
+
+
+
+
+<h1 id="8-sans-watch-ca-marche-pas">8 - Quand je supprime le watch, ça marche plus</h1>
+
+
+
 # 8 - Quand je supprime le watch, ça marche plus
 
 
@@ -915,7 +937,8 @@ Ainsi, seul le `Text` est rebuild, pas toute la page.
 <br/>
 
 
-# 9 - Autres techniques et logiques de consommation d’état
+<h1 id="9-autres-consommations-provider">9 - Autres techniques et logiques de consommation d’état</h1>
+
 
 
 ### 1. Que veut-on « extraire » ?
@@ -1054,7 +1077,11 @@ class ColorBanner extends StatelessWidget {
 <br/>
 <br/>
 
-# 10 - Méthodes principales pour « consommer » un Provider
+
+
+<h1 id="10-methodes-consommation-provider">10 - Méthodes principales pour « consommer » un Provider</h1>
+
+
 
 
 ### Méthodes principales pour « consommer » un `Provider`
@@ -1171,7 +1198,9 @@ Ainsi, `Consumer` n’est qu’une *des* méthodes ; `watch`, `read`, `select` e
 <br/>
 
 
-# 11 - Équivalent de watch : c’est Consumer<ColorProvider>
+
+
+<h1 id="11-equivalent-watch">11 - Équivalent de watch : c’est Consumer&lt;ColorProvider&gt;</h1>
 
 
 
@@ -1334,10 +1363,7 @@ Widget build(BuildContext context) {
 
 
 
-# 12 - Méthodes principales pour « consommer » un Provider
-
-
-
+<h1 id="12-passer-variables-flutter">12 - Mécanismes pour passer des variables et partager des informations en Flutter</h1>
 
 
 - `Provider` **n’est pas le seul moyen** de partager des informations entre widgets en Flutter. Mais c’est **le plus propre, scalable et recommandé** dans 90 % des cas professionnels.
@@ -1494,7 +1520,8 @@ class GlobalUser {
 
 
 
-# 13 - Comparaison avec des méthodes des concepts **Android natifs (Java/Kotlin)** avec **Flutter (Dart)**.
+
+<h1 id="13-flutter-vs-android">13 - Comparaison avec des méthodes des concepts Android natifs (Java/Kotlin) avec Flutter (Dart)</h1>
 
 
 
@@ -1594,7 +1621,7 @@ final value = prefs.getInt('count');
 
 
 
-# 14 -  Mécanismes pour passer des variables et partager des informations en Flutter - partie 1
+<h1 id="14-mecanismes-partage-etat-1">14 - Mécanismes pour passer des variables et partager des informations en Flutter - partie 1</h1>
 
 
 ## <h1 id="cours-passage-donnees-flutter">Cours – Mécanismes pour passer des variables et des informations en Flutter</h1>
@@ -1855,7 +1882,10 @@ Pour les applications modernes et maintenables :
 <br/>
 
 
-# 15 -  Mécanismes pour passer des variables et partager des informations en Flutter - partie 2
+
+
+<h1 id="15-mecanismes-partage-etat-2">15 - Mécanismes pour passer des variables et partager des informations en Flutter - partie 2</h1>
+
 
 
 ## <h2 id="1-objectifs">1. Objectifs du cours</h2>
@@ -2113,7 +2143,12 @@ Pour les applications modernes et maintenables :
 <br/>
 
 
-# 16 - Différence entre `Provider` et `SharedPreferences` :
+
+<h1 id="16-provider-vs-sharedpreferences">16 - Différence entre Provider et SharedPreferences</h1>
+
+
+
+
 
 1. `Provider` sert à **gérer et partager l’état en mémoire** entre plusieurs widgets de façon réactive.
 2. `SharedPreferences` sert à **sauvegarder des données simples de manière persistante** (elles restent après la fermeture de l’application).
@@ -2134,7 +2169,10 @@ Pour les applications modernes et maintenables :
 <br/>
 
 
-# 17 - C’est quoi `context` dans Flutter ?
+
+<h1 id="17-context-flutter">17 - C’est quoi context dans Flutter ?</h1>
+
+
 
 `context` est **un pointeur vers l’endroit de l’arbre des widgets** où tu te trouves.
 
