@@ -440,9 +440,6 @@ void main() {
 
 <h1 id="5-provider-vs-rebuild">5 - Provider vs Rebuild manuel</h1>
 
-<h1 id="6-quand-utiliser-provider">6 - Quand utiliser Provider</h1>
-
-
 
 
 *Je vous propose une **explication simple et pédagogique** de la différence entre :*
@@ -542,7 +539,17 @@ Consumer<CounterProvider>(
 
 
 
-## <h2 id="quand-utiliser-provider"> 3. Quand utiliser Provider ?</h2>
+<span style="display:inline-block; margin-top:1em;">
+  <a href="#table-matières" style="text-decoration:none; color:#3366cc;">
+    ⬅️ Retour à la table des matières
+  </a>
+</span>
+
+<br/>
+<br/>
+
+<h1 id="6-quand-utiliser-provider">6 - Quand utiliser Provider</h1>
+
 
 | Situation                                       | Recommandé                                  |
 | ----------------------------------------------- | ------------------------------------------- |
