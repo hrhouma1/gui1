@@ -20,6 +20,38 @@
 
 
 
+
+Voici la **table des matières avec liens directs vers chaque section** de ton cours Flutter. Les ancres HTML sont déjà présentes dans ton contenu (`<h1 id="...">` et `<h2 id="...">`), donc ces liens fonctionneront parfaitement dans un CMS ou une page HTML.
+
+---
+
+## 📚 Table des matières – Liens directs
+
+1. [Modes de `flutter run`](#1-modes-flutter-run)
+2. [Frameworks de tests intégrés dans Flutter](#2-frameworks-tests-flutter)
+3. [Hot Reload vs Hot Restart](#3-hot-reload-restart)
+4. [Explication d’un `ChangeNotifierProvider`](#4-explication-provider)
+5. [Provider vs Rebuild manuel](#5-provider-vs-rebuild)
+6. [Quand utiliser `Provider`](#6-quand-utiliser-provider)
+7. [Différences `.watch` vs `.read`](#7-watch-vs-read)
+8. [Pourquoi sans `watch`, ça ne marche plus](#8-sans-watch-ca-marche-pas)
+9. [Autres techniques de consommation d’état](#9-autres-consommations-provider)
+10. [Méthodes principales pour consommer un `Provider`](#10-methodes-consommation-provider)
+11. [Équivalent de `watch` = `Consumer<T>`](#11-equivalent-watch)
+12. [Mécanismes pour passer des variables dans Flutter](#12-passer-variables-flutter)
+13. [Comparaison avec Android natif (`BroadcastReceiver`, `Intent`...)](#13-flutter-vs-android)
+14. [Passage et partage de données – Partie 1](#14-mecanismes-partage-etat-1)
+15. [Passage et partage de données – Partie 2](#15-mecanismes-partage-etat-2)
+16. [`Provider` vs `SharedPreferences`](#16-provider-vs-sharedpreferences)
+17. [`context` dans Flutter (≠ `this`)](#17-context-flutter)
+
+---
+
+Chaque lien dirige vers l’ancre correspondante si tu colles le contenu dans une page HTML ou un CMS comme Docusaurus, Thinkific ou GitBook.
+
+Souhaites-tu aussi une version `.md` ou `.html` complète avec cette table de navigation intégrée en haut de la page ?
+
+
 <br/>
 
 
@@ -92,32 +124,6 @@ Je vous propose de chercher des exemples avec le build time, logs, taille d'APK,
 
 
 <br/>
-
-
-
-
-
-<ul>
-  <li><a href="#1-modes-flutter-run">1. Modes de flutter run</a></li>
-  <li><a href="#2-frameworks-tests-flutter">2. Frameworks de tests intégrés dans Flutter</a></li>
-  <li><a href="#3-hot-reload-restart">3. Hot Reload vs Hot Restart</a></li>
-  <li><a href="#4-explication-provider">4. Explication d’un ChangeNotifierProvider</a></li>
-  <li><a href="#5-provider-vs-rebuild">5. Provider vs Rebuild manuel</a></li>
-  <li><a href="#6-quand-utiliser-provider">6. Quand utiliser Provider</a></li>
-  <li><a href="#7-watch-vs-read">7. Différences .watch vs .read</a></li>
-  <li><a href="#8-sans-watch-ca-marche-pas">8. Pourquoi sans watch, ça ne marche plus</a></li>
-  <li><a href="#9-autres-consommations-provider">9. Autres techniques de consommation d’état</a></li>
-  <li><a href="#10-methodes-consommation-provider">10. Méthodes principales pour consommer un Provider</a></li>
-  <li><a href="#11-equivalent-watch">11. Équivalent de watch : Consumer&lt;T&gt;</a></li>
-  <li><a href="#12-passer-variables-flutter">12. Mécanismes pour passer des variables dans Flutter</a></li>
-  <li><a href="#13-flutter-vs-android">13. Comparaison avec Android natif</a></li>
-  <li><a href="#14-mecanismes-partage-etat-1">14. Mécanismes de partage de données – Partie 1</a></li>
-  <li><a href="#15-mecanismes-partage-etat-2">15. Mécanismes de partage de données – Partie 2</a></li>
-  <li><a href="#16-provider-vs-sharedpreferences">16. Provider vs SharedPreferences</a></li>
-  <li><a href="#17-context-flutter">17. C’est quoi context dans Flutter ?</a></li>
-</ul>
-
-
 
 # 2 - Frameworks de tests intégrés  dans Flutter
 
