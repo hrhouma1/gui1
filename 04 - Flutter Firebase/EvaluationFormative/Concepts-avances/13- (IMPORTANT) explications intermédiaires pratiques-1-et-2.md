@@ -19,7 +19,10 @@
 17. <a href="#17-context-flutter">C’est quoi `context` dans Flutter ?</a>
 
 
+## Codes :
 
+<a href="#11-1 equivalent-watch">`Provider` vs `SharedPreferences`</a>
+<a href="#11-2 equivalent-colorProvider">C’est quoi `context` dans Flutter ?</a>
 
 
 <br/>
@@ -1265,8 +1268,166 @@ C’est **strictement équivalent fonctionnellement** à ton `Consumer`, **mais 
 
 
 
-FUCK 1100
-Souhaites-tu que je transforme ton code avec context.watch() pour bien voir la différence ?
+
+
+<br/>
+<br/>
+
+
+<h1 id="11-1 equivalent-watch">11-1 context.watch()</h1>
+
+
+# Version 1 **avec `context.watch()`** au lieu de `Consumer`
+
+```dart
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'color_provider.dart'; // assure-toi que ton provider est bien importé
+
+class ColorBanner extends StatelessWidget {
+  const ColorBanner({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    // 🔁 On écoute ici → ce widget sera reconstruit à chaque changement
+    final colorProvider = context.watch<ColorProvider>();
+
+    return Container(
+      width: double.infinity,
+      height: 80,
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [
+            colorProvider.currentColor,
+            colorProvider.currentColor.withOpacity(0.6), // `.withValues` n'existe pas
+          ],
+        ),
+        borderRadius: BorderRadius.circular(12),
+      ),
+      child: const Center(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(Icons.palette, color: Colors.white, size: 24),
+            SizedBox(width: 8),
+            Text(
+              'Widget Container #3',
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+```
+
+
+
+## Différence importante
+
+| Version                   | Reconstruit…                        | Meilleur pour…                     |
+| ------------------------- | ----------------------------------- | ---------------------------------- |
+| `Consumer<ColorProvider>` | ❗ Seulement le contenu du `builder` | Grosse UI, optimisation fine       |
+| `context.watch<T>()`      | ❗ Tout le widget `build()`          | Code plus lisible, rapide à écrire |
+
+
+
+## Remarque technique
+
+Tu avais utilisé :
+
+```dart
+colorProvider.currentColor.withValues(alpha: 0.6)
+```
+
+Cela n’existe pas dans Flutter. Il faut utiliser :
+
+```dart
+colorProvider.currentColor.withOpacity(0.6)
+```
+
+
+
+
+<br/>
+<br/>
+
+
+<h1 id="11-2 equivalent-colorProvider">11-2 ColorProvider complet</h1>
+
+# Version 2 *ColorProvider complet* utilisé ici (`ChangeNotifier`, avec `currentColor`) 
+
+```dart
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'color_provider.dart'; // à adapter selon ton projet
+
+class ColorBanner extends StatelessWidget {
+  const ColorBanner({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Consumer<ColorProvider>(
+      builder: (context, colorProvider, child) {
+        return Container(
+          width: double.infinity,
+          height: 80,
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                colorProvider.currentColor,
+                colorProvider.currentColor.withOpacity(0.6),
+              ],
+            ),
+            borderRadius: BorderRadius.circular(12),
+          ),
+          child: const Center(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(Icons.palette, color: Colors.white, size: 24),
+                SizedBox(width: 8),
+                Text(
+                  'Widget Container #3',
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
+}
+```
+
+
+##  Pourquoi utiliser `Consumer` ici ?
+
+* Seule **la partie à l’intérieur du `builder`** est reconstruite quand `notifyListeners()` est déclenché dans `ColorProvider`.
+* Cela permet d’**éviter de redessiner tout le parent** du `Consumer`, ce qui est utile si ce widget est complexe ou lourd.
+
+
+
+##  Résumé des deux versions
+
+| Méthode utilisée  | Rebuild automatique ? | Zone reconstruite                 |
+| ----------------- | --------------------- | --------------------------------- |
+| `context.watch()` |  Oui                 | Le widget entier (`build`)        |
+| `Consumer<T>()`   |  Oui                 | Seulement le contenu du `builder` |
+
+
+
+
 
 
 
