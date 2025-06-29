@@ -1,10 +1,4 @@
-Voici un **quiz exhaustif sur SharedPreferences dans Flutter**, au format examen national. Il couvre tous les aspects fondamentaux et avancés : initialisation, lecture/écriture, types supportés, sérialisation, architecture (Provider, singleton), sécurité et bonnes pratiques.
-
-Chaque question est suivie de **4 choix (A, B, C, D)** et d'une **réponse détaillée**.
-
----
-
-# 📝 **Quiz Flutter – SharedPreferences**
+# **Quiz Flutter – SharedPreferences**
 
 ---
 
@@ -309,7 +303,3 @@ await prefs.setStringList('cities', ['Paris', 'Tunis']);
 **Réponse : C**
 
 > Il est conseillé de **ne pas dépasser 100 Ko**, au risque de ralentir le chargement et d’avoir des erreurs.
-
----
-
-Souhaitez-vous que je vous fournisse **les 10 dernières questions** pour compléter un quiz de **30 questions** ? Ou bien souhaitez-vous un **format imprimable en `.docx`** ou `.md` pour cours ou examen ?
