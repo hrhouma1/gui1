@@ -1,5 +1,8 @@
 # <h1 id="quiz-provider">Quiz Flutter – Comparaison des méthodes Provider (`watch` / `Consumer`)</h1>
 
+### Prérequis :
+
+- Lire le fichier suivant : *Flutter Firebase/EvaluationFormative/Concepts-avances/12- (PRATIQUE3) - COMPARER METHODES 1 ET 2 - LES 2 MÉTHODES*
 
 
 ## <h2>Partie 1 – Questions à choix multiples (QCM)</h2>
