@@ -2,9 +2,10 @@
 
 ### Prérequis :
 
-**Lire les 2 fichiers suivants :**
+**Lire les 3 fichiers suivants :**
 
 - *04 - Flutter Firebase/EvaluationFormative/Concepts-avances/12- (PRATIQUE3) - COMPARER METHODES 1 ET 2 - LES 2 MÉTHODES*
+- *04 - Flutter Firebase/EvaluationFormative/06-Provider dans Flutter – bases, usages et bonnes pratiques.md*
 - *04 - Flutter Firebase/EvaluationFormative/Concepts-avances/20- (IMPORTANT) Explications intermédiaires pratiques-1-et-2.md*
 
 ## <h2>Partie 1 – Questions à choix multiples (QCM)</h2>
