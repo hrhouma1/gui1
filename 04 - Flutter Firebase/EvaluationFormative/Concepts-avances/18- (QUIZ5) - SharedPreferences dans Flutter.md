@@ -1,6 +1,14 @@
 # **Quiz Flutter – SharedPreferences**
 
----
+
+### Prérequis :
+
+**Lire le fichier suivant :**
+
+- *04 - Flutter Firebase/EvaluationFormative/07-COURS SharedPreferences dans Flutter.md*
+
+
+
 
 ### **Question 1**
 
