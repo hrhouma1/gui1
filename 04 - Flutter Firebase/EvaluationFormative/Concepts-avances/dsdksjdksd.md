@@ -1,4 +1,4 @@
-# EXAMEN NATIONAL – DÉVELOPPEMENT D’UNE APPLICATION FLUTTER
+# EXAMEN – DÉVELOPPEMENT D’UNE APPLICATION FLUTTER
 
 ## Sujet : Persistance des préférences utilisateur et gestion dynamique du thème
 
@@ -139,4 +139,98 @@ Total : **100 points**
 * Aucun ajout fonctionnel non demandé ne sera évalué.
 * Tout manquement aux répertoires imposés ou à la structure provoque une pénalité de 5 points par écart.
 
+
+<br/>
+<br/>
+
+# Indications et instructions importantes :
+
+
+
+
+L’étudiant doit impérativement utiliser à la fois :
+
+* `SharedPreferences` (persistance locale **asynchrone**, simple clé-valeur)
+* `Provider` (gestion **réactive** et **centralisée** de l’état en mémoire)
+
+Ces deux concepts sont **complémentaires** mais ont des **usages très distincts**. Voici une explication claire, structurée, et adaptée à ton cadre pédagogique strict :
+
+
+
+## <h1 id="distinction-shared-provider">DIFFÉRENCE ENTRE `SharedPreferences` ET `Provider`</h1>
+
+| Objectif                                                                                   | Utiliser `SharedPreferences` | Utiliser `Provider` |
+| ------------------------------------------------------------------------------------------ | ---------------------------- | ------------------- |
+| Sauvegarder une valeur **dans la mémoire locale** du téléphone (même après fermeture)      | ✅ Oui                        | ❌ Non               |
+| Gérer un état **en mémoire, réactif** et notifier l’interface graphique quand il change    | ❌ Non                        | ✅ Oui               |
+| Lire ou écrire une préférence utilisateur (thème, identifiants, booléens)                  | ✅ Oui                        | ❌ Non               |
+| Modifier dynamiquement l’UI quand l’utilisateur active un switch, un toggle ou se connecte | ❌ Non                        | ✅ Oui               |
+| Notifier plusieurs widgets automatiquement en cas de changement                            | ❌ Non                        | ✅ Oui               |
+
+
+
+## <h2 id="quand-quel-usage">QUAND UTILISER QUOI DANS CET EXAMEN ?</h2>
+
+| Fonctionnalité requise par le sujet                                        | Technologie obligatoire       | Justification                                        |
+| -------------------------------------------------------------------------- | ----------------------------- | ---------------------------------------------------- |
+| Sauvegarder `username` et `password` si « Se souvenir de moi » est coché   | `SharedPreferences`           | Persister les données même après redémarrage         |
+| Préremplir le formulaire de connexion si les identifiants sont enregistrés | `SharedPreferences`           | Lecture directe des valeurs au lancement             |
+| Appliquer un thème clair ou sombre de façon réactive                       | `Provider` (`ChangeNotifier`) | Permet de reconstruire l’interface dynamique         |
+| Enregistrer la préférence de thème pour qu’elle persiste au redémarrage    | `SharedPreferences`           | Le thème doit être restauré après fermeture de l’app |
+| Réagir au `Switch` du thème dans `SettingsScreen`                          | `Provider`                    | Le `Switch` doit déclencher un `notifyListeners()`   |
+
+
+
+## <h2 id="structure-recommandee">STRUCTURE TECHNIQUE RECOMMANDÉE</h2>
+
+* `ThemeProvider` (classe `ChangeNotifier`)
+
+  * Contient un booléen `isDarkMode`
+  * Contient une méthode `toggleTheme()`
+  * Appelle `notifyListeners()` à chaque changement
+  * Utilise `SharedPreferences` **à l’intérieur** du provider pour :
+
+    * Sauvegarder la préférence dans `setBool`
+    * Charger la valeur au démarrage avec `getBool`
+
+
+
+## <h2 id="schema">SCHÉMA DE FLUX PÉDAGOGIQUE</h2>
+
+```
+[Démarrage de l'app]
+        |
+        V
+Chargement des préférences → SharedPreferences
+        |
+        V
+Initialisation du Provider → ThemeProvider
+        |
+        V
+Provider notifie les widgets via notifyListeners()
+        |
+        V
+L’UI se met à jour automatiquement avec le bon thème
+```
+
+
+## <h2 id="règles-pédagogiques-imposées">RÈGLES PÉDAGOGIQUES IMPOSÉES POUR L'ÉTUDIANT</h2>
+
+1. **Toute donnée persistée (ex: thème, identifiants)** doit obligatoirement passer par `SharedPreferences`.
+2. **Toute donnée affichée ou mise à jour dynamiquement** dans l’interface doit obligatoirement passer par un `Provider`.
+3. **Le thème ne peut pas être appliqué uniquement avec `SharedPreferences` sans Provider**, car aucun rebuild automatique ne serait déclenché.
+4. **Le thème ne peut pas être uniquement stocké dans le `Provider` sans `SharedPreferences`**, sinon la valeur sera perdue au redémarrage.
+
+## <h2 id="erreurs-a-eviter">ERREURS MAJEURES À ÉVITER</h2>
+
+| Erreur                                                                        | Conséquence                                               |
+| ----------------------------------------------------------------------------- | --------------------------------------------------------- |
+| Utiliser uniquement `setState()` au lieu de `Provider` pour le thème          | L’UI ne sera pas réactive et non persistante              |
+| Stocker le thème uniquement dans `SharedPreferences` sans Provider            | Impossible d’avoir une UI réactive et synchronisée        |
+| Oublier de sauvegarder dans `SharedPreferences` après le `toggleTheme()`      | La préférence ne sera pas persistée au prochain lancement |
+| Lire `SharedPreferences` dans un `build()` sans `FutureBuilder` ou async init | Erreur d’exécution ou mauvaise UX                         |
+
+
+
+*Il faut eécrire un **modèle complet de `ThemeProvider`** intégrant les deux technologies (`Provider` + `SharedPreferences`)*
 
