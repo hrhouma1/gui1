@@ -3,11 +3,10 @@
 
 ### Prérequis :
 
-**Lire les 3 fichiers suivants :**
+**Lire le fichier suivant :**
 
-- *04 - Flutter Firebase/EvaluationFormative/Concepts-avances/12- (PRATIQUE3) - COMPARER METHODES 1 ET 2 - LES 2 MÉTHODES*
-- *04 - Flutter Firebase/EvaluationFormative/06-Provider dans Flutter – bases, usages et bonnes pratiques.md*
-- *04 - Flutter Firebase/EvaluationFormative/Concepts-avances/20- (IMPORTANT) Explications intermédiaires pratiques-1-et-2.md*
+- *04 - Flutter Firebase/EvaluationFormative/07-COURS SharedPreferences dans Flutter.md*
+
 
 
 
