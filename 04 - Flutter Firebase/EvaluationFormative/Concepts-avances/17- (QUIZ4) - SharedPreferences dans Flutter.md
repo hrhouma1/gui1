@@ -1,5 +1,15 @@
 # Démos exhaustives : SharedPreferences dans Flutter
 
+
+### Prérequis :
+
+**Lire le fichier suivant :**
+
+- *04 - Flutter Firebase/EvaluationFormative/07-COURS SharedPreferences dans Flutter.md*
+
+
+
+
 Chaque section comporte :
 
 1. Un extrait de code autonome et directement exécutable (ou à copier tel quel).
