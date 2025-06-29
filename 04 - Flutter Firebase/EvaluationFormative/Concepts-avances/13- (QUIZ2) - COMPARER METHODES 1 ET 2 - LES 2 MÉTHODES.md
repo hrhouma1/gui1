@@ -17,6 +17,55 @@ A. 1 fois B. 2 fois C. 3 fois D. 4 fois
 * **Réponse : C – 3 fois**
 * **Explication :** appels pour `backgroundColor`, `Container.color` et `Text`.
 
+
+
+
+
+**Explication détaillée:**
+
+
+### Question 1
+
+Dans la méthode 1, combien de fois `context.watch<CounterProvider>()` est-il utilisé dans le `build()` ?
+A. 1 fois
+B. 2 fois
+C. 3 fois
+D. 4 fois
+
+**Réponse : C**
+
+
+
+Dans la méthode 1, `context.watch<CounterProvider>()` est appelé trois fois dans la méthode `build()` :
+
+1. Première fois — pour la `backgroundColor` de la `Scaffold` :
+
+   ```dart
+   backgroundColor: context.watch<CounterProvider>().count % 2 == 0
+       ? Colors.amber
+       : Colors.blue,
+   ```
+
+2. Deuxième fois — pour la couleur du `Container` :
+
+   ```dart
+   color: context.watch<CounterProvider>().count % 2 == 0
+       ? Colors.blue
+       : Colors.amber,
+   ```
+
+3. Troisième fois — pour afficher le compteur dans le `Text` :
+
+   ```dart
+   Text(
+     "Compteur : ${context.watch<CounterProvider>().count}",
+   )
+   ```
+
+Chacun de ces appels déclenche un rebuild de tout le widget `build()` quand `notifyListeners()` est appelé.
+
+
+
 ---
 
 ### Question 2
