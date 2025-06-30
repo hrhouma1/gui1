@@ -290,3 +290,82 @@ class MyApp extends StatelessWidget {
 * **Méthode 2** centralise l'écoute uniquement là où c'est nécessaire (`body`) tout en gardant le reste stable.
 * **Méthode 3** place toute la logique dans un seul `Consumer`, ce qui est très clair mais impose de reconstruire tout le `Scaffold`.
 
+
+# Annexe - exemple au complet
+
+
+
+
+```dart
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+//import 'package:demo2provider/CounterProvider.dart';
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(
+    ChangeNotifierProvider(create: (_) => CounterProvider(), child: MyApp()),
+  );
+}
+
+
+
+
+class CounterProvider extends ChangeNotifier {
+  int _count = 0;
+
+  int get count => _count;
+
+  void increment() {
+    _count++;
+    notifyListeners();
+  }
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        backgroundColor: context.watch<CounterProvider>().count % 2 == 0
+            ? Colors.amber
+            : Colors.blue,
+        appBar: AppBar(title: const Text("Mon Exercice Provider")),
+        body: Center(
+          child: Container(
+            padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(90),
+              color: context.watch<CounterProvider>().count % 2 == 0
+                  ? Colors.blue
+                  : Colors.amber,
+              border: Border.all(color: Colors.black, width: 5),
+            ),
+            /*child: Consumer<CounterProvider>(
+              builder: (context, provider, child) {
+                return Text(
+                  "Compteur : ${provider.count}",
+                  style: TextStyle(fontSize: 30),
+                );
+              },
+            ),*/
+            child: Text(
+              "Compteur : ${context.watch<CounterProvider>().count}",
+              style: TextStyle(fontSize: 30),
+            ),
+          ),
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            context.read<CounterProvider>().increment();
+          },
+          child: Icon(Icons.add),
+        ),
+      ),
+    );
+  }
+}
+```
