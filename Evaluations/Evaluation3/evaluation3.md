@@ -21,7 +21,7 @@ Quand l’utilisateur répond à un quiz, tu veux **sauvegarder son score** pour
 
 
 
-# 02. Étude de cas – Application de messagerie simple**
+# 02. Étude de cas – Application de messagerie simple
 
 **Contexte :**
 Tu développes une application de messagerie **en temps réel** pour étudiants. Les messages doivent être envoyés à un serveur et vus par d’autres utilisateurs sur plusieurs appareils.
@@ -32,7 +32,7 @@ Tu développes une application de messagerie **en temps réel** pour étudiants.
 
 
 
-# 03. Étude de cas – Application de recettes**
+# 03. Étude de cas – Application de recettes
 
 **Contexte :**
 - Tu développes une app où les utilisateurs peuvent consulter des recettes. Les recettes viennent d’un **serveur externe** via Internet.
@@ -47,7 +47,7 @@ Tu développes une application de messagerie **en temps réel** pour étudiants.
 
 
 
-# 04. Étude de cas – Application de configuration utilisateur**
+# 04. Étude de cas – Application de configuration utilisateur
 
 **Contexte :**
 Ton application propose aux utilisateurs de choisir leur **thème (clair ou sombre)** et leur **langue préférée**.
@@ -59,7 +59,7 @@ Ces choix doivent être appliqués automatiquement **à chaque lancement de l’
 
 
 
-# 05. Étude de cas – Application de gestion d’élèves pour une école**
+# 05. Étude de cas – Application de gestion d’élèves pour une école
 
 **Contexte :**
 Tu dois créer une application pour une école afin de **gérer les listes d’élèves**, ajouter/supprimer des noms, et consulter les détails d’un élève.
