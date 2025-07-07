@@ -4,6 +4,7 @@
 
 
 <br/>
+<br/>
 
 # Partie 2
 
@@ -71,6 +72,7 @@ Plusieurs utilisateurs doivent pouvoir accéder à ces données **depuis différ
 
 
 
+<br/>
 <br/>
 
 # Partie 3
