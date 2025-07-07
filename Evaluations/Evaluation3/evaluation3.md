@@ -9,7 +9,7 @@
 # Partie 2
 
 
-# 01. Étude de cas – Application de quiz local**
+# 01. Étude de cas – Application de quiz local
 
 **Contexte :**
 Tu crées une application de quiz hors-ligne pour un client. Les questions sont fixées dans le code.
