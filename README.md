@@ -17,16 +17,16 @@
 
 # Liste
 
-/flutter-demo-1-stateless
-/flutter-demo-2-stateless
-/flutter-01-projet08-shared-preferences-demo
-/flutter-01-projet07-provider-demo-
-/flutter-01-projet06-provider-demo
-/workshop-flutter-recipe-App
-/flutter-01-projet05
-/flutter-01-projet04
-/flutter-01-projet00
-/flutter-01-projet03
-/flutter-01-projet02
-/flutter-01-projet01
+- /flutter-demo-1-stateless
+- /flutter-demo-2-stateless
+- /flutter-01-projet08-shared-preferences-demo
+- /flutter-01-projet07-provider-demo-
+- /flutter-01-projet06-provider-demo
+- /workshop-flutter-recipe-App
+- /flutter-01-projet05
+- /flutter-01-projet04
+- /flutter-01-projet00
+- /flutter-01-projet03
+- /flutter-01-projet02
+- /flutter-01-projet01
 
