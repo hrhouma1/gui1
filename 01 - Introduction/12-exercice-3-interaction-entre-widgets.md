@@ -4,6 +4,10 @@
 
 - https://github.com/hrhouma1/flutter-demo-1-stateless/blob/main/04-Pratique2.md
 
+# Correction :
+- https://github.com/hrhouma1/flutter-12-exercice-3-interaction-entre-widgets
+
+
 > **But** : Concevoir une petite app *sans état interne* (stateless uniquement) avec **trois écrans** (Accueil, Détail, Paramètres), en décrivant clairement :
 >
 > 1. **L’arborescence des widgets** (Widget Tree)
