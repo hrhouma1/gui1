@@ -1,5 +1,9 @@
 # Exercice 3 — Création d’une nouvelle application Flutter avec **widgets stateless**-Actions → Réactions
 
+# Lien:
+
+- https://github.com/hrhouma1/flutter-demo-1-stateless/blob/main/04-Pratique2.md
+
 > **But** : Concevoir une petite app *sans état interne* (stateless uniquement) avec **trois écrans** (Accueil, Détail, Paramètres), en décrivant clairement :
 >
 > 1. **L’arborescence des widgets** (Widget Tree)
