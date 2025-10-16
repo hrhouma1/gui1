@@ -20,7 +20,7 @@
 * **Aucun état interne** (pas de `StatefulWidget`, pas de “Idle/Loading”).
 * Navigation : `Navigator.push`/`pop` depuis des **Stateless** (l’événement de tap déclenche la navigation).
 
----
+
 
 ## Partie 1 — Arborescence des Widgets (ASCII)
 
@@ -55,7 +55,7 @@
       └─ ListTile (Radio Langue)
 ```
 
----
+
 
 ## Partie 2 — Navigation entre écrans (flux “tap” → écran)
 
@@ -68,7 +68,6 @@ Détail --(AppBar Back)--> Accueil
 Paramètres --(AppBar Back)--> Accueil
 ```
 
----
 
 ## Annexes — Interactions utilisateur → Réactions UI (Mermaid)
 
@@ -112,7 +111,7 @@ flowchart TD
   P_List --> P_Radio[Radio: Langue]
 ```
 
----
+
 
 ## Vision “1 seul bloc en pile” (3 sous-graphes)
 
@@ -152,7 +151,7 @@ flowchart TD
   end
 ```
 
----
+
 
 ## Arborescence des Widgets (3 sous-graphes)
 
@@ -191,9 +190,9 @@ flowchart TD
   end
 ```
 
----
 
-## Navigation entre écrans (Mermaid)
+
+## Navigation entre écrans 
 
 ```mermaid
 flowchart LR
@@ -203,45 +202,12 @@ flowchart LR
   Parametres -- AppBar Back --> Accueil
 ```
 
----
 
 ## Interactions UI — Flowchart (Actions → Réactions)
 
 
 
 
-
-
-
-
-Tu as un bug Mermaid à cause de caractères spéciaux/parenthèses dans le label du nœud `Recompute`. Voici une version **ASCII-safe** (sans accents ni flèches “→”, sans parenthèses dans les labels) qui se rend bien sur GitHub :
-
-```mermaid
-flowchart TD
-  subgraph Actions
-    TapFAB((Tap FAB))
-    TapCarte1((Tap Carte 1))
-    TapCarte2((Tap Carte 2))
-    TapIconParams((Tap Icon Parametres))
-    ToggleTheme((Switch Theme))
-  end
-
-  subgraph Reactions
-    SnackFAB[SnackBar: Action executee]
-    SnackC1[SnackBar: Carte 1]
-    GoDetail[[Navigator.push -> Detail]]
-    GoSettings[[Navigator.push -> Parametres]]
-    Recompute[Recompute color scheme - theme clair stateless simule]
-  end
-
-  TapFAB --> SnackFAB
-  TapCarte1 --> SnackC1
-  TapCarte2 --> GoDetail
-  TapIconParams --> GoSettings
-  ToggleTheme --> Recompute
-```
-
-Si tu veux garder les accents et la flèche “→”, évite les parenthèses dans les labels, par exemple :
 
 ```mermaid
 flowchart TD
@@ -271,8 +237,7 @@ flowchart TD
 
 
 
-## Diagramme de séquence (Mermaid)
-
+## Diagramme de séquence 
 ```mermaid
 sequenceDiagram
   actor U as User
@@ -293,7 +258,7 @@ sequenceDiagram
   A->>N: push(Paramètres)
 ```
 
----
+
 
 ## Livrables
 
@@ -316,7 +281,7 @@ sequenceDiagram
 * Interactions → Réactions (SnackBar/Navigation) — **10 pts**
 * Qualité de présentation (lisibilité, cohérence, respect des contraintes) — **6 pts**
 
----
+
 
 ## Rappels commandes
 
