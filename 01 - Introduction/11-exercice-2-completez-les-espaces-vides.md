@@ -4,7 +4,8 @@
 
 # Exercice 2 :
 - https://github.com/hrhouma1/flutter-demo-1-stateless/blob/main/03-pratique1.md
-
+# Correction exercice 2:
+- https://github.com/hrhouma1/flutter-11-exercice-2-completez-les-espaces-vides
 
 ## Objectifs d’apprentissage
 
