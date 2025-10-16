@@ -207,6 +207,42 @@ flowchart LR
 
 ## Interactions UI — Flowchart (Actions → Réactions)
 
+
+
+
+
+
+
+
+Tu as un bug Mermaid à cause de caractères spéciaux/parenthèses dans le label du nœud `Recompute`. Voici une version **ASCII-safe** (sans accents ni flèches “→”, sans parenthèses dans les labels) qui se rend bien sur GitHub :
+
+```mermaid
+flowchart TD
+  subgraph Actions
+    TapFAB((Tap FAB))
+    TapCarte1((Tap Carte 1))
+    TapCarte2((Tap Carte 2))
+    TapIconParams((Tap Icon Parametres))
+    ToggleTheme((Switch Theme))
+  end
+
+  subgraph Reactions
+    SnackFAB[SnackBar: Action executee]
+    SnackC1[SnackBar: Carte 1]
+    GoDetail[[Navigator.push -> Detail]]
+    GoSettings[[Navigator.push -> Parametres]]
+    Recompute[Recompute color scheme - theme clair stateless simule]
+  end
+
+  TapFAB --> SnackFAB
+  TapCarte1 --> SnackC1
+  TapCarte2 --> GoDetail
+  TapIconParams --> GoSettings
+  ToggleTheme --> Recompute
+```
+
+Si tu veux garder les accents et la flèche “→”, évite les parenthèses dans les labels, par exemple :
+
 ```mermaid
 flowchart TD
   subgraph Actions
@@ -217,12 +253,12 @@ flowchart TD
     ToggleTheme((Switch Thème))
   end
 
-  subgraph Reactions
-    SnackFAB[SnackBar: Action exécutée]
-    SnackC1[SnackBar: Carte 1]
+  subgraph Réactions
+    SnackFAB[SnackBar : Action exécutée]
+    SnackC1[SnackBar : Carte 1]
     GoDetail[[Navigator.push → Détail]]
     GoSettings[[Navigator.push → Paramètres]]
-    Recompute[Recompute color scheme (thème clair stateless simulé)]
+    Recompute[Recalcul du thème clair stateless simulé]
   end
 
   TapFAB --> SnackFAB
@@ -232,7 +268,8 @@ flowchart TD
   ToggleTheme --> Recompute
 ```
 
----
+
+
 
 ## Diagramme de séquence (Mermaid)
 
