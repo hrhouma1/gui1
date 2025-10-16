@@ -1,4 +1,4 @@
-# Exercice 3 — Création d’une nouvelle application Flutter avec **widgets stateless** (*Pratique 2*)
+# Exercice 3 — Création d’une nouvelle application Flutter avec **widgets stateless**-Actions → Réactions
 
 > **But** : Concevoir une petite app *sans état interne* (stateless uniquement) avec **trois écrans** (Accueil, Détail, Paramètres), en décrivant clairement :
 >
