@@ -7,7 +7,7 @@ Dans cet exercice, vous allez **DÉVELOPPER** (pas seulement analyser) du code a
 **Objectif** : Créer 3 applications Flutter fonctionnelles utilisant StreamBuilder.
 
 
-# PARTIE 1 : StreamBuilder Compteur (10 points)
+# PARTIE 1 : StreamBuilder Compteur 
 
 ### Énoncé
 
@@ -114,7 +114,7 @@ class _CounterScreenState extends State<CounterScreen> {
 <br/>
 <br/>
 
-# PARTIE 2 : StreamBuilder Date et Heure (10 points)
+# PARTIE 2 : StreamBuilder Date et Heure 
 
 ### Énoncé
 
@@ -228,18 +228,17 @@ class _ClockScreenState extends State<ClockScreen> {
 }
 ```
 
----
 
-### Grille de notation (10 points)
+### Grille de notation 
 
-- [ ] Stream DateTime créé avec Stream.periodic (2 pts)
-- [ ] Stream initialisé dans initState() (1 pt)
-- [ ] StreamBuilder avec type `<DateTime>` (1 pt)
-- [ ] initialData utilisé (1 pt)
-- [ ] Formatage de l'heure correct (HH:MM:SS) (2 pts)
-- [ ] Formatage de la date en français (1 pt)
-- [ ] Gestion des états (1 pt)
-- [ ] Code compile et fonctionne (1 pt)
+- [ ] Stream DateTime créé avec Stream.periodic
+- [ ] Stream initialisé dans initState() 
+- [ ] StreamBuilder avec type `<DateTime>` 
+- [ ] initialData utilisé 
+- [ ] Formatage de l'heure correct (HH:MM:SS) 
+- [ ] Formatage de la date en français 
+- [ ] Gestion des états 
+- [ ] Code compile et fonctionne 
 
 ---
 
@@ -367,19 +366,19 @@ class _TasksScreenState extends State<TasksScreen> {
 }
 ```
 
----
 
-### Grille de notation (10 points)
 
-- [ ] Instance Firestore créée (1 pt)
-- [ ] StreamBuilder avec bon type (1 pt)
-- [ ] Stream Firestore correct (.snapshots()) (1 pt)
-- [ ] Gestion de hasError (1 pt)
-- [ ] Gestion de ConnectionState.waiting (1 pt)
-- [ ] Gestion de liste vide (1 pt)
-- [ ] Affichage des tâches dans ListView (2 pts)
-- [ ] Fonction addTask fonctionnelle (1 pt)
-- [ ] Code compile sans erreur (1 pt)
+### Grille de notation 
+
+- [ ] Instance Firestore créée
+- [ ] StreamBuilder avec bon type 
+- [ ] Stream Firestore correct (.snapshots()) 
+- [ ] Gestion de hasError 
+- [ ] Gestion de ConnectionState.waiting 
+- [ ] Gestion de liste vide 
+- [ ] Affichage des tâches dans ListView 
+- [ ] Fonction addTask fonctionnelle 
+- [ ] Code compile sans erreur 
 
 
 
@@ -389,7 +388,7 @@ class _TasksScreenState extends State<TasksScreen> {
 
 # BONUS : Défis supplémentaires (points bonus)
 
-# Défi 1 : Compteur avec pause (2 points)
+# Défi 1 : Compteur avec pause 
 
 Améliorez le compteur (Partie 1) pour ajouter :
 - Un bouton "Pause" qui arrête le compteur
@@ -402,7 +401,7 @@ Améliorez le compteur (Partie 1) pour ajouter :
 <br/>
 
 
-# Défi 2 : Horloge avec fuseaux horaires (2 points)
+# Défi 2 : Horloge avec fuseaux horaires 
 
 Améliorez l'horloge (Partie 2) pour afficher :
 - L'heure locale
@@ -412,7 +411,7 @@ Améliorez l'horloge (Partie 2) pour afficher :
 <br/>
 <br/>
 
-# Défi 3 : Tâches avec filtres (3 points)
+# Défi 3 : Tâches avec filtres 
 
 Améliorez la liste de tâches (Partie 3) pour ajouter :
 - Filtrer : Toutes / Complétées / À faire
