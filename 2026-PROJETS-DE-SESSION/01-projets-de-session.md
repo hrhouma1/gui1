@@ -139,7 +139,9 @@ Application de prise de notes minimaliste.
 </details>
 
 
-# NIVEAU 2 : PROJETS INTERMÉDIAIRES (2-3 semaines)
+<details>
+
+<summary> NIVEAU 2 : PROJETS INTERMÉDIAIRES (2-3 semaines) </summary>
 
 Projets avec plus de fonctionnalités et de complexité.
 
@@ -284,11 +286,12 @@ Jeu de mémoire avec cartes à retourner.
 - Difficulté variable (1 pt)
 
 
-<br/­>
-<br/­>
+</details>
 
 
-# NIVEAU 3 : PROJETS AVANCÉS (3-4 semaines)
+<details>
+
+<summary> NIVEAU 3 : PROJETS AVANCÉS (3-4 semaines) </summary>
 
 Projets complets avec plusieurs écrans et fonctionnalités avancées.
 
@@ -442,11 +445,12 @@ Jeu de morpion avec IA et multijoueur.
 - Options avancées (1 pt)
 
 
-<br/­>
-<br/­>
+</details>
 
 
-# NIVEAU 4 : PROJETS COMPLEXES (4+ semaines)
+<details>
+
+<summary> NIVEAU 4 : PROJETS COMPLEXES (4+ semaines) </summary>
 
 Projets ambitieux pour étudiants avancés ou projets de fin de session.
 
@@ -609,8 +613,11 @@ Mini jeu de plateforme 2D (style Mario simplifié).
 - Interface et contrôles (1 pt)
 
 
-<br/­>
-<br/­>
+</details>
+
+
+<br/>
+<br/>
 
 
 # PROJETS THÉMATIQUES SPÉCIAUX
@@ -654,8 +661,8 @@ Mini jeu de plateforme 2D (style Mario simplifié).
 - Approche holistique
 
 
-<br/­>
-<br/­>
+<br/>
+<br/>
 
 
 # CRITÈRES D'ÉVALUATION GÉNÉRAUX
@@ -682,8 +689,8 @@ Mini jeu de plateforme 2D (style Mario simplifié).
 - Instructions d'installation (2%)
 
 
-<br/­>
-<br/­>
+<br/>
+<br/>
 
 
 # CONSEILS POUR LES ÉTUDIANTS
@@ -717,8 +724,8 @@ Mini jeu de plateforme 2D (style Mario simplifié).
 - Proposer des améliorations futures
 
 
-<br/­>
-<br/­>
+<br/>
+<br/>
 
 
 # RESSOURCES UTILES
@@ -762,8 +769,8 @@ Choisir un projet de Niveau 3 ou 4
 Augmenter d'un niveau de complexité
 
 
-<br/­>
-<br/­>
+<br/>
+<br/>
 
 
 # MODIFICATION ET PERSONNALISATION
