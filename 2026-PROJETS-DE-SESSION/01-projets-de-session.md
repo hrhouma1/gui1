@@ -1,15 +1,16 @@
 # Idées de Projets pour Étudiants
 
+
 ## Introduction
 
 Ce document présente des idées de projets Flutter utilisant Provider, classées par niveau de difficulté. Tous les projets sont réalisables en 2 à 4 semaines selon le niveau de l'étudiant.
 
 
-<br/­>
-<br/­>
+
+<details> 
 
 
-# NIVEAU 1 : PROJETS TRÈS SIMPLES (1-2 semaines)
+<summary>  NIVEAU 1 : PROJETS TRÈS SIMPLES (1-2 semaines) </summary>
 
 Parfaits pour débuter avec Flutter et Provider.
 
@@ -135,8 +136,7 @@ Application de prise de notes minimaliste.
 - Dates et tri (2 pts)
 
 
-<br/­>
-<br/­>
+</details>
 
 
 # NIVEAU 2 : PROJETS INTERMÉDIAIRES (2-3 semaines)
