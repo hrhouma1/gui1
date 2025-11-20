@@ -258,3 +258,11 @@ class SettingsProvider with ChangeNotifier {
 ## <h2 id="conclusion">14. Conclusion</h2>
 
 `SharedPreferences` est une solution légère et efficace pour la persistance de données simples dans Flutter. En la combinant avec des architectures propres (Provider, services), on peut créer des applications robustes, performantes et maintenables.
+
+
+
+# Annexe 1
+
+
+<img width="1901" height="488" alt="image" src="https://github.com/user-attachments/assets/bbf73ae7-81fe-4375-8de7-6057fc3efb02" />
+
