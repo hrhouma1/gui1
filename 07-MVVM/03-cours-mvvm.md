@@ -25,22 +25,11 @@ Tu peux le voir comme 3 boîtes :
 Idée clé :
 **La VIEW ne fait presque pas de logique. Elle demande tout au VIEWMODEL.**
 
----
+
 
 ## 2. Version dessin
 
 
-
-```mermaid
-graph TD
-
-A[View (Widget Flutter)] --> B[ViewModel (Logique, État)]
-B --> C[Model (Données, API, DB)]
-
-C --> B --> A
-```
-
-Encore plus minimal :
 
 ```mermaid
 graph TD
@@ -51,9 +40,6 @@ Model --> ViewModel --> View
 
 
 
-
----
-
 ## 3. Exemple concret très simple (compteur)
 
 On fait un **compteur** façon MVVM.
@@ -63,7 +49,7 @@ On fait un **compteur** façon MVVM.
 Ici, on n’a même pas besoin de vraie class Model.
 On va juste imaginer que le “nombre” c’est la donnée.
 
----
+
 
 ### 3.2. VIEWMODEL : le cerveau du compteur
 
@@ -93,7 +79,7 @@ class CounterViewModel extends ChangeNotifier {
 * `increment()` / `reset()` : la logique.
 * `notifyListeners()` : “hé, Vue, reconstruis-toi”.
 
----
+
 
 ### 3.3. VIEW : l’écran qui affiche le compteur
 
@@ -166,9 +152,9 @@ Points importants :
 * Le ViewModel met à jour l’état et appelle `notifyListeners()`.
 * Grâce à `context.watch<CounterViewModel>()`, la Vue se reconstruit automatiquement.
 
----
 
-## 4. Ce qu’il faut retenir (version ultra courte)
+
+## 4. Ce qu’il faut retenir
 
 1. **VIEW**
    → Widgets (écrans)
