@@ -77,9 +77,73 @@ lib/
 6. La **VIEW** (HomePage) écoute le **ViewModel** et se reconstruit avec les nouvelles données.
 
 
+
+<br/>
 <br/>
 
-# Annexe - exemple simple d’architecture **MVVM en Flutter**
+
+
+
+# Annexe 1 - MVVM est dans le code ou dans la strcuturation des dossiers ?
+
+#### 1. L’architecture, d’abord, c’est **dans le code**
+
+Même si tu mets **tout dans un seul fichier**, tu peux déjà faire du MVVM :
+
+```dart
+class CounterViewModel extends ChangeNotifier { ... }   // ViewModel
+class CounterPage extends StatelessWidget { ... }       // View (UI)
+class CounterModel { ... }                              // Model (données)
+```
+
+Ici :
+
+* `CounterPage` = **VIEW**
+* `CounterViewModel` = **VIEWMODEL**
+* `CounterModel` (ou juste un `int`, une liste…) = **MODEL**
+
+Donc :
+**L’architecture = qui parle à qui, qui fait quoi.**
+Ça se voit dans le code (classes, responsabilités, dépendances).
+
+
+
+### 2. Mais on la reflète aussi dans les **dossiers**
+
+Pour que ce soit plus clair et propre, on range les fichiers par rôles :
+
+```text
+lib/
+  ui/               // VUES (Widgets)
+    counter_page.dart
+
+  viewmodels/       // VIEWMODELS
+    counter_view_model.dart
+
+  models/           // MODELS (données)
+    counter_model.dart
+```
+
+Ici :
+
+* Les **dossiers** servent juste à organiser.
+* Mais si ton `view_model.dart` commence à faire des appels HTTP directement, à gérer l’UI, etc.,
+  → tu n’es plus dans une vraie architecture MVVM, même si les dossiers ont le bon nom.
+
+
+
+### 3. Donc, la réponse courte
+
+> **MVVM, c’est d’abord dans le code (séparation des rôles), et ensuite on reflète ça dans les dossiers pour organiser.**
+
+* Tu peux avoir des beaux dossiers MVVM mais un code “spaghetti” → mauvaise architecture.
+* Tu peux avoir une petite app dans 2–3 fichiers sans dossiers, mais avec une vraie séparation View / ViewModel / Model → architecture correcte.
+
+
+
+<br/>
+
+# Annexe 2 - exemple simple d’architecture **MVVM en Flutter**
 
 ```text
 +------------------------------------------------------+
