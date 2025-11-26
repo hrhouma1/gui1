@@ -27,23 +27,30 @@ Idée clé :
 
 ---
 
-## 2. Version dessin (Mermaid)
+## 2. Version dessin
 
-Tu peux coller ça dans un fichier Markdown :
+
 
 ```mermaid
 graph TD
 
-A[View<br/>(Widget Flutter)] --> B[ViewModel<br/>(Logique + État)]
-B --> C[Model<br/>(Données, API, DB)]
+A[View (Widget Flutter)] --> B[ViewModel (Logique, État)]
+B --> C[Model (Données, API, DB)]
 
 C --> B --> A
 ```
 
-* La VIEW demande au VIEWMODEL : “donne-moi des données”.
-* Le VIEWMODEL va voir le MODEL.
-* Le MODEL lit les vraies données (API, DB).
-* Puis les données remontent jusqu’à la VIEW.
+Encore plus minimal :
+
+```mermaid
+graph TD
+
+View --> ViewModel --> Model
+Model --> ViewModel --> View
+```
+
+
+
 
 ---
 
