@@ -76,3 +76,99 @@ lib/
 5. Les données reviennent vers **HomeViewModel**, qui met à jour ses variables.
 6. La **VIEW** (HomePage) écoute le **ViewModel** et se reconstruit avec les nouvelles données.
 
+
+<br/>
+
+# Annexe - exemple simple d’architecture **MVVM en Flutter**
+
+```text
++------------------------------------------------------+
+|                    PRESENTATION                      |
+|                 (Flutter UI / View)                  |
++------------------------------------------------------+
+|                                                      |
+|  +----------------------+        +----------------+  |
+|  |  Screen Widget      |        |  Screen Widget |  |
+|  |  (HomePage)         |        |  (DetailsPage) |  |
+|  +----------+----------+        +--------+-------+  |
+|             |                            |          |
+|             v                            v          |
+|      +------+-------------------------------+       |
+|      |           VIEWMODELS (VM)           |       |
+|      |                                      |      |
+|      |  HomeViewModel   DetailsViewModel   |      |
+|      +------+--------------+---------------+      |
+|             |              |                      |
++-------------|--------------|----------------------+
+              |              |
+              v              v
++------------------------------------------------------+
+|                        DOMAIN                        |
+|                 (UseCases / Logique)                 |
++------------------------------------------------------+
+|   +-----------------+      +---------------------+   |
+|   |   UseCase A     |      |    UseCase B        |   |
+|   |  (FetchItems)   |      |  (GetItemDetails)   |   |
+|   +--------+--------+      +----------+----------+   |
+|            |                          |              |
++------------|--------------------------|--------------+
+             |                          |
+             v                          v
++------------------------------------------------------+
+|                        DATA                          |
+|             (Repositories / DataSources)             |
++------------------------------------------------------+
+|   +----------------------+   +--------------------+  |
+|   |  Repository (Item)   |   |  Repository (Auth) |  |
+|   +----------+-----------+   +----------+---------+  |
+|              |                          |            |
+|     +--------+--------+        +--------+--------+   |
+|     |  RemoteSource   |        |  LocalSource    |   |
+|     |  (API / HTTP)   |        | (DB / Cache)    |   |
+|     +--------+--------+        +--------+--------+   |
+|              |                          |            |
++--------------|--------------------------|------------+
+               v                          v
+        [ REST API / Backend ]       [ SQLite / Hive ]
+```
+
+### Flux simplifié (de haut en bas)
+
+```text
+UI (Widget) 
+   -> appelle méthodes du ViewModel
+ViewModel 
+   -> appelle UseCase(s) / Repository
+UseCase 
+   -> orchestre la logique métier
+Repository 
+   -> va chercher les données (Remote / Local)
+Remote / Local 
+   -> renvoient les données au Repository
+Repository -> UseCase -> ViewModel -> UI
+```
+
+### Exemple d’objets typiques
+
+```text
+lib/
+  models/
+    item.dart              (Model)
+  data/
+    item_repository.dart   (Repository)
+    remote/
+      item_api_service.dart
+    local/
+      item_local_store.dart
+  domain/
+    fetch_items_usecase.dart
+  viewmodels/
+    home_view_model.dart
+  ui/
+    screens/
+      home_page.dart       (View)
+    widgets/
+      item_card.dart
+```
+
+
